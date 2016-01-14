@@ -8,7 +8,7 @@
 <body>
 	<div id="" class="login_div">
 		<div id="" class="logo_div">
-			<img src="images/logo.ico" alt="Blu Video and Audio Shop" id="" class="logo_images"/>
+			<a href="visitor.php"><img src="images/logo.ico" alt="Blu Video and Audio Shop" id="" class="logo_images"/></a>
 		</div>
 		<div id="" class="input_div">
 			<form name="login" method="" action="">

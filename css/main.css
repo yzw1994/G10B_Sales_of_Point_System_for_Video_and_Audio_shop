@@ -1,6 +1,12 @@
 body {
-	background-color:#F0F8FF;
+	background-image: url("../images/colorful-triangles-background.jpg");
+	background-repeat:no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	margin:0 auto;
+	font-family:elegant_luxmager;
 }
 
 .header {
