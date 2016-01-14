@@ -3,7 +3,7 @@
 	<title>Sales of Point System for Video and Audio shop 
 	</title>
 	<link rel="icon" href="images/favicon.png" type="image/x-icon" sizes="16x16">
-	<link href="css/sopsys.css" rel="stylesheet" type="text/css" />
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<div class="header section group">
