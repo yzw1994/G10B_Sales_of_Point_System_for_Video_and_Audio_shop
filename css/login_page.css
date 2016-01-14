@@ -1,0 +1,124 @@
+body {
+	/*background-color:rgba(72, 118, 255, 0.3);*/
+	background-image: url("../images/colorful-triangles-background.jpg");
+	background-repeat:no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	margin:0 auto;
+	font-family:elegant_luxmager;
+	font-size:25px;
+}
+.login_div {
+	border-style:solid;
+	border-color:white;
+	border-width:1px;
+	width:380px;
+	height:400px;
+	margin:100px auto;
+	border-radius:20px;
+}
+.logo_div {
+	width:100px;
+	height:100px;
+	
+	margin-top:-40px;
+	margin-left:140px;
+}
+.logo_images {
+	width:180px;
+	margin-top:-40px;
+	margin-left:-40px;
+}
+.input_div {
+	width:300px;
+	height:280px;
+	background-color:;
+	margin:30px auto;
+}
+.btn {
+	font-family:elegant_luxmager;
+	font-size:18px;
+	width:48%;
+	color:#6B6B6B;
+	font-weight:800;
+	border-radius:5px;
+	margin-top:58px;
+	height:39px;
+	border-style:solid;
+	border-width:0px;
+}
+.login_btn {
+	float:right;
+	display:block;
+	background-color:#63B8FF;
+}
+.register_btn {
+	float:left;
+	display:block;
+}
+.input_box {
+	background-color:rgba(240, 255, 255, 0.5);
+	font-family:elegant_luxmager;
+	color:black;
+	border-style:solid;
+	border-width:1px;
+	border-color:grey;
+	border-radius:8px;
+	width:100%;
+	height:40px;
+	margin-top:20px;
+	padding-left:10px;
+	font-size:18px;
+	outline:0;
+}
+.input_box:focus {
+	background-color:white;
+	opacity:0.8;
+}
+input::-webkit-input-placeholder {
+color: black !important;
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+color: black !important;  
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: black !important;  
+}
+ 
+input:-ms-input-placeholder {  
+color: black !important;  
+}
+.email {
+	background-image: url("../images/login_email.png");
+	background-repeat:no-repeat;
+	-webkit-background-size: 30px;
+	-moz-background-size: 30px;
+	-o-background-size: 30px;
+	background-size: 30px;
+	background-position:255px 4px;
+}
+.password {
+	background-image: url("../images/login_password.png");
+	background-repeat:no-repeat;
+	-webkit-background-size: 30px;
+	-moz-background-size: 30px;
+	-o-background-size: 30px;
+	background-size: 30px;
+	background-position:255px 4px;
+	
+}
+.login_error {
+	font-size:20px;
+	padding-top:20px;
+	width:100%;
+	height:20px;
+	text-align:center;
+	color:red;
+}
+.error_message {
+	display:none;
+}
