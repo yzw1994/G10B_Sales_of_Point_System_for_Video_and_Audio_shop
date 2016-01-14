@@ -31,11 +31,11 @@
 	$username = $_POST["uname"];
 	$userpass = $_POST["upass"];
 	
-	$result = mysql_query("select * from admin where AD_USER = '$username' and AD_PASS = '$userpass'");
+	$result = mysql_query("select * from admin where ad_username = '$username' and admin_password = '$userpass'");
 	if(mysql_num_rows($result)!=0)
 	{
 		$row = mysql_fetch_assoc($result);
-		$_SESSION["aid"] = $row["AD_ID"];
+		$_SESSION["admin_id"] = $row["admin_id"];
 		
 		header("Location: admin_dashboard.php");
 	}
