@@ -10,11 +10,26 @@ body {
 }
 
 .header {
-	background-color:grey;
+	background-color:rgba(202, 225,	255, 0.8);
 	width:80%;
-	height:80px;
+	height:110px;
 }
-
+.logo_images {
+	width:100px;
+	margin-left:10px;
+}
+.logo_link {
+	text-decoration:none;
+	color:grey;
+	background-color:;
+	font-size:38px;
+	display:inline-block;
+}
+.shop_name {
+	margin-top:30px;
+	background-color:;
+	float:right;
+}
 .nav_bar {
 	background-color:silver;
 	width:100%;
@@ -22,7 +37,7 @@ body {
 }
 
 .cont {
-	background-color:green;
+	background-color:rgba(202, 225,	255, 0.8);
 	width:80%;
 	min-height:100%;
 	margin-bottom:30px !important;
@@ -41,8 +56,23 @@ body {
 	margin-bottom:20px;
 	margin-left:-5%;
 	float:left;
+    -webkit-transition-duration: 800ms; /* Safari */
+    -webkit-transition-delay: 800ms; /* Safari */
+    transition-delay: 800ms;
+	color:white;
+	text-align:center;
+	font-size:28px;
 }
-
+.footer:hover {
+	background-color:black;
+	
+}
+.footer_text {
+	width:90%;
+	background-color:;
+	display:inline-block;
+	margin-top:25px;
+}
 /*  SECTIONS  */
 .section {
 	clear: both;
