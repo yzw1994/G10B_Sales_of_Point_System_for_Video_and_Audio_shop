@@ -19,7 +19,7 @@
 					<span id="" class="error_message">Invalid Email or Password.
 					</span>
 				</div>
-				<input type="submit" value="REGISTER" id="" class="btn register_btn"/>
+				<a href="register.php"><input type="button" value="REGISTER" id="" class="btn register_btn"/></a>
 				<input type="submit" value="LOGIN" id="" class="btn login_btn"/>
 			</form>
 			<div class=""></div>
