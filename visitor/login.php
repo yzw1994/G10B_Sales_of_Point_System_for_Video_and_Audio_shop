@@ -2,13 +2,13 @@
 <html>
 <head>
 	<title>Log In</title>
-	<link href="css/login_page.css" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="css/font/elegantlux/elegant_luxmager.css" type="text/css" charset="utf-8" />
+	<link href="../css/login_page.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="../css/font/elegantlux/elegant_luxmager.css" type="text/css" charset="utf-8" />
 </head>
 <body>
 	<div id="" class="login_div">
 		<div id="" class="logo_div">
-			<a href="visitor.php"><img src="images/logo.ico" alt="Blu Video and Audio Shop" id="" class="logo_images"/></a>
+			<a href="visitor.php"><img src="../images/logo.ico" alt="Blu Video and Audio Shop" id="" class="logo_images"/></a>
 		</div>
 		<div id="" class="input_div">
 			<form name="login" method="" action="">
