@@ -11,10 +11,10 @@
 					<a href="">AUDIO</a>
 				</li>
 				<li>
-					<a href="">assadsa</a>
+					<a href="">COMING SOON</a>
 				</li>
 				<li>
-					<a href="">assadsa</a>
+					<a href="">kkkkkk</a>
 				</li>
 			</ul>
 		</div>
