@@ -40,5 +40,10 @@ jQuery(document).ready(function ($) {
     $('a.control_next').click(function () {
         moveRight();
     });
-
+	
+	$("#menu_function").click(function () {
+		$("#menu_content_function").toggle();
+	}
+		
+	);
 });
