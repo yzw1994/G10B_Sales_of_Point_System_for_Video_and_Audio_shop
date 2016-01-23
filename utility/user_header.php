@@ -9,7 +9,7 @@
 			<p><input type="text" name="search" id="" class="search_bar" placeholder="Search..."/></p>
 		</div>
 		<div id="" class="col span_1_of_3 btn_group after_login">
-			<a href="" id="" class="user_btn cart_btn"/>
+			<a href="add_to_cart.php" id="" class="user_btn cart_btn"/>
 				<img src="../images/cartblack.png" title="add to cart" id="" class=""/>
 			</a>
 			<a href="user_profile.php" id="" class="user_btn profile_btn"/>

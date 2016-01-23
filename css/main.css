@@ -220,7 +220,7 @@ box-shadow:         0px 1px 15px 0px rgba(0, 0, 0, 0.83);
 .cont {
 	background-color:rgba(202, 225,	255, 0.8);
 	width:80%;
-	min-height:100%;
+	min-height:70%;
 	margin-bottom:30px !important;
 	z-index:1;
 }
@@ -431,6 +431,23 @@ a.control_next {
 	width: 23.8%;
 }
 
+.span_5_of_5 {
+	width: 100%;
+}
+.span_4_of_5 {
+	width: 79.68%;
+}
+.span_3_of_5 {
+	width: 59.36%;
+}
+.span_2_of_5 {
+	width: 39.04%;
+}
+.span_1_of_5 {
+	width: 18.72%;
+}
+
+
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
 
 @media only screen and (max-width: 480px) {
@@ -443,4 +460,5 @@ a.control_next {
 	.span_2_of_2, .span_1_of_2 { width: 100%; }
 	.span_3_of_3, .span_2_of_3, .span_1_of_3 { width: 100%;}
 	.span_1_of_4, .span_2_of_4, .span_3_of_4, .span_4_of_4 { width: 100%; }
+	.span_1_of_5, .span_2_of_5, .span_3_of_5, .span_4_of_5, .span_5_of_5 { width: 100%; }
 }
