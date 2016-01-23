@@ -17,18 +17,18 @@
 		<?php include("../utility/user_header.php");?>
 		<?php include("../utility/navigation.php");?>
 		<div class="cont_element col span_2_of_2">
-      <a href="" id="" class="cart_prod_div ">
-          <div id="" class="span_1_of_5 right_border" style="display:block;float:left;">
+      <a href="" id="" class="cart_prod_div span_5_of_5">
+          <div id="" class="span_1_of_5 right_border">
             <div id="" class="cart_prod_image">
               <img src="../images/cover1.jpg" id="" class=""/>
             </div>
           </div>
-          <div id="" class="span_4_of_5" style="display:block;float:left;">
+          <div id="" class="span_4_of_5">
             <span id="" class="cart_prod_title">
               adelle
             </span>
-            <div id="" class="cart_prod_checkbox">
-            </div>
+            <span id="" class="cart_prod_checkbox">
+            </span>
             <span id="" class="cart_prod_description">
               jshb asjnxja,lsxnajsm xsjanxja asjnxja xbjsvaddssjhsc aksnc kasnnkjx sabxaskcjcnkbckb ashcb bnjxh bmjsa b
             </span>
