@@ -8,6 +8,13 @@
 <html>
 	<head><title>Admin View Product</title>
 	<link rel="stylesheet" href="design.css" type="text/css" />
+	<script>
+		function confirmation()
+		{
+			answer=confirm("are you sure want to delete?");
+			return answer;
+		}
+	</script>
 </head>
 <body>
 	<div class="main">
@@ -41,7 +48,7 @@
 					<td><?php echo $row["price"];?></td>
 					<td><?php echo $row["quantity"];?></td>
 					<td><a href="admin_edit_product.php?pid=<?php echo $row["product_id"]; ?>'">Modify</a></td>
-					<td><a href="admin_delete_product.php?pid=<?php echo $row["product_id"]; ?>">Delete</a></td>
+					<td><a onclick="return confirmation()" href="admin_delete_product.php?pid=<?php echo $row["product_id"]; ?>">Delete</a></td>
 				</tr>
 				
 			<?php
