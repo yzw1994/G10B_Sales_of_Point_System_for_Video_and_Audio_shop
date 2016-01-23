@@ -1,3 +1,13 @@
+.cart_control_div {
+  display:block;
+  height: 45px;
+  width:93%;
+  margin: 10px auto 0 auto;
+  padding-top: 20px;
+  padding-left: 15px;
+  padding-right: 25px;
+  background-color: rgba(125, 125, 125, 0.5);
+}
 .cart_prod_div{
   background-color: white;
   display: block;
@@ -7,8 +17,15 @@
   background-color: white;
 
 }
+.cart_prod_link {
+  text-decoration:none;
+  color:black;
+}
+.cart_prod_link:hover {
+  text-decoration:underline;
+}
 .cart_prod_div:hover {
-  background-color: green;
+  background-color: ;
 }
 .cart_prod_div div{
   display: block;
@@ -57,8 +74,20 @@
   margin: 0px 0 10px 10px;
   font-size: 20px;
   color: black;
-  height: 80px;
-  width: 95%
+  width: 30%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align:center;
+  padding-right: 10px;
+}
+.cart_prod_price {
+  float: left;
+  margin: 0px 0 10px 10px;
+  font-size: 20px;
+  color: black;
+  width: 150px;
+  text-align:center;
 }
 .cart_prod_checkbox {
   width:30px;
@@ -70,4 +99,62 @@
   border-right-style: solid;
   border-right-width: 1px;
   border-right-color: silver;
+}
+.right_border_dotted {
+  border-right-style: dotted;;
+  border-right-width: 1px;
+  border-right-color: grey;
+}
+.right_border_white {
+  border-right-style: dotted;;
+  border-right-width: 1px;
+  border-right-color: white;
+}
+.cart_select_all {
+  padding-right: 10px;
+}
+.cart_delete_all {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.cart_delete_all:hover {
+  color:red;
+  font-weight: 900;
+}
+.cart_delete_title {
+  font-size: 18px;
+  padding-right: 10px;
+}
+.cart_count_total {
+  margin-left: 10px;
+
+}
+.cart_count_result {
+  color:red;
+  padding-left: 10px;
+  padding-right: 20px;
+  font-weight: 900;
+  font-size: 22px;
+
+}
+.cart_item_amount {
+  margin-right: 10px;
+  margin-left: 20px;
+}
+.cart_purchase_btn {
+  float: right;
+  background-color: #FF7256;
+  border:none;
+  padding:10px;
+  margin-top: -5px;
+  color: white;
+  font-weight: 500;
+}
+.cart_purchase_btn:hover {
+  background-color: #FF4500;
+  color: white;
+  transform: scale(1.2);
+	 -webkit-transition-duration: 200ms; /* Safari */
+    -webkit-transition-delay: 200ms; /* Safari */
+    transition-delay: 200ms;
 }
