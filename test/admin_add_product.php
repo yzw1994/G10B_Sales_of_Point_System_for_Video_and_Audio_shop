@@ -16,7 +16,7 @@
 			<ul>
 				<li><a href="admin_dashboard.php">Dashboard</a></li>
 				<li><a href="admin_edit_profile.php">Edit Profile</a> </li>
-				<li><a href="admin_add_product.php">View Product</a></li>
+				<li><a href="admin_add_product.php">Add Product</a></li>
 				<li><a href="admin_view_product.php">View Product</a></li>
 			</ul>
 		</div>
