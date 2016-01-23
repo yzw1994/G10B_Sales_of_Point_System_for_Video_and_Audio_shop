@@ -42,7 +42,7 @@ jQuery(document).ready(function ($) {
     });
 	
 	$("#menu_function").click(function () {
-		$("#menu_content_function").toggle();
+		$("#menu_content_function").toggle(200);
 	}
 		
 	);
