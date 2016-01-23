@@ -5,6 +5,7 @@
 	
 	$result = mysql_query("select * from admin where admin_id = $sess_aid");
 	$row = mysql_fetch_assoc($result);
+	
 ?>
 
 <!DOCTYPE html>
@@ -45,3 +46,13 @@
 	</div>
 </body>
 </html>
+
+<?php
+
+ 
+if(!$sess_aid)
+{
+       header("Location: login.php");
+       die();
+}
+?>
