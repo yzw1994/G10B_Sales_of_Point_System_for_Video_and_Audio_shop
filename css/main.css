@@ -67,7 +67,7 @@ body {
 	text-align:center;
 	font-size:18px;
 	color:white;
-	
+
 }
 .user_btn {
 	width:45px;
@@ -79,7 +79,7 @@ body {
 	text-align:center;
 	font-size:18px;
 	color:white;
-	
+
 }
 .reg_btn {
 	margin-right:-5px;
@@ -127,7 +127,7 @@ body {
 	float:right;
 	border-radius:100%;
 	border-style:solid;
-	
+
 }
 .profile_btn:hover  img{
 	border-color:#00FF00;
@@ -147,7 +147,7 @@ body {
 	clear:right;
 	background-color:white;
 	margin-top:10px;
-	
+
 	width:95px;
 	z-index:999;
 	position:relative;
@@ -155,7 +155,7 @@ body {
 	-webkit-box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.83);
 -moz-box-shadow:    0px 1px 15px 0px rgba(0, 0, 0, 0.83);
 box-shadow:         0px 1px 15px 0px rgba(0, 0, 0, 0.83);
-	
+
 }
 .menu_item {
 	float:left;
@@ -174,7 +174,7 @@ box-shadow:         0px 1px 15px 0px rgba(0, 0, 0, 0.83);
 	text-align:center;
 	background-color:;
 	height:80px;
-	
+
 }
 .nav_bar {
 	background-color:white;
@@ -353,12 +353,12 @@ a.control_next {
 	text-decoration:none;
 	color:white;
 }
-.prod_rent {	
+.prod_rent {
 	background-color:green;
 	margin:0 8px;
 }
 .prod_buy {
-	background-color:orange;	
+	background-color:orange;
 }
 /*new product*/
 .footer {
@@ -378,7 +378,7 @@ a.control_next {
 }
 .footer:hover {
 	background-color:black;
-	
+
 }
 .footer_text {
 	width:90%;
@@ -418,15 +418,29 @@ a.control_next {
 .span_2_of_3 { width: 66.13%; }
 .span_1_of_3 { width: 32.26%; }
 
+.span_4_of_4 {
+	width: 100%;
+}
+.span_3_of_4 {
+	width: 74.6%;
+}
+.span_2_of_4 {
+	width: 49.2%;
+}
+.span_1_of_4 {
+	width: 23.8%;
+}
+
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
 
 @media only screen and (max-width: 480px) {
-	.col { 
+	.col {
 		margin: 0 auto;
 	}
 }
 
 @media only screen and (max-width: 480px) {
 	.span_2_of_2, .span_1_of_2 { width: 100%; }
-	.span_3_of_3, .span_2_of_3, .span_1_of_3 { width: 100%;
+	.span_3_of_3, .span_2_of_3, .span_1_of_3 { width: 100%;}
+	.span_1_of_4, .span_2_of_4, .span_3_of_4, .span_4_of_4 { width: 100%; }
 }
