@@ -31,6 +31,7 @@
               </span>
 
             <span id="" class="cart_prod_checkbox">
+              <input type="checkbox" id="" class="" name=""/>
             </span>
             <span id="" class="cart_prod_description right_border_dotted">
               jshb asjnxja,lsxnajsm xsjanxja asjnxja xbjsvaddssjhsc aksnc kasnnkjx sabxaskcjcnkbckb ashcb bnjxh bmjsa b
