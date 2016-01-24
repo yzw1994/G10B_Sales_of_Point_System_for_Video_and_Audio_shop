@@ -67,6 +67,6 @@
 	</script>
 	
 	<?php
-		header("Location:admin_view_product.php");
+		header("Location:list.php");
 	}
 ?>
