@@ -23,7 +23,7 @@
 
 		mysql_query("insert into product(Product_Name,Product_Description,Product_Quantity,Product_Type,Product_Category,Product_Price,Product_Status)values
 		('$prodname','$description','$prodqty','$type','$category','$prodprice','$status')");
-
+		header("Location:list.php")
 	
 	
 	}
