@@ -1,4 +1,3 @@
-<DOCTYPE html>
 <html>
 <head>
 	<title>Log In</title>
@@ -35,9 +34,8 @@
 			</form>
 			<div class=""></div>
 		</div>
-		
+
 	</div>
-	
+
 </body>
 </html>
-

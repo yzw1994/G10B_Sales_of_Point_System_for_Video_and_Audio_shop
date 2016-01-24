@@ -40,7 +40,10 @@
               RM 9.90
             </span>
             <span id="" class="cart_prod_price right_border_dotted">
-              Amount
+							Amount :
+							<span id="" class="cart_count_result">
+		            1
+		          </span>
             </span>
           </div>
       </div>
@@ -67,7 +70,10 @@
               RM 9.90
             </span>
             <span id="" class="cart_prod_price right_border_dotted">
-              Amount
+              Amount :
+							<span id="" class="cart_count_result">
+		            1
+		          </span>
             </span>
           </div>
       </div>

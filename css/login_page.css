@@ -35,7 +35,7 @@ body {
 	min-height:280px;
 	background-color:;
 	margin:30px auto;
-	
+
 }
 .btn {
 	font-family:elegant_luxmager;
@@ -87,17 +87,17 @@ body {
 input::-webkit-input-placeholder {
 color: black !important;
 }
- 
+
 input:-moz-placeholder { /* Firefox 18- */
-color: black !important;  
+color: black !important;
 }
- 
+
 input::-moz-placeholder {  /* Firefox 19+ */
-color: black !important;  
+color: black !important;
 }
- 
-input:-ms-input-placeholder {  
-color: black !important;  
+
+input:-ms-input-placeholder {
+color: black !important;
 }
 .email {
 	background-image: url("../images/login_email.png");
@@ -116,7 +116,7 @@ color: black !important;
 	-o-background-size: 95px 60px;
 	background-size: 95px 60px;
 	background-position:-23px -11px;
-	
+
 }
 .phone {
 	background-image: url("../images/phone.png");
