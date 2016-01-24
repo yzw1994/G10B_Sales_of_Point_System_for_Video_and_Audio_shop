@@ -1,7 +1,16 @@
-<DOCTYPE html>
+<?php
+
+	if(isset($_SESSION["user_id"]) && !empty($_SESSION["user_id"])) {
+   echo 'Set and not empty, and no undefined index error!';
+	}
+	else {
+		session_start();
+		echo "1".$_SESSION["user_id"];
+	}
+?>
 <html>
 <head>
-	<title>Sales of Point System for Video and Audio shop 
+	<title>Sales of Point System for Video and Audio shop
 	</title>
 	<link rel="icon" href="images/favicon.png" type="image/x-icon" sizes="16x16">
 	<link href="../css/main.css" rel="stylesheet" type="text/css" />
@@ -12,7 +21,7 @@
 </head>
 <body>
 	<div class="cont section group">
-	
+
 		<?php include("../utility/header.php");?>
 		<?php include("../utility/navigation.php");?>
 		<div class="cont_element col span_2_of_2 slider_div">
@@ -25,7 +34,7 @@
 			<?php include("../utility/rightprod.php");?>
 		</div>
 		<?php include("../utility/footer.php");?>
-		
+
 	</div>
 </body>
 </html>
