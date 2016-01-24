@@ -1,0 +1,39 @@
+.product_content_div {
+ background-color: white;
+  margin:10px auto;
+  width: 90%;
+  min-height: 10px；
+  padding-bottom: 20px;
+}
+.product_cover {
+  float: left;
+  background-color: grey;
+  width: 150px;
+  height: 150px;
+  margin-left: 20px;
+  margin-top: 20px;
+  display: block;
+}
+.product_content_name {
+  float:left;
+  width: 80%;
+  height:30px;
+  background-color: green;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.product_content_price_amount {
+  float:left;
+  width: 80%;
+  height:40px;
+  background-color: purple;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+.product_content_description {
+  float:left;
+  width: 80%;
+  background-color: green;
+  margin-left: 20px;
+  margin-top: 15px;
+}

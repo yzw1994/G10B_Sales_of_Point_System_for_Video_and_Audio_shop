@@ -18,7 +18,7 @@
 		<?php include("../utility/navigation.php");?>
 		<div class="cont_element col span_2_of_2">
       <div id="" class="cart_prod_div span_5_of_5">
-          <a href="" target="_blank" id="" class="cart_prod_link">
+          <a href="../utility/product_page.php" target="_blank" id="" class="cart_prod_link">
             <div id="" class="span_1_of_5 right_border">
               <div id="" class="cart_prod_image">
                 <img src="../images/cover1.jpg" id="" class=""/>
@@ -27,7 +27,34 @@
           </a>
           <div id="" class="span_4_of_5">
               <span id="" class="cart_prod_title">
-                <a href="" target="_blank" id="" class="cart_prod_link">adelle</a>
+                <a href="../utility/product_page.php" target="_blank" id="" class="cart_prod_link">adelle</a>
+              </span>
+
+            <span id="" class="cart_prod_checkbox">
+              <input type="checkbox" id="" class="" name=""/>
+            </span>
+            <span id="" class="cart_prod_description right_border_dotted">
+              jshb asjnxja,lsxnajsm xsjanxja asjnxja xbjsvaddssjhsc aksnc kasnnkjx sabxaskcjcnkbckb ashcb bnjxh bmjsa b
+            </span>
+            <span id="" class="cart_prod_price right_border_dotted">
+              RM 9.90
+            </span>
+            <span id="" class="cart_prod_price right_border_dotted">
+              Amount
+            </span>
+          </div>
+      </div>
+			<div id="" class="cart_prod_div span_5_of_5">
+          <a href="../utility/product_page.php" target="_blank" id="" class="cart_prod_link">
+            <div id="" class="span_1_of_5 right_border">
+              <div id="" class="cart_prod_image">
+                <img src="../images/cover1.jpg" id="" class=""/>
+              </div>
+            </div>
+          </a>
+          <div id="" class="span_4_of_5">
+              <span id="" class="cart_prod_title">
+                <a href="../utility/product_page.php" target="_blank" id="" class="cart_prod_link">adelle</a>
               </span>
 
             <span id="" class="cart_prod_checkbox">
