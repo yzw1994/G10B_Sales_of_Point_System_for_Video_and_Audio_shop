@@ -5,7 +5,6 @@ include("../dataconn/dataconn.php");
 	$user_id = $_SESSION['user_id']; 
 	$result = mysql_query("select * from user where User_ID = '$user_id'");
 	$row = mysql_fetch_assoc($result);
-	echo $row['User_Email'];
 	if(!$user_id)
 {
        header("Location: ../visitor/login.php");
