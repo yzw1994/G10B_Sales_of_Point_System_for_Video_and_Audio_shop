@@ -1,3 +1,12 @@
+<?php
+
+ 
+if(!$user_id)
+{
+       header("Location: ../visitor/visitor.php");
+       die();
+}
+?>
 <div id="" class="logo_div section group">
 		<div id="" class="col span_1_of_3">
 		<a href="" id="" class="logo_link" id="">
@@ -22,7 +31,7 @@
 					<a href="" id="" class="menu_item"><span>log out</span></a>
 					<a href="" id="" class="menu_item"><span>log out</span></a>
 					<a href="" id="" class="menu_item"><span>log out</span></a>
-					<a href="" id="" class="menu_item"><span>log out</span></a>
+					<a href="../user/logout.php" id="" class="menu_item"><span>log out</span></a>
 				</div>
 			</div>
 		</div>
