@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2016 at 09:35 AM
+-- Generation Time: Jan 25, 2016 at 01:08 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
 CREATE TABLE IF NOT EXISTS `manage` (
   `Manage_ID` int(15) NOT NULL AUTO_INCREMENT,
   `Manage_Date` date NOT NULL,
-  `Manage_Description` varchar(50) NOT NULL,
+  `Manage_Description` varchar(500) NOT NULL,
   `User_ID` int(15) NOT NULL,
   `Product_ID` int(15) NOT NULL,
   PRIMARY KEY (`Manage_ID`)
@@ -58,8 +58,8 @@ CREATE TABLE IF NOT EXISTS `manage` (
 
 CREATE TABLE IF NOT EXISTS `product` (
   `Product_ID` int(15) NOT NULL AUTO_INCREMENT,
-  `Product_Name` int(20) NOT NULL,
-  `Product_Description` int(100) NOT NULL,
+  `Product_Name` varchar(300) NOT NULL,
+  `Product_Description` varchar(1000) NOT NULL,
   `Product_Type` int(15) NOT NULL,
   `Product_Category` int(15) NOT NULL,
   `Product_Price` double NOT NULL,
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `product` (
 
 CREATE TABLE IF NOT EXISTS `rent` (
   `Rent_ID` int(15) NOT NULL AUTO_INCREMENT,
-  `Rent_Type` varchar(15) NOT NULL,
+  `Rent_Type` varchar(150) NOT NULL,
   `Rent_Date` date NOT NULL,
   `Rent_Exp_Date` date NOT NULL,
   `User_ID` int(15) NOT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `rent` (
 
 CREATE TABLE IF NOT EXISTS `sold` (
   `Sold_ID` int(15) NOT NULL AUTO_INCREMENT,
-  `Sold_Type` varchar(10) NOT NULL,
+  `Sold_Type` varchar(100) NOT NULL,
   `Sold_Date` date NOT NULL,
   `Sold_Price` double NOT NULL,
   `Quantity` int(5) NOT NULL,
@@ -108,11 +108,11 @@ CREATE TABLE IF NOT EXISTS `sold` (
 
 CREATE TABLE IF NOT EXISTS `user` (
   `User_ID` int(15) NOT NULL AUTO_INCREMENT,
-  `User_Name` varchar(50) NOT NULL,
-  `User_Password` varchar(50) NOT NULL,
-  `User_Email` varchar(50) NOT NULL,
-  `User_Phone` varchar(20) NOT NULL,
-  `User_Address` varchar(500) NOT NULL,
+  `User_Name` varchar(300) NOT NULL,
+  `User_Password` varchar(300) NOT NULL,
+  `User_Email` varchar(300) NOT NULL,
+  `User_Phone` varchar(30) NOT NULL,
+  `User_Address` varchar(300) NOT NULL,
   `User_Dob` date NOT NULL,
   `User_Subscribe_Status` varchar(10) NOT NULL,
   `User_Privilege` varchar(15) NOT NULL,
