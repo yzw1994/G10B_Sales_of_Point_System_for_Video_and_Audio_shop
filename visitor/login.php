@@ -1,7 +1,7 @@
 <?php
 	include("../dataconn/dataconn.php");
 ?>
-
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Log In</title>
