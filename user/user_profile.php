@@ -1,3 +1,10 @@
+<?php
+	include("dataconn.php");
+	$session_user = $_SESSION["user_id"];
+	$result = mysql_query("select * from user where user_id = '$session_user'");
+	$row = mysql_fetch_assoc($result);
+?>
+
 <DOCTYPE html>
 <html>
 <head>
@@ -29,7 +36,7 @@
               Email
             </span>
             <span id="" class="user_data_content">
-              Yap Cheng Wei
+              <?php echo $_POST[''] ?>
             </span>
             <div id="" class="user_data_edit">
             </div>
