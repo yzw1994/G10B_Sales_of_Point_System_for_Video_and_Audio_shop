@@ -5,9 +5,9 @@
 	}
 	else {
 		session_start();
-		echo "1".$_SESSION["user_id"];
 	}
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Sales of Point System for Video and Audio shop

@@ -1,6 +1,32 @@
 <?php
 	include("../dataconn/dataconn.php");
 ?>
+<?php
+	if(isset($_POST['loginbtn']))
+	{
+	$user_email = $_POST["email"];
+	$user_password = $_POST["password"];
+
+	$result = mysql_query("select * from user where user_email = '$user_email' and user_password = '$user_password'");
+	if(mysql_num_rows($result)!=0)
+	{
+		$row = mysql_fetch_assoc($result);
+		$_SESSION["user_id"] = $row["User_ID"];
+
+		header("Location: ../user/index.php");
+	}
+	else
+	{
+		?>
+		<script>
+			alert("Invalid Username or Password");
+		</script>
+		<?php
+	}
+
+	mysql_close();
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,29 +58,3 @@
 
 </body>
 </html>
-<?php
-	if(isset($_POST['loginbtn']))
-	{
-	$user_email = $_POST["email"];
-	$user_password = $_POST["password"];
-
-	$result = mysql_query("select * from user where user_email = '$user_email' and user_password = '$user_password'");
-	if(mysql_num_rows($result)!=0)
-	{
-		$row = mysql_fetch_assoc($result);
-		$_SESSION["user_id"] = $row["user_id"];
-
-		header("Location: ../user/index.php");
-	}
-	else
-	{
-		?>
-		<script>
-			alert("Invalid Username or Password");
-		</script>
-		<?php
-	}
-
-	mysql_close();
-	}
-?>

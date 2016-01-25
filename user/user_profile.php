@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Sales of Point System for Video and Audio shop
@@ -19,7 +19,7 @@
 		<div class="cont_element col span_2_of_2">
         <div id="" class="span_1_of_4 user_pic_div">
           <div id="" class="user_pic_box">
-            <img src="../images/profile_pic.jpg" id="" class="user_pic_img" name="" title=""/>
+            <img src="../images/default_pic.jpg.jpg" id="" class="user_pic_img" name="" title=""/>
 
           </div>
         </div>
