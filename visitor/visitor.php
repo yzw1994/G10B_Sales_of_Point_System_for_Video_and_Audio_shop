@@ -1,11 +1,6 @@
 <?php
+	include("../dataconn/dataconn.php");
 
-	if(isset($_SESSION["user_id"]) && !empty($_SESSION["user_id"])) {
-   echo 'Set and not empty, and no undefined index error!';
-	}
-	else {
-		session_start();
-	}
 ?>
 <!DOCTYPE html>
 <html>

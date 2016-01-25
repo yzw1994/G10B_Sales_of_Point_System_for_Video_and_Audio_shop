@@ -22,7 +22,7 @@
 					<a href="" id="" class="menu_item"><span>log out</span></a>
 					<a href="" id="" class="menu_item"><span>log out</span></a>
 					<a href="" id="" class="menu_item"><span>log out</span></a>
-					<a href="../user/logout.php" id="" class="menu_item"><span>log out</span></a>
+					<a href="" id="" class="menu_item"><span>log out</span></a>
 				</div>
 			</div>
 		</div>

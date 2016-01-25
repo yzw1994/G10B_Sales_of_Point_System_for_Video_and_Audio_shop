@@ -1,33 +1,25 @@
 <?php
-	include("../dataconn/dataconn.php");
-?>
-<?php
-	if(isset($_POST['loginbtn']))
-	{
-	$user_email = $_POST["email"];
-	$user_password = $_POST["password"];
+	require("../dataconn/dataconn.php");
+	session_start();
+	if(isset($_POST['loginbtn'])){
+		extract($_POST);
+		$login_sql = "select * from user where user_email = '".$email."' and user_password = '".$password."'";
+		$login_result = mysql_query($login_sql);
 
-	$result = mysql_query("select * from user where user_email = '$user_email' and user_password = '$user_password'");
-	if(mysql_num_rows($result)!=0)
-	{
-		$row = mysql_fetch_assoc($result);
-		$_SESSION["user_id"] = $row["User_ID"];
+		$login_check = mysql_num_rows($login_result);
 
-		header("Location: ../user/index.php");
-	}
-	else
-	{
-		?>
-		<script>
-			alert("Invalid Username or Password");
-		</script>
-		<?php
-	}
+		if($login_check==1){
+			$row = mysql_fetch_assoc($login_result);
+			$_SESSION['user_id'] = $row["User_ID"];
+			header("Location: ../user/index.php");
+		}
+		else {
+			echo "error";
+		}
 
-	mysql_close();
 	}
 ?>
-<!DOCTYPE html>
+
 <html>
 <head>
 	<title>Log In</title>
@@ -53,8 +45,6 @@
 			</form>
 			<div class=""></div>
 		</div>
-
 	</div>
-
 </body>
 </html>
