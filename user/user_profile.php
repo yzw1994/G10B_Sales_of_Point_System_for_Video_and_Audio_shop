@@ -1,15 +1,11 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-=======
 <?php
-	include("dataconn.php");
-	$session_user = $_SESSION["user_id"];
-	$result = mysql_query("select * from user where user_id = '$session_user'");
-	$row = mysql_fetch_assoc($result);
+	if(!isset($_SESSION))
+	{
+		session_start();
+	}
+	$user_id = $_SESSION['user_id'];
 ?>
-
-<DOCTYPE html>
->>>>>>> origin/master
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Sales of Point System for Video and Audio shop
