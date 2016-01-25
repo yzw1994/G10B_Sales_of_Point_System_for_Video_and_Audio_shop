@@ -1,14 +1,22 @@
-<?php
-	if(!isset($_SESSION))
-	{
-		session_start();
-	}
-	$user_id = $_SESSION['user_id'];
+<?php 
+include("../dataconn/dataconn.php");
+
+
+	$user_id = $_SESSION['user_id']; 
+	$result = mysql_query("select * from user where User_ID = '$user_id'");
+	$row = mysql_fetch_assoc($result);
+	echo $row['User_Email'];
+	if(!$user_id)
+{
+       header("Location: ../visitor/login.php");
+       die();
+}	
+
 ?>
-<!DOCTYPE html>
+<DOCTYPE html>
 <html>
 <head>
-	<title>Sales of Point System for Video and Audio shop
+	<title>Sales of Point System for Video and Audio shop 
 	</title>
 	<link rel="icon" href="images/favicon.png" type="image/x-icon" sizes="16x16">
 	<link href="../css/main.css" rel="stylesheet" type="text/css" />
@@ -19,7 +27,7 @@
 </head>
 <body>
 	<div class="cont section group">
-
+	
 		<?php include("../utility/user_header.php");?>
 		<?php include("../utility/navigation.php");?>
 		<div class="cont_element col span_2_of_2 slider_div">
@@ -32,7 +40,8 @@
 			<?php include("../utility/rightprod.php");?>
 		</div>
 		<?php include("../utility/footer.php");?>
-
+		
 	</div>
 </body>
 </html>
+
