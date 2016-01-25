@@ -108,6 +108,15 @@ color: black !important;
 	background-size: 30px;
 	background-position:10px 4px;
 }
+.nickname {
+	background-image: url("../images/nickname.png");
+	background-repeat:no-repeat;
+	-webkit-background-size: 38px;
+	-moz-background-size: 38px;
+	-o-background-size: 38px;
+	background-size: 38px;
+	background-position:5px 3px;
+}
 .password {
 	background-image: url("../images/login_password.png");
 	background-repeat:no-repeat;

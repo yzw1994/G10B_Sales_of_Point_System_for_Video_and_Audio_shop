@@ -16,6 +16,9 @@
 				<input type="text" name="email" value="" id="" placeholder="Your Email..." class="input_box email"/>
 				<span id="" class="reg_error">
 				</span>
+				<input type="text" name="text" value="" id="" placeholder="Your Nickname..." class="input_box nickname"/>
+				<span id="" class="reg_error">
+				</span>
 				<input type="password" name="password" value=""  id="" placeholder="Your Password..." class="input_box password"/>
 				<span id="" class="reg_error">
 				</span>
