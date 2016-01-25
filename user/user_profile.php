@@ -1,9 +1,13 @@
 <?php
+  include("../dataconn/dataconn.php");
 	if(!isset($_SESSION))
 	{
 		session_start();
 	}
+
 	$user_id = $_SESSION['user_id'];
+	$result = mysql_query("SELECT * FROM user WHERE User_ID = '$user_id'");
+	$row = mysql_fetch_assoc($result);
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,7 +40,7 @@
               Email
             </span>
             <span id="" class="user_data_content">
-              <?php echo $_POST[''] ?>
+							<?php echo $row["User_Email"]; ?>
             </span>
             <div id="" class="user_data_edit">
             </div>
@@ -46,7 +50,7 @@
               Name
             </span>
             <span id="" class="user_data_content">
-              Yap Cheng Wei
+              <?php echo $row["User_Name"]; ?>
             </span>
             <div id="" class="user_data_edit">
             </div>
@@ -56,7 +60,7 @@
               Contact No
             </span>
             <span id="" class="user_data_content">
-              Yap Cheng Wei
+              <?php echo $row["User_Phone"]; ?>
             </span>
             <div id="" class="user_data_edit">
             </div>
@@ -66,7 +70,7 @@
               Address
             </span>
             <span id="" class="user_data_content">
-              Yap Cheng Wei
+              <?php echo $row["User_Address"]; ?>
             </span>
             <div id="" class="user_data_edit">
             </div>
@@ -76,7 +80,7 @@
               Birthday
             </span>
             <span id="" class="user_data_content">
-              Yap Cheng Wei
+              <?php echo $row["User_Dob"]; ?>
             </span>
             <div id="" class="user_data_edit">
             </div>
