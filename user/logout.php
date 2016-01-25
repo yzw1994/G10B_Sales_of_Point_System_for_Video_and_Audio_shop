@@ -9,6 +9,6 @@ if (isset($_COOKIE[session_name()])) {
 }
 // Finally, destroy the session.
 session_destroy();
-	header('Location: login.php');
+	header('Location: ../visitor/visitor.php');
 	exit;
 ?>
