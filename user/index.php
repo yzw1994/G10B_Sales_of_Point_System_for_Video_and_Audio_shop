@@ -4,7 +4,6 @@
 		session_start();
 	}
 	$user_id = $_SESSION['user_id'];
-	echo "111".$user_id;
 ?>
 <!DOCTYPE html>
 <html>
