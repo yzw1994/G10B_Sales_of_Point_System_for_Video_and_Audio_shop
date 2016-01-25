@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2016 at 01:08 PM
+-- Generation Time: Jan 25, 2016 at 01:38 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -111,6 +111,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `User_Name` varchar(300) NOT NULL,
   `User_Password` varchar(300) NOT NULL,
   `User_Email` varchar(300) NOT NULL,
+  `User_Profile_Pic` varchar(1000) NOT NULL,
   `User_Phone` varchar(30) NOT NULL,
   `User_Address` varchar(300) NOT NULL,
   `User_Dob` date NOT NULL,
@@ -123,9 +124,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`User_ID`, `User_Name`, `User_Password`, `User_Email`, `User_Phone`, `User_Address`, `User_Dob`, `User_Subscribe_Status`, `User_Privilege`) VALUES
-(1, '', '12345', 'yapchengwei@gmail.com', '0109333724', 'dygsankjefvdsjfdsjdesb xiywegjxvd', '1994-06-06', '', ''),
-(2, '', '123123123', 'yuanyuan0331@live.com', '0177601692', 'sad sad ixora ', '2194-02-11', '', '');
+INSERT INTO `user` (`User_ID`, `User_Name`, `User_Password`, `User_Email`, `User_Profile_Pic`, `User_Phone`, `User_Address`, `User_Dob`, `User_Subscribe_Status`, `User_Privilege`) VALUES
+(1, '', '12345', 'yapchengwei@gmail.com', '', '0109333724', 'dygsankjefvdsjfdsjdesb xiywegjxvd', '1994-06-06', '', ''),
+(2, '', '123123123', 'yuanyuan0331@live.com', '', '0177601692', 'sad sad ixora ', '2194-02-11', '', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
