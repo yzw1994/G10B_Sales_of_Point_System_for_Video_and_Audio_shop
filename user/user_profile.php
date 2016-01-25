@@ -30,7 +30,8 @@
 		<div class="cont_element col span_2_of_2">
         <div id="" class="span_1_of_4 user_pic_div">
           <div id="" class="user_pic_box">
-            <img src="../images/default_pic.jpg.jpg" id="" class="user_pic_img" name="" title=""/>
+
+            <img src="<?php echo $row["User_Profile_Pic"]; ?>" id="" class="user_pic_img" name="" title=""/>
 
           </div>
         </div>

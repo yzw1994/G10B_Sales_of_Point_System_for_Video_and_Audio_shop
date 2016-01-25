@@ -1,3 +1,15 @@
+<?php
+  include("../dataconn/dataconn.php");
+	if(!isset($_SESSION))
+	{
+		session_start();
+	}
+
+	$user_id = $_SESSION['user_id'];
+	$result = mysql_query("SELECT * FROM user WHERE User_ID = '$user_id'");
+	$row = mysql_fetch_assoc($result);
+?>
+
 <div id="" class="logo_div section group">
 		<div id="" class="col span_1_of_3">
 		<a href="" id="" class="logo_link" id="">
@@ -13,7 +25,7 @@
 				<img src="../images/cartblack.png" title="add to cart" id="" class=""/>
 			</a>
 			<a href="user_profile.php" id="" class="user_btn profile_btn"/>
-				<img src="../images/profile_pic.jpg" title="profile" id="" class=""/>
+				<img src="<?php echo $row["User_Profile_Pic"]; ?>" title="profile" id="" class=""/>
 			</a>
 			<div id="menu_function" class="user_btn menu_btn"/>
 				<img src="../images/menu.png" title="menu" id="" class=""/>
