@@ -366,6 +366,13 @@ a.control_next {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+	color:grey;
+}
+.prod_name:hover {
+	color:black;
+	-webkit-transition-duration: 100ms; /* Safari */
+	-webkit-transition-delay: 100ms; /* Safari */
+	transition-delay: 100ms;
 }
 .prod_price {
 	text-decoration:none;

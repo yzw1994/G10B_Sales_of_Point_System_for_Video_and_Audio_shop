@@ -1,12 +1,3 @@
-<?php
-	$header_page = "";
-	if(isset($_SESSION['user_id']) && $_SESSION['user_id']) {
-		$header_page = "../utility/user_header.php";
-	} else {
-    echo 1;
-		$header_page = "../utility/header.php";
-	}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +14,7 @@
 <body>
 	<div class="cont section group">
 
-		<?php include($header_page);?>
+		<?php include('../utility/header.php');?>
 		<?php include("../utility/navigation.php");?>
 		<div class="cont_element col span_2_of_2 ">
       <div id="" class="product_content_div">

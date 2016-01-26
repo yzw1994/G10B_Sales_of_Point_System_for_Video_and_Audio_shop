@@ -1,9 +1,13 @@
 <?php
+	include("../dataconn/dataconn.php");
 	$check_login_url = "";
 	if(isset($_SESSION['user_id']) && $_SESSION['user_id']) {
-		$check_login_url = "../utility/product_page.php";
+		$user_id = $_SESSION['user_id'];
+		$check_login_url = "../utility/product_page_login.php?u_id=".$user_id;
+		$login_product="product_page_login.php";
 	} else {
 		$check_login_url = "../visitor/login.php";
+		$login_product="product_page.php";
 	}
 ?>
 <div id="" class="new_pro_color pro_title">New Arrive
@@ -26,10 +30,10 @@
 					<div id='' class='prod_pic'>
 						<img src='".$product_image."' id='' class='prod_pic_img'/>
 					</div>
-					<a href='../utility/product_page.php?product_id=".$product_id."' id='' class='prod_name'>
+					<a href='../utility/".$login_product."?product_id=".$product_id."' id='' class='prod_name'>
 					".$product_name."
 					</a>
-					<a href='../utility/product_page.php' id='' class='prod_price'>
+					<a href='../utility/".$login_product."?product_id=".$product_id."' id='' class='prod_price'>
 					RM ".$product_price."
 					</a>
 					<a href='".$check_login_url."' class='prod_btn prod_rent'>RENT</a>
