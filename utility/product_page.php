@@ -9,6 +9,7 @@
     $product_image = $product_row['Product_Pic'];
     $product_name = $product_row['Product_Name'];
     $product_price = $product_row['Product_Price'];
+    $product_rent_price = $product_row['Product_Rent_Price'];
     $product_describe = $product_row['Product_Description'];
   }while($product_row = mysql_fetch_array($product_exe));
 ?>
@@ -39,7 +40,7 @@
           <?php echo $product_name; ?>
         </div>
         <div id="" class="product_content_price">
-          RM <?php echo $product_price; ?>
+          <span id="" class="buy_title">Buy :</span> RM <?php echo $product_price; ?><span id="" class="rent_title"> / Rent :</span> RM <?php echo $product_rent_price; ?>
         </div>
         <div id="" class="product_content_description">
           <?php echo $product_describe; ?>

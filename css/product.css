@@ -26,18 +26,21 @@
   color: white;
   border:none;
 }
+
 .rent_btn {
 
   background-color: orange;
-
-
-
-
+}
+.rent_btn:hover {
+  background-color: #ED9121;
 }
 .buy_btn {
   background-color: #00CD66;
   clear:left;
   margin-left: 10px;
+}
+.buy_btn:hover {
+  background-color: #3CB371;
 }
 .product_cover img {
   position: absolute;
@@ -71,10 +74,16 @@
   font-size: 22px;
   font-weight: bold;
 }
+.buy_title {
+  color: black;
+}
+.rent_title {
+  color: black;
+}
 .product_content_description {
   float:right;
   width: 72%;
-  background-color: rgba(255, 255, 255, 0.5);;
+  background-color: rgba(255, 255, 255, 0.8);;
   margin-right: 20px;
   margin-top: 15px;
   font-size: 18px;
