@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="../css/font/elegantlux/elegant_luxmager.css" type="text/css" charset="utf-8" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="../js/main.js"></script>
-
+  <script src="../js/jquery-2.2.0.js"></script>
 </head>
 <body>
 	<div class="cont section group">
