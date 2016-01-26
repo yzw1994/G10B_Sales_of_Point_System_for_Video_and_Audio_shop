@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2016 at 01:38 PM
+-- Generation Time: Jan 26, 2016 at 10:58 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -60,12 +60,21 @@ CREATE TABLE IF NOT EXISTS `product` (
   `Product_ID` int(15) NOT NULL AUTO_INCREMENT,
   `Product_Name` varchar(300) NOT NULL,
   `Product_Description` varchar(1000) NOT NULL,
+  `Product_Pic` varchar(1000) NOT NULL DEFAULT '../images/default_album.jpg',
   `Product_Type` int(15) NOT NULL,
-  `Product_Category` int(15) NOT NULL,
+  `Product_Category` varchar(500) NOT NULL,
   `Product_Price` double NOT NULL,
   `Product_Status` varchar(15) NOT NULL,
   PRIMARY KEY (`Product_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`Product_ID`, `Product_Name`, `Product_Description`, `Product_Pic`, `Product_Type`, `Product_Category`, `Product_Price`, `Product_Status`) VALUES
+(1, 'adellssssssssssssssssssssssssssss', 'yasfcvbayvs,bs,gkiu,bxh,sjbxgjgxbsd', '../images/default_album.jpg', 2, 'jazz', 35.99, '1'),
+(2, 'Unorthodox Jukebox', 'usygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll', '../images/default_album.jpg', 2, 'jazz', 49.9, '1');
 
 -- --------------------------------------------------------
 
@@ -111,22 +120,23 @@ CREATE TABLE IF NOT EXISTS `user` (
   `User_Name` varchar(300) NOT NULL,
   `User_Password` varchar(300) NOT NULL,
   `User_Email` varchar(300) NOT NULL,
-  `User_Profile_Pic` varchar(1000) NOT NULL,
+  `User_Profile_Pic` varchar(1000) NOT NULL DEFAULT '../images/default_pic.jpg',
   `User_Phone` varchar(30) NOT NULL,
   `User_Address` varchar(300) NOT NULL,
   `User_Dob` date NOT NULL,
   `User_Subscribe_Status` varchar(10) NOT NULL,
   `User_Privilege` varchar(15) NOT NULL,
   PRIMARY KEY (`User_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`User_ID`, `User_Name`, `User_Password`, `User_Email`, `User_Profile_Pic`, `User_Phone`, `User_Address`, `User_Dob`, `User_Subscribe_Status`, `User_Privilege`) VALUES
-(1, '', '12345', 'yapchengwei@gmail.com', '', '0109333724', 'dygsankjefvdsjfdsjdesb xiywegjxvd', '1994-06-06', '', ''),
-(2, '', '123123123', 'yuanyuan0331@live.com', '', '0177601692', 'sad sad ixora ', '2194-02-11', '', '');
+(1, '', '12345', 'yapchengwei@gmail.com', '../images/default_pic.jpg', '0109333724', 'dygsankjefvdsjfdsjdesb xiywegjxvd', '1994-06-06', '', ''),
+(2, '', '123123123', 'yuanyuan0331@live.com', '../images/default_pic.jpg', '0177601692', 'sad sad ixora ', '2194-02-11', '', ''),
+(3, 'yyy', '123', 'kkk@hsa', '../images/default_pic.jpg', '000000000', 'kajsinmajslas', '0001-06-06', '1', '2');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
