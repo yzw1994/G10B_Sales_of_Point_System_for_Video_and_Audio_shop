@@ -22,20 +22,17 @@
 			<p><input type="text" name="search" id="" class="search_bar" placeholder="Search..."/></p>
 		</div>
 		<div id="" class="col span_1_of_3 btn_group after_login">
-			<a href="add_to_cart.php" id="" class="user_btn cart_btn"/>
+			<a href="../user/add_to_cart.php" id="" class="user_btn cart_btn"/>
 				<img src="../images/cartblack.png" title="add to cart" id="" class=""/>
 			</a>
-			<a href="user_profile.php" id="" class="user_btn profile_btn"/>
+			<a href="../user/user_profile.php" id="" class="user_btn profile_btn"/>
 				<img src="<?php echo $row["User_Profile_Pic"]; ?>" title="profile" id="" class=""/>
 			</a>
 			<div id="menu_function" class="user_btn menu_btn"/>
 				<img src="../images/menu.png" title="menu" id="" class=""/>
 				<div id="menu_content_function" class="menu_content">
-					<a href="" id="" class="menu_item"><span>log out</span></a>
-					<a href="" id="" class="menu_item"><span>log out</span></a>
-					<a href="" id="" class="menu_item"><span>log out</span></a>
-					<a href="" id="" class="menu_item"><span>log out</span></a>
-					<a href="<?php echo $logoutAction ;?>" id="" class="menu_item"><span>log out</span></a>
+					<a href="" id="" class="menu_item"><span>Setting</span></a>
+					<a href="<?php echo $logoutAction ;?>" id="" class="menu_item logout"><span>Log Out</span></a>
 				</div>
 			</div>
 		</div>
