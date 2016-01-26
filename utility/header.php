@@ -10,9 +10,9 @@
 		</div>
 		<div id="" class="col span_1_of_3 btn_group">
 			<p>
-			<a href="register.php" id="" class="btn reg_btn"/>REGISTER</a>
-			<a href="login.php" id="" class="btn log_btn"/>LOGIN</a>
+			<a href="../visitor/register.php" id="" class="btn reg_btn"/>REGISTER</a>
+			<a href="../visitor/login.php" id="" class="btn log_btn"/>LOGIN</a>
 			</p>
 		</div>
-		
+
 	</div>
