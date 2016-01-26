@@ -1,6 +1,6 @@
 <?php
 	include("../dataconn/dataconn.php");
-
+	require("../dataconn/page_load.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,6 +11,7 @@
 	<link href="../css/main.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="../css/font/elegantlux/elegant_luxmager.css" type="text/css" charset="utf-8" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="../js/jquery-2.2.0.js"></script>
 	<script src="../js/main.js"></script>
 
 </head>

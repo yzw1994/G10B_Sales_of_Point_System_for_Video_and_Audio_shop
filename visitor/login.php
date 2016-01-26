@@ -1,6 +1,9 @@
 <?php
 	require("../dataconn/dataconn.php");
+
+
 	session_start();
+
 	if(isset($_POST['loginbtn'])){
 		extract($_POST);
 		$login_sql = "select * from user where user_email = '".$email."' and user_password = '".$password."'";
@@ -25,6 +28,7 @@
 	<title>Log In</title>
 	<link href="../css/login_page.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="../css/font/elegantlux/elegant_luxmager.css" type="text/css" charset="utf-8" />
+	<script src="../js/jquery-2.2.0.js"></script>
 </head>
 <body>
 	<div id="" class="login_div">
