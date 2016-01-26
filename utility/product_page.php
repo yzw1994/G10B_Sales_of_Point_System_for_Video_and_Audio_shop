@@ -1,4 +1,15 @@
-<DOCTYPE html>
+<?php
+  include("../dataconn/dataconn.php");
+	if(!isset($_SESSION))
+	{
+		$header_page = "../utility/header.php";
+	}
+	else {
+		$header_page = "../utility/user_header.php";
+	}
+
+?>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Sales of Point System for Video and Audio shop
@@ -14,7 +25,7 @@
 <body>
 	<div class="cont section group">
 
-		<?php include("../utility/user_header.php");?>
+		<?php include($header_page);?>
 		<?php include("../utility/navigation.php");?>
 		<div class="cont_element col span_2_of_2 ">
       <div id="" class="product_content_div">

@@ -8,6 +8,8 @@
 	$user_id = $_SESSION['user_id'];
 	$result = mysql_query("SELECT * FROM user WHERE User_ID = '$user_id'");
 	$row = mysql_fetch_assoc($result);
+
+  require("logout.php");
 ?>
 
 <div id="" class="logo_div section group">
@@ -34,7 +36,7 @@
 					<a href="" id="" class="menu_item"><span>log out</span></a>
 					<a href="" id="" class="menu_item"><span>log out</span></a>
 					<a href="" id="" class="menu_item"><span>log out</span></a>
-					<a href="" id="" class="menu_item"><span>log out</span></a>
+					<a href="<?php echo $logoutAction ;?>" id="" class="menu_item"><span>log out</span></a>
 				</div>
 			</div>
 		</div>
