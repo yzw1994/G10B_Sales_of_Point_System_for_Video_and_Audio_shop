@@ -1,4 +1,17 @@
-<!DOCTYPE html>
+<?php
+  include("../dataconn/dataconn.php");
+  $product_id = $_REQUEST['product_id'];
+  $product_sql = "select * from product where product_id = ".$product_id." ";
+  $product_exe = mysql_query($product_sql);
+  $product_row = mysql_num_rows($product_exe);
+  $product_image = "";
+  do {
+    $product_image = $product_row['Product_Pic'];
+    $product_name = $product_row['Product_Name'];
+    $product_price = $product_row['Product_Price'];
+    $product_describe = $product_row['Product_Description'];
+  }while($product_row = mysql_fetch_array($product_exe));
+?>
 <html>
 <head>
 	<title>Sales of Point System for Video and Audio shop
@@ -16,15 +29,27 @@
 
 		<?php include('../utility/header.php');?>
 		<?php include("../utility/navigation.php");?>
-		<div class="cont_element col span_2_of_2 ">
+    <div class="cont_element col span_2_of_2 ">
       <div id="" class="product_content_div">
         <div id="" class="product_cover">
-          ss
-        </div>
-        <div id="" class="product_content_name">
-          www
+          <img src="<?php echo $product_image;?>" id="" class="product_picture"/>
         </div>
 
+        <div id="" class="product_content_name">
+          <?php echo $product_name; ?>
+        </div>
+        <div id="" class="product_content_price">
+          RM <?php echo $product_price; ?>
+        </div>
+        <div id="" class="product_content_description">
+          <?php echo $product_describe; ?>
+        </div>
+        <a href=" " id="" class="">
+          <input type="button" id="" class="product_btn buy_btn" value="BUY">
+        </a>
+        <a href=" " id="" class="">
+          <input type="button"  id="" class="product_btn rent_btn" value="RENT">
+        </a>
       </div>
 		</div>
 		<?php include("../utility/footer.php");?>

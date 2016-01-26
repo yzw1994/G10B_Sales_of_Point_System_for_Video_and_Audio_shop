@@ -28,7 +28,7 @@
 			echo "
 				<div id='' class='pro_div'>
 					<div id='' class='prod_pic'>
-						<img src='".$product_image."' id='' class='prod_pic_img'/>
+						<a href='../utility/".$login_product."?product_id=".$product_id."' id='' class=''><img src='".$product_image."' id='' class='prod_pic_img'/></a>
 					</div>
 					<a href='../utility/".$login_product."?product_id=".$product_id."' id='' class='prod_name'>
 					".$product_name."

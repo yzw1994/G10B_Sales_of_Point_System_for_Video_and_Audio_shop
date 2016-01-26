@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 26, 2016 at 10:58 AM
+-- Generation Time: Jan 26, 2016 at 11:42 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -64,6 +64,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `Product_Type` int(15) NOT NULL,
   `Product_Category` varchar(500) NOT NULL,
   `Product_Price` double NOT NULL,
+  `Product_Rent_Price` double NOT NULL,
   `Product_Status` varchar(15) NOT NULL,
   PRIMARY KEY (`Product_ID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
@@ -72,9 +73,9 @@ CREATE TABLE IF NOT EXISTS `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`Product_ID`, `Product_Name`, `Product_Description`, `Product_Pic`, `Product_Type`, `Product_Category`, `Product_Price`, `Product_Status`) VALUES
-(1, 'adellssssssssssssssssssssssssssss', 'yasfcvbayvs,bs,gkiu,bxh,sjbxgjgxbsd', '../images/default_album.jpg', 2, 'jazz', 35.99, '1'),
-(2, 'Unorthodox Jukebox', 'usygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll', '../images/default_album.jpg', 2, 'jazz', 49.9, '1');
+INSERT INTO `product` (`Product_ID`, `Product_Name`, `Product_Description`, `Product_Pic`, `Product_Type`, `Product_Category`, `Product_Price`, `Product_Rent_Price`, `Product_Status`) VALUES
+(1, 'adellssssssssssssssssssssssssssss', 'yasfcvbayvs,bs,gkiu,bxh,sjbxgjgxbsd', '../images/default_album.jpg', 2, 'jazz', 35.99, 0, '1'),
+(2, 'Unorthodox Jukebox', 'usygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll', '../images/default_album.jpg', 2, 'jazz', 49.9, 0, '1');
 
 -- --------------------------------------------------------
 

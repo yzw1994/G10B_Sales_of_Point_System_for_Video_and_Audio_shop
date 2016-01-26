@@ -57,10 +57,12 @@
           <?php echo $product_describe; ?>
         </div>
 
-        <div id="" class="product_buy_btn">
-        </div>
-        <div id="" class="product_rent_btn">
-        </div>
+        <a href="" id="" class="product_buy_btn">
+          BUY
+        </a>
+        <a href="" id="" class="product_rent_btn">
+          RENT
+        </a>
       </div>
 		</div>
 		<?php include("../utility/footer.php");?>
