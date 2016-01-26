@@ -1,9 +1,12 @@
 <?php
   include("../dataconn/dataconn.php");
-	if(!isset($_SESSION))
+  if(!isset($_SESSION))
 	{
 		session_start();
 	}
+	$user_id = $_SESSION['user_id'];
+
+	require("../dataconn/page_load.php");
 
 	$user_id = $_SESSION['user_id'];
 	$result = mysql_query("SELECT * FROM user WHERE User_ID = '$user_id'");
