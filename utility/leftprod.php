@@ -28,12 +28,12 @@
 			echo "
 				<div id='' class='pro_div'>
 					<div id='' class='prod_pic'>
-						<a href='../utility/".$login_product."?product_id=".$product_id."' id='' class=''><img src='".$product_image."' id='' class='prod_pic_img'/></a>
+						<a href='../utility/".$login_product."?product_id=".$product_id."' target='_blank' id='' class=''><img src='".$product_image."' id='' class='prod_pic_img'/></a>
 					</div>
-					<a href='../utility/".$login_product."?product_id=".$product_id."' id='' class='prod_name'>
+					<a href='../utility/".$login_product."?product_id=".$product_id."' target='_blank' id='' class='prod_name'>
 					".$product_name."
 					</a>
-					<a href='../utility/".$login_product."?product_id=".$product_id."' id='' class='prod_price'>
+					<a href='../utility/".$login_product."?product_id=".$product_id."' target='_blank' id='' class='prod_price'>
 					RM ".$product_price."
 					</a>
 					<a href='".$check_login_url."' class='prod_btn prod_rent'>RENT</a>

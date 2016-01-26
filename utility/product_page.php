@@ -13,6 +13,7 @@
     $product_describe = $product_row['Product_Description'];
   }while($product_row = mysql_fetch_array($product_exe));
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Sales of Point System for Video and Audio shop
