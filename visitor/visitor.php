@@ -1,6 +1,8 @@
 <?php
 	include("../dataconn/dataconn.php");
-	require("../dataconn/page_load.php");
+	if (!isset($_SESSION)) {
+	session_start();
+	}
 ?>
 <!DOCTYPE html>
 <html>

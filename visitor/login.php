@@ -2,7 +2,7 @@
 	require("../dataconn/dataconn.php");
 
 
-	session_start();
+
 
 	if(isset($_POST['loginbtn'])){
 		extract($_POST);
@@ -13,6 +13,7 @@
 
 		if($login_check==1){
 			$row = mysql_fetch_assoc($login_result);
+			session_start();
 			$_SESSION['user_id'] = $row["User_ID"];
 			header("Location: ../user/index.php");
 		}

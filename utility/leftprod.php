@@ -1,3 +1,11 @@
+<?php
+	$check_login_url = "";
+	if(isset($_SESSION['user_id']) && $_SESSION['user_id']) {
+		$check_login_url = "../utility/product_page.php";
+	} else {
+		$check_login_url = "../visitor/login.php";
+	}
+?>
 <div id="" class="new_pro_color pro_title">New Arrive
 </div>
 <?php
@@ -24,8 +32,8 @@
 					<a href='../utility/product_page.php' id='' class='prod_price'>
 					RM ".$product_price."
 					</a>
-					<a href='' class='prod_btn prod_rent'>RENT</a>
-					<a href='' class='prod_btn prod_buy'>BUY</a>
+					<a href='".$check_login_url."' class='prod_btn prod_rent'>RENT</a>
+					<a href='".$check_login_url."' class='prod_btn prod_buy'>BUY</a>
 				</div>
 				";
 		}while($product_row = mysql_fetch_array($product_result));

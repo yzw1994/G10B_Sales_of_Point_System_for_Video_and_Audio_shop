@@ -13,6 +13,8 @@
 
   $logoutLocation = "../visitor/visitor.php";
   if ($logoutLocation) {
+		session_start();
+		session_destroy();
     header("Location: $logoutLocation");
     exit;
   }

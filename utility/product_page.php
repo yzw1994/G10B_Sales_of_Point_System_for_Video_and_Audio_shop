@@ -1,13 +1,11 @@
 <?php
-  include("../dataconn/dataconn.php");
-	if(!isset($_SESSION))
-	{
+	$header_page = "";
+	if(isset($_SESSION['user_id']) && $_SESSION['user_id']) {
+		$header_page = "../utility/user_header.php";
+	} else {
+    echo 1;
 		$header_page = "../utility/header.php";
 	}
-	else {
-		$header_page = "../utility/user_header.php";
-	}
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +17,6 @@
   <link href="../css/product.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="../css/font/elegantlux/elegant_luxmager.css" type="text/css" charset="utf-8" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="../js/jquery-2.2.0.js"></script>
 	<script src="../js/main.js"></script>
 
 </head>
