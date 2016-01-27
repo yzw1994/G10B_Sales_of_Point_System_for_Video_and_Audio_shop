@@ -1,18 +1,21 @@
 jQuery(document).ready(function ($) {
+  $('#edit_profile').change(function(){
+			$(this).parents('#upload_profile').submit();
+	});
 
     setInterval(function () {
         moveRight();
     }, 5000);
-  
+
 	var slideCount = $('#slider ul li').length;
 	var slideWidth = $('#slider ul li').width();
 	var slideHeight = $('#slider ul li').height();
 	var sliderUlWidth = slideCount * slideWidth;
-	
+
 	$('#slider').css({ width: slideWidth, height: slideHeight });
-	
+
 	$('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
-	
+
     $('#slider ul li:last-child').prependTo('#slider ul');
 
     function moveLeft() {
@@ -40,10 +43,10 @@ jQuery(document).ready(function ($) {
     $('a.control_next').click(function () {
         moveRight();
     });
-	
+
 	$("#menu_function").click(function () {
 		$("#menu_content_function").toggle(200);
 	}
-		
+
 	);
 });

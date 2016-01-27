@@ -21,9 +21,43 @@
       -ms-transform: translate(-50%,-50%);
           transform: translate(-50%,-50%);
 }
+.user_pic_img {
+  z-index:1;
+  position: relative;
+}
 .user_pic_box img.user_pic_img {
     width: 100%;
     height: auto;
+}
+
+.file-upload {
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  background-color: grey;
+  color:white;
+  border:none;
+  height:25px;
+  opacity:0.1;
+  float:right;
+  -webkit-transition-duration: 100ms; /* Safari */
+   -webkit-transition-delay: 100ms; /* Safari */
+   transition-delay: 100ms;
+}
+.file-upload:hover {
+  opacity:1;
+}
+.file-upload input.file-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+
 }
 .user_data {
   width:98%;

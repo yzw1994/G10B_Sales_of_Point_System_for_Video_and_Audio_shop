@@ -3,7 +3,12 @@
 	$check_login_url = "";
 	if(isset($_SESSION['user_id']) && $_SESSION['user_id']) {
 		$user_id = $_SESSION['user_id'];
-		$check_login_url = "../utility/product_page_login.php?u_id=".$user_id;
+		if(isset($_GET['buy_product'])){
+			$check_login_url = "../user/product_page_login.php?u_id=".$user_id;
+		}
+		else if(isset($_GET['rent_product'])){
+			$check_login_url = "../user/product_page_login.php?u_id=".$user_id;
+		}
 		$login_product="product_page_login.php";
 	} else {
 		$check_login_url = "../visitor/login.php";
@@ -36,8 +41,8 @@
 					<a href='../utility/".$login_product."?product_id=".$product_id."' target='_blank' id='' class='prod_price'>
 					RM ".$product_price."
 					</a>
-					<a href='".$check_login_url."&product_id=".$product_id."' class='prod_btn prod_rent'>RENT</a>
-					<a href='".$check_login_url."&product_id=".$product_id."' class='prod_btn prod_buy'>BUY</a>
+					<a href='' name='rent_product' class='prod_btn prod_rent'>RENT</a>
+					<a href='' name='buy_product' class='prod_btn prod_buy'>BUY</a>
 				</div>
 				";
 		}while($product_row = mysql_fetch_array($product_result));

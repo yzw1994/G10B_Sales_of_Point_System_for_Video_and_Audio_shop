@@ -24,6 +24,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="../js/main.js"></script>
   <script src="../js/jquery-2.2.0.js"></script>
+  <script>
+
+  </script>
 </head>
 <body>
 	<div class="cont section group">
@@ -34,9 +37,17 @@
         <div id="" class="span_1_of_4 user_pic_div">
           <div id="" class="user_pic_box">
 
-            <img src="<?php echo $row["User_Profile_Pic"]; ?>" id="" class="user_pic_img" name="" title=""/>
+            <img src="<?php echo $row["User_Profile_Pic"]; ?>" id="" class="user_pic_img" name="" title="" alt="<?php echo $row["User_Profile_Pic"]; ?>"/>
 
+            <form action="upload_profile_picture.php?user_id=<?php echo $row['User_ID'];?>" id="upload_profile" enctype="multipart/form-data" method="post">
+              <button class="file-upload">
+              <input type="file" name="edit_profile_pic" accept="image/x-png, image/gif, image/jpeg" id="edit_profile" class="file-input"/>
+              Upload Photo
+              </button>
+
+            </form>
           </div>
+
         </div>
         <div id="" class="span_3_of_4 user_detail_div">
           <div id="" class="user_data">
