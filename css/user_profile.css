@@ -7,6 +7,7 @@
 .user_pic_box {
   position: relative;
   overflow: hidden;
+  background-color: #F7F7F7;
   width:200px;
   height:200px;
   margin:15px 0px 30px 30px;
