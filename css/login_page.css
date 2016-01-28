@@ -79,11 +79,13 @@ body {
 	padding-left:50px;
 	font-size:18px;
 	outline:0;
+
 }
 .input_box:focus {
-	background-color:white;
+	background-color:none;
 	opacity:0.8;
 }
+
 input::-webkit-input-placeholder {
 color: black !important;
 }
@@ -102,57 +104,57 @@ color: black !important;
 .email {
 	background-image: url("../images/login_email.png");
 	background-repeat:no-repeat;
-	-webkit-background-size: 30px;
-	-moz-background-size: 30px;
-	-o-background-size: 30px;
-	background-size: 30px;
-	background-position:10px 4px;
+	-webkit-background-size: 25px;
+	-moz-background-size: 25px;
+	-o-background-size: 25px;
+	background-size: 25px;
+	background-position:10px 7px;
 }
 .nickname {
 	background-image: url("../images/nickname.png");
 	background-repeat:no-repeat;
-	-webkit-background-size: 38px;
-	-moz-background-size: 38px;
-	-o-background-size: 38px;
-	background-size: 38px;
-	background-position:5px 3px;
+	-webkit-background-size: 25px;
+	-moz-background-size: 25px;
+	-o-background-size: 25px;
+	background-size: 25px;
+	background-position:10px 7px;
 }
 .password {
 	background-image: url("../images/login_password.png");
 	background-repeat:no-repeat;
-	-webkit-background-size: 95px 60px;
-	-moz-background-size: 95px 60px;
-	-o-background-size: 95px 60px;
-	background-size: 95px 60px;
-	background-position:-23px -11px;
+	-webkit-background-size: 23px 25px;
+	-moz-background-size: 23px 25px;
+	-o-background-size:23px 25px;
+	background-size: 23px 25px;
+	background-position:10px 7px;
 
 }
 .phone {
 	background-image: url("../images/phone.png");
 	background-repeat:no-repeat;
-	-webkit-background-size: 40px 35px;
-	-moz-background-size: 40px 35px;
-	-o-background-size: 40px 35px;
-	background-size: 40px 35px;
-	background-position:5px 2px;
+	-webkit-background-size: 25px 25px;
+	-moz-background-size: 25px 25px;
+	-o-background-size: 25px 25px;
+	background-size: 25px 25px;
+	background-position:10px 7px;
 }
 .bday {
 	background-image: url("../images/bday.png");
 	background-repeat:no-repeat;
-	-webkit-background-size: 25px 29px;
-	-moz-background-size: 25px 29px;
-	-o-background-size: 25px 29px;
-	background-size: 25px 29px;
-	background-position:12px 5px;
+	-webkit-background-size: 25px;
+	-moz-background-size: 25px;
+	-o-background-size:25px;
+	background-size: 25px;
+	background-position:10px 7px;
 }
 .address {
 	background-image: url("../images/address.png");
 	background-repeat:no-repeat;
-	-webkit-background-size: 29px 29px;
-	-moz-background-size: 29px 29px;
-	-o-background-size: 29px 29px;
-	background-size: 29px 29px;
-	background-position:10px 5px;
+	-webkit-background-size: 30px 25px;
+	-moz-background-size: 30px 25px;
+	-o-background-size:30px 25px;
+	background-size: 30px 25px;
+	background-position:10px 7px;
 }
 .login_error {
 	font-size:20px;

@@ -58,7 +58,7 @@
           <?php echo $product_describe; ?>
         </div>
 
-        <a href=" " id="" class="">
+        <a href="../user/buy_product.php?product_id=<?php echo $product_id;?>" id="" class="">
           <input type="button" id="" class="product_btn buy_btn" value="BUY">
         </a>
         <a href=" " id="" class="">
