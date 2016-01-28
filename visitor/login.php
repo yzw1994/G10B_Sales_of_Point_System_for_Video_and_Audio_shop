@@ -1,7 +1,7 @@
 <?php
 	require("../dataconn/dataconn.php");
 
-
+	$reg_error_login="reg_normal";
 
 
 	if(isset($_POST['loginbtn'])){
@@ -18,7 +18,7 @@
 			header("Location: ../user/index.php");
 		}
 		else {
-			echo "error";
+				$reg_error_login= "reg_error";
 		}
 
 	}
@@ -39,10 +39,10 @@
 		<div id="" class="input_div">
 			<form name="login" method="post" action="">
 				<span>whatever slogan here...</span>
-				<input type="text" name="email" value="" id="" placeholder="Your Email..." class="input_box email"/>
+				<input type="text" name="email" value="" id="" placeholder="Your Email..." class="input_box email" pattern="[a-z0-9._%+-]+@[a-z0-9]+.com"/>
 				<input type="password" name="password" value=""  id="" placeholder="Your Password..." class="input_box password"/>
 				<div id="" class="login_error">
-					<span id="" class="error_message">Invalid Email or Password.
+					<span id="" class="<?php echo $reg_error_login;?>">Invalid Email or Password.
 					</span>
 				</div>
 				<a href="register.php"><input type="button" value="REGISTER" id="" class="btn register_btn"/></a>
