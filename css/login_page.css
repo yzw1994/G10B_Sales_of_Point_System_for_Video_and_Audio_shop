@@ -167,10 +167,24 @@ color: black !important;
 .error_message {
 	display:none;
 }
+.error_display {
+	display:block;
+}
 .reg_error {
+	color:white;
+	font-weight: bolder;
+	font-size:14px;
+	padding:10px 0 0px 5px;
+	display:block;
+	height:15px;
+}
+
+.reg_normal {
 	color:red;
 	font-size:16px;
 	padding:10px 0 0px 5px;
 	display:block;
 	height:15px;
+	opacity: 0;
+
 }
