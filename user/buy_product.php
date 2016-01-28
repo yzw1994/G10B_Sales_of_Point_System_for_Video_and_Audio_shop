@@ -45,46 +45,20 @@
 			<div id="" class="purchase_div">
 				<span id="" class="purchase_title">Confirmation for Purchasing</span>
 				<div id="" class="purchase_product_div">
-					<div id="" class="purchase_product_img" >
+					<div id="" class="span_5_of_1 purchase_product_img" >
 						<img src="<?php echo $product_image;?>" class="purchase_product_picture">
 					</div>
-						<span><?php echo $product_name;?>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-							aaa<br>
-						</span>
+						<div id="" class="purchase_product_title">
+							<?php echo $product_name;?>
+						</div>
+						<div id="" class="purchase_description_char">
+							<span id="" class="purchase_product_caption">PRICE : </span>
+							<span id="" class="purchase_product_value purchase_product_price">RM <?php echo $product_price;?></span>
+						</div>
+						<div id="" class="purchase_description_char purchase_product_amount">
+							<span id="" class="purchase_product_caption">AMOUNT : </span>
+							<span id="" class="purchase_product_value"><?php echo $product_price;?></span>
+						</div>
 				</div>
 			</div>
 		</div>
