@@ -2,7 +2,9 @@
 
 <?php
 	 include("../dataconn/dataconn.php");
-
+	 //hi
+$reg_error_email = "reg_normal";
+$reg_error_pass = "reg_normal";
 
 		if(isset($_POST["createaccbtn"]))
 		{
@@ -19,15 +21,21 @@
 
 			if(mysql_num_rows($emailresult)!=0)
 		{
-			?>
-			<script type="text/javascript">
-				alert("Your email is exist. Please change other email.");
-			</script>
-			<?php
+				$reg_error_email = "reg_error";
+
 		}
+			else if($pass!=$repass)
+				{
+
+						$reg_error_pass = "reg_error";
+
+
+				}
+
 		else
 		{
 			mysql_query("insert into user(User_Name,User_Password,User_Email,User_Phone,User_Address,User_Dob,User_Subscribe_Status,User_Privilege)values('$name','$pass','$email','$phone','$address','$bday','1','2')");
+
 			?>
 			<script type="text/javascript">
 				alert("Your register is successful.");
@@ -64,26 +72,26 @@
 		<div id="" class="input_div">
 			<form name="login" method="post" action="">
 				<span>whatever slogan here...</span>
-				<input type="text" name="email" value="" id="" placeholder="Your Email..." class="input_box email"/>
-				<span id="" class="reg_error">
+				<input type="text" name="email" value="" id="" placeholder="Your Email..." class="input_box email" required pattern="[a-z0-9._%+-]+@[a-z0-9]+.com"/>
+				<span id="" class="<?php echo $reg_error_email;?>">Your email is exist. Please change other email.
 				</span>
-				<input type="text" name="text" value="" id="" placeholder="Your Nickname..." class="input_box nickname"/>
-				<span id="" class="reg_error">
+				<input type="text" name="text" value="" id="" placeholder="Your Nickname..." class="input_box nickname" required/>
+				<span id="" class="<?php echo $reg_error;?>">
 				</span>
-				<input type="password" name="password" value=""  id="" placeholder="Your Password..." class="input_box password"/>
-				<span id="" class="reg_error">
+				<input type="password" name="password" value=""  id="" placeholder="Your Password..." class="input_box password" required/>
+				<span id="" class="<?php echo $reg_error;?>">
 				</span>
-				<input type="password" name="repassword" value=""  id="" placeholder="Retype Password..." class="input_box password"/>
-				<span id="" class="reg_error">
+				<input type="password" name="repassword" value=""  id="" placeholder="Retype Password..." class="input_box password" required/>
+				<span id="" class="<?php echo $reg_error_pass;?>">Your Password was not same with Retype Password.
 				</span>
-				<input type="number" name="phone" value=""  id="" placeholder="Your Phone Number..." class="input_box phone"/>
-				<span id="" class="reg_error">
+				<input type="text" name="phone" maxlength="11" value=""  id="" placeholder="Your Phone Number..." class="input_box phone" required />
+				<span id="" class="<?php echo $reg_error;?>">
 				</span>
-				<input type="date" name="bday" value=""  id="" placeholder="Your Birthday..." class="input_box bday"/>
-				<span id="" class="reg_error">
+				<input type="date" name="bday" value=""  id=""  placeholder="Your Birthday..." class="input_box bday"  required />
+				<span id="" class="<?php echo $reg_error;?>">
 				</span>
-				<input type="text" name="address" value=""  id="" placeholder="Your Address..." class="input_box address"/>
-				<span id="" class="reg_error">
+				<input type="text" name="address" value=""  id="" placeholder="Your Address..." class="input_box address" required/>
+				<span id="" class="r<?php echo $reg_error;?>">
 				</span>
 				<input type="submit" value="REGISTER" id="" class="btn press_reg" name="createaccbtn"/>
 			</form>
