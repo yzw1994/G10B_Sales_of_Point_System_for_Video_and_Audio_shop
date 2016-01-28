@@ -41,6 +41,9 @@
 				<span>whatever slogan here...</span>
 				<input type="text" name="email" value="" id="" placeholder="Your Email..." class="input_box email" pattern="[a-z0-9._%+-]+@[a-z0-9]+.com"/>
 				<input type="password" name="password" value=""  id="" placeholder="Your Password..." class="input_box password"/>
+				<div class="forget_password">
+				<a href="forgetpassword.php" class="forget_password_text">Forget Password</a>
+				</div>
 				<div id="" class="login_error">
 					<span id="" class="<?php echo $reg_error_login;?>">Invalid Email or Password.
 					</span>
