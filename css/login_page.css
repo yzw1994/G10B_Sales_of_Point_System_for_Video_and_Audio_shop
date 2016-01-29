@@ -281,3 +281,9 @@ display: block;
 opacity:0.7;
 
 }
+
+#change_password{
+	color:white;
+	font-weight: bolder;
+	padding-left: 20%;
+}
