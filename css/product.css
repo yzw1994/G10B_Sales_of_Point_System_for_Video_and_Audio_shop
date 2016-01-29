@@ -157,6 +157,16 @@
   color:black;
   font-size: 28px;
 }
+.purchase_user_info {
+  padding:20px;
+  word-wrap: break-word;
+  font-size: 18px;
+}
+.purchase_T_C {
+  padding:20px;
+  font-size: 18px;
+  word-wrap: break-word;
+}
 .purchase_description_char {
   display: block;
   width:80%;
@@ -174,4 +184,9 @@
   display: inline-block;
   width:120px;
 
+}
+.buy_now_btn {
+  width:100px;
+  height: 30px;
+  float: right;
 }

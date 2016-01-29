@@ -99,14 +99,18 @@
 			</div>
 		</div>
 		<div class="purchase_div">
-			<span id="" class="col span_5_of_5" style="border:grey 1px solid;">
-				<?php echo $row["User_Name"]; ?>
-			</span>
-			<div id="" class="col span_3_of_5" style="border:grey 1px solid;">
-				address
+			<div id="" class="col span_2_of_4 purchase_user_info" style="border:grey 1px solid;">
+				<?php echo $row["User_Name"]; ?><br/><br/>
+				<?php echo $row["User_Address"]; ?><br/><br/>
+				<?php echo $row["User_Phone"]; ?>
 			</div>
-			<div id="" class="col span_2_of_5" style="border:grey 1px solid;float:right;">
-				Terms and condition
+			<div id="" class="col span_2_of_5 purchase_T_C" style="border:grey 1px solid;float:right;">
+				Terms and condition<br>
+				<hr>
+				sjagbxkasxsb,cjdshdjba,sdbxsc,svdbcjsdbjcbxjcbs,dvcbsvdmbsdjb,ksdhvxs,jjdbcmmsjdcbxjdsxgsv,cjshbxcj,hbjchssjagbxkasxsb,cjdshdjba,sdbxsc,svdbcjsdbjcbxjcbs,dvcbsvdmbsdjbksdhvxs,jjdbcmmsjdcbxjdsxgsv,cjshbxcj,hbjchsjagbxkasxsb,cjdshdjba,sdbxsc,svdbcjsdbjcbxjcbs,dvcbsvdmbsdjb,svdbcjsdbjcbxjcbs,dvcbsvdmbsdjb,svdbcjsdbjcbxjcbs,dvcbsvdmbsdjb,svdbcjsdbjcbxjcbs,dvcbsvdmbsdjb
+				<br>
+				<br>
+				<input type="submit" value="Buy Now" id="" class="buy_now_btn" name=""/>
 			</div>
 
 		</div>
