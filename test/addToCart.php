@@ -43,7 +43,7 @@
 </head>
 
 <body>
-<a href="payment.php" target="_blank">checkout</a>
+<a href="view_cart.php" target="_blank">checkout</a>
 	<form name="loginfrm" action="" method="post">
 		<?php if (isset($_SESSION['flash_msg']) && $_SESSION['flash_msg'] != NULL) 
 	{
