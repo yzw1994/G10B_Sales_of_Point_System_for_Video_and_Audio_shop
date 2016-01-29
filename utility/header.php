@@ -10,6 +10,20 @@
 					<form name="searchfrm" method="post" action="search_result.php">
 						<input type="submit" name="search" id="" class="search_bar" placeholder="Search..."/>
 					</form>
+
+					<!--
+					function searching() {            
+            var keywordsStr = document.getElementById('keywords').value;
+            var cmd ="http://XXX/advancedsearch_result.asp?language=ENG&+"+ encodeURI(keywordsStr) + "&x=11&y=4";
+            window.location = cmd;
+        }
+
+    <form name="form1" method="get">
+             <input name="keywords" type="text" id="keywords" size="50" >
+             <input type="submit" name="btn_search" id="btn_search" value="Search"
+onClick="javascript:searching(); return false;" onKeyPress="javascript:searching(); return false;">
+             <input type="reset" name="btn_reset" id="btn_reset" value="Reset">
+    </form>-->
 			</p>
 		</div>
 		<div id="" class="col span_1_of_3 btn_group">

@@ -10,12 +10,7 @@
 
     require("../dataconn/page_load.php")
 
-    if(isset($_POST["search"]))
-    {
-      $search_text = $_POST["Prodcut_Name"];
-      $search_result = mysql_query("SELECT * FROM product WHERE Product_Name like '%$search_text%'");
-      $row = mysql_fetch_assoc($search_result);
-    }
+
 ?>
 
 <!DOCTYPE html>
@@ -31,36 +26,7 @@
 
 </head>
 <body>
-  <?php
-    if($row!=0)
-    {
-  ?>
-
-    <table border="1px">
-      <tr>
-        <th>Name</th>
-        <th>Descriprtion</th>
-        <th>Picture/th>
-        <th>Type</th>
-        <th>Category</th>
-      </tr>
-      <tr>
-          <td><?php echo $row["Product_Name"]; ?></td>
-          <td><?php echo $row["Product_Description"]; ?></td>
-          <td><?php echo $row["Product_Pic"]; ?></td>
-          <td><?php echo $row["Product_Type"]; ?></td>
-          <td><?php echo $row["Product_Category"]; ?></td>
-      </tr>
-    </table>
-    }
-    <?php
-      }
-      else
-      {
-        echo "No records found";
-      }
-}
-?>
+  
 	<div class="cont section group">
 
 		<?php include("../utility/user_header.php");?>
