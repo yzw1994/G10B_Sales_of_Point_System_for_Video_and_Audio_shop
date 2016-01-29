@@ -3,14 +3,30 @@
 <?php
 		require("../dataconn/dataconn.php");
 		require_once ("Mail.php");
+		$reg_error_login="reg_normal";
 
 if(isset($_POST['sendbtn'])){
 
-	randomPassword();
-	$newpassword = randomPassword();
 
 	$name = $_POST['nickname'];
 	$to = $_POST["email"];
+
+	$login_sql = "select * from user where User_Email = '".$to."' and User_Name = '".$name."'";
+	$login_result = mysql_query($login_sql);
+
+
+
+		if($login_result==null){
+
+					$reg_error_login= "reg_error";
+			}
+			else {
+
+	$login_check = mysql_num_rows($login_result);
+	randomPassword();
+	$newpassword = randomPassword();
+
+
 	$cforget=mysql_query("update user set User_Password='$newpassword' where User_Name='$name' and User_Email='$to'");
 
 
@@ -56,8 +72,10 @@ EMAIL;
 			echo("<script>Send Successful!!</script>");
 	}
 
+	header("Location:login.php");
+		}
+	}
 
-}
 
 ?>
 
@@ -76,15 +94,14 @@ EMAIL;
 		<div id="" class="input_div">
 			<form name="login" method="post" action="">
 				<span id="forget_password">Forget Password</span>
-				<input type="text" name="email" value="" id="" placeholder="Your Email..." class="input_box email" pattern="[a-z0-9._%+-]+@[a-z0-9]+.com"/>
-				<input type="text" name="nickname" value=""  id="" placeholder="Your Nickname..." class="input_box password"/>
+				<input type="text" name="email" value="" id="" placeholder="Your Email..." class="input_box_forget email" pattern="[a-z0-9._%+-]+@[a-z0-9]+.com"/>
+				<input type="text" name="nickname" value=""  id="" placeholder="Your Nickname..." class="input_box_forget password"/>
 
 				<div id="" class="login_error">
 					<span id="" class="<?php echo $reg_error_login;?>">Invalid Email or Nickname.
 					</span>
 				</div>
-
-				<input type="submit" value="Send" id="" name="sendbtn" class="btn send_btn"/>
+								<input type="submit" value="Send" id="" name="sendbtn" class="btn forget_btn"/>
 			</form>
 
 		</div>
