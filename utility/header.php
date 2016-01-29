@@ -6,7 +6,11 @@
 		</a>
 		</div>
 		<div id="" class="search_div col span_1_of_3">
-			<p><input type="text" name="search" id="" class="search_bar" placeholder="Search..."/></p>
+			<p>
+					<form name="searchfrm" method="post" action="search_result.php">
+						<input type="submit" name="search" id="" class="search_bar" placeholder="Search..."/>
+					</form>
+			</p>
 		</div>
 		<div id="" class="col span_1_of_3 btn_group">
 			<p>
