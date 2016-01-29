@@ -43,28 +43,59 @@
 		<?php include('../utility/user_header.php');?>
 		<?php include("../utility/navigation.php");?>
 		<div class="cont_element col span_2_of_2 ">
-      <div id="" class="product_content_div">
-        <div id="" class="product_cover">
-          <img src="<?php echo $product_image;?>" id="" class="product_picture"/>
-        </div>
+			<div id="" class="product_content_div">
+				<div class="col span_1_of_5 " style="">
+					<img src="<?php echo $product_image;?>" id="" class="product_picture"/>
+					<a href="../user/buy_product.php?product_id=<?php echo $product_id;?>" id="" class="">
+	          <input type="button" id="" class="product_btn buy_btn" value="BUY">
+	        </a>
+	        <a href=" " id="" class="">
+	          <input type="button"  id="" class="product_btn rent_btn" value="RENT">
+	        </a>
+				</div>
+				<div class="col span_4_of_5 product_content_name" style="">
+					<?php echo $product_name; ?>
+				</div>
 
-        <div id="" class="product_content_name">
-          <?php echo $product_name; ?>
-        </div>
-        <div id="" class="product_content_price">
-          <span id="" class="buy_title">Buy :</span> RM <?php echo $product_price; ?><span id="" class="rent_title"> / Rent :</span> RM <?php echo $product_rent_price; ?>
-        </div>
-        <div id="" class="product_content_description">
-          <?php echo $product_describe; ?>
-        </div>
+				<div class="col span_4_of_5 product_content_price" style="">
+					<span id="" class="buy_title">Buy :</span> RM <?php echo $product_price; ?>
+					<span id="" class="rent_title"> / Rent :</span> RM <?php echo $product_rent_price; ?>
+				</div>
+				<div class="col span_4_of_5 product_content_quantity_div" style="">
+					<div id="" class="product_content_quantity_function_title">Quantity</div>
+					<div id="" class="product_content_quantity_function_operation">
+						<script>
+						function minus_function(){
+							quantity_value = parseInt(document.getElementById('product_quantity_value').value);
+							if(quantity_value == 1){
+								document.getElementById('product_quantity_value').value=quantity_value;
+							}
+							else {
+								quantity_value = quantity_value-1;
+								document.getElementById('product_quantity_value').value=quantity_value;
+							}
+						}
+						function plus_function(){
+							quantity_value = parseInt(document.getElementById('product_quantity_value').value);
+							if(quantity_value == 5){
+								document.getElementById('product_quantity_value').value=quantity_value;
+							}
+							else {
+								quantity_value = quantity_value+1;
+								document.getElementById('product_quantity_value').value=quantity_value;
+							}
+						}
+						</script>
+						<input type="button" name="quantity_minus" value="-" onclick="minus_function()">
+						<input type="number" id="product_quantity_value" name="product_quantity_value" value="1" disabled="disabled" class="quantity_value_input"/>
+						<input type="button" name="quantity_plus" value="+" onclick="plus_function()">
+					</div>
+				</div>
+				<div class="col span_4_of_5 product_content_description" style="">
+					<?php echo $product_describe; ?>
+				</div>
+			</div>
 
-        <a href="../user/buy_product.php?product_id=<?php echo $product_id;?>" id="" class="">
-          <input type="button" id="" class="product_btn buy_btn" value="BUY">
-        </a>
-        <a href=" " id="" class="">
-          <input type="button"  id="" class="product_btn rent_btn" value="RENT">
-        </a>
-      </div>
 		</div>
 		<?php include("../utility/footer.php");?>
 

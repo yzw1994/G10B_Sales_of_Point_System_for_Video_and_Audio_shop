@@ -3,18 +3,15 @@
 	$check_login_url = "";
 	if(isset($_SESSION['user_id']) && $_SESSION['user_id']) {
 		$user_id = $_SESSION['user_id'];
-		if(isset($_GET['buy_product'])){
-			$check_login_url = "../user/product_page_login.php?u_id=".$user_id;
-		}
-		else if(isset($_GET['rent_product'])){
-			$check_login_url = "../user/product_page_login.php?u_id=".$user_id;
-		}
 		$login_product="product_page_login.php";
 	} else {
 		$check_login_url = "../visitor/login.php";
 		$login_product="product_page.php";
 	}
+
+
 ?>
+
 <div id="" class="new_pro_color pro_title">New Arrive
 </div>
 <?php
@@ -30,6 +27,7 @@
 			$product_name = $product_row['Product_Name'];
 			$product_image = $product_row['Product_Pic'];
 			$product_price = $product_row['Product_Price'];
+
 			echo "
 				<div id='' class='pro_div'>
 					<div id='' class='prod_pic'>
@@ -41,8 +39,9 @@
 					<a href='../utility/".$login_product."?product_id=".$product_id."' target='_blank' id='' class='prod_price'>
 					RM ".$product_price."
 					</a>
-					<a href='../user/buy_product.php?product_id=".$product_id."' target='_blank' name='buy_product' class='prod_btn prod_buy'>BUY</a>
-					<a href='' target='_blank' name='rent_product' class='prod_btn prod_rent'>RENT</a>
+
+					<a href='../utility/".$login_product."?product_id=".$product_id."' name='buy_product' onclick='buy_assignLink()' class='prod_btn prod_buy'>BUY</a>
+					<a href='../utility/".$login_product."?product_id=".$product_id."' name='rent_product' onclick='rent_assignLink()' class='prod_btn prod_rent'>RENT</a>
 				</div>
 				";
 		}while($product_row = mysql_fetch_array($product_result));
