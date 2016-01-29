@@ -4,13 +4,6 @@
 		require("../dataconn/dataconn.php");
 		require_once ("Mail.php");
 
-
-
-
-
-
-
-
 if(isset($_POST['sendbtn'])){
 
 	randomPassword();
@@ -67,6 +60,7 @@ EMAIL;
 }
 
 ?>
+
 <html>
 <head>
 	<title>Log In</title>

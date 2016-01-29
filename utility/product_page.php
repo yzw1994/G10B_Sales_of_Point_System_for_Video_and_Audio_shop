@@ -46,10 +46,10 @@
         <div id="" class="product_content_description">
           <?php echo $product_describe; ?>
         </div>
-        <a href=" " id="" class="">
+        <a href="../visitor/login.php" id="" class="">
           <input type="button" id="" class="product_btn buy_btn" value="BUY">
         </a>
-        <a href=" " id="" class="">
+        <a href="../visitor/login.php" id="" class="">
           <input type="button"  id="" class="product_btn rent_btn" value="RENT">
         </a>
       </div>

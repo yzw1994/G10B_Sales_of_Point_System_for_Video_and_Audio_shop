@@ -8,7 +8,6 @@
 	}
 	$user_id = $_SESSION['user_id'];
 	require("../dataconn/page_load.php");
-
 	$product_id = $_REQUEST['product_id'];
   $product_sql = "select * from product where product_id = ".$product_id." ";
   $product_exe = mysql_query($product_sql);

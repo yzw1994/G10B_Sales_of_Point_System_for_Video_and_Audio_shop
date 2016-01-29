@@ -41,8 +41,8 @@
 					<a href='../utility/".$login_product."?product_id=".$product_id."' target='_blank' id='' class='prod_price'>
 					RM ".$product_price."
 					</a>
-					<a href='' name='rent_product' class='prod_btn prod_rent'>RENT</a>
-					<a href='' name='buy_product' class='prod_btn prod_buy'>BUY</a>
+					<a href='../user/buy_product.php?product_id=".$product_id."' target='_blank' name='buy_product' class='prod_btn prod_buy'>BUY</a>
+					<a href='' target='_blank' name='rent_product' class='prod_btn prod_rent'>RENT</a>
 				</div>
 				";
 		}while($product_row = mysql_fetch_array($product_result));

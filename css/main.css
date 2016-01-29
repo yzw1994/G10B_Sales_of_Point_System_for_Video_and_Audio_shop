@@ -393,11 +393,17 @@ a.control_next {
 	color:white;
 }
 .prod_rent {
-	background-color:green;
-	margin:0 8px;
+	background-color: orange;
+}
+.prod_rent:hover {
+	background-color: #ED9121;
 }
 .prod_buy {
-	background-color:orange;
+	background-color: #00CD66;
+	margin:0 8px;
+}
+.prod_buy:hover {
+	background-color: #3CB371;
 }
 /*new product*/
 .footer {
