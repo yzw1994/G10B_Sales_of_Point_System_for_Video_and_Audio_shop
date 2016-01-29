@@ -39,7 +39,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login Page</title>
+	<title>Product Page</title>
 </head>
 
 <body>
