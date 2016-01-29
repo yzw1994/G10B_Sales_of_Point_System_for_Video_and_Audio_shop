@@ -86,9 +86,9 @@
 							}
 						}
 						</script>
-						<input type="button" name="quantity_minus" value="-" onclick="minus_function()">
+						<input type="button" name="quantity_minus" value="-" onclick="minus_function()" class="minus_function_char">
 						<input type="number" id="product_quantity_value" name="product_quantity_value" value="1" disabled="disabled" class="quantity_value_input"/>
-						<input type="button" name="quantity_plus" value="+" onclick="plus_function()">
+						<input type="button" name="quantity_plus" value="+" onclick="plus_function()" class="plus_function_char">
 					</div>
 				</div>
 				<div class="col span_4_of_5 product_content_description" style="">
