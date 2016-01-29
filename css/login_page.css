@@ -49,10 +49,20 @@ body {
 	border-style:solid;
 	border-width:0px;
 }
+
+.forget_btn:hover{
+	color:white;
+}
+
+
 .login_btn {
 	float:right;
 	display:block;
 	background-color:#63B8FF;
+}
+
+.login_btn:hover{
+	color:white;
 }
 
 .send_btn {
@@ -61,11 +71,31 @@ body {
 	background-color:#63B8FF;
 }
 
+
+
+
 .register_btn {
 	float:left;
 	display:block;
 	background-color:#00FF7F;
 }
+
+
+
+.forget_btn{
+	margin-left: 30%;
+	display: block;
+	background-color: #dba400;
+	opacity: 0.8;
+
+}
+
+.register_btn:hover{
+	color:white;
+}
+
+
+
 .press_reg {
 	display:block;
 	margin:15px auto;
@@ -92,6 +122,24 @@ body {
 	background-color:none;
 	opacity:0.8;
 }
+
+.input_box_forget {
+	background-color:rgba(240, 255, 255, 0.5);
+	font-family:elegant_luxmager;
+	color:black;
+	border-style:solid;
+	border-width:1px;
+	border-color:grey;
+	border-radius:8px;
+	width:238px;
+	height:36px;
+	margin-top:10px;
+	padding-left:50px;
+	font-size:18px;
+	outline:0;
+
+}
+
 
 input::-webkit-input-placeholder {
 color: black !important;
@@ -201,6 +249,8 @@ font-weight: bolder;
 color:white;
 padding-left: 20%;
 }
+
+
 
 .forget_password{
 margin-left: 20%;
