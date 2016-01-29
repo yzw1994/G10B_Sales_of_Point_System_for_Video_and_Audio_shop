@@ -1,7 +1,5 @@
 <?php
 	include("../dataconn/dataconn.php");
-
-
 	if(!isset($_SESSION))
 	{
 		session_start();
@@ -35,7 +33,33 @@
 	<link rel="stylesheet" href="../css/font/elegantlux/elegant_luxmager.css" type="text/css" charset="utf-8" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="../js/main.js"></script>
-
+	<script>
+	url_quantity_val = "";
+	function minus_function(){
+		quantity_value = parseInt(document.getElementById('product_quantity_value').value);
+		if(quantity_value == 1){
+			document.getElementById('product_quantity_value').value=quantity_value;
+			document.getElementById('quantity_value_hidden_js').value=quantity_value;
+		}
+		else {
+			quantity_value = quantity_value-1;
+			document.getElementById('product_quantity_value').value=quantity_value;
+			document.getElementById('quantity_value_hidden_js').value=quantity_value;
+		}
+	}
+	function plus_function(){
+		quantity_value = parseInt(document.getElementById('product_quantity_value').value);
+		if(quantity_value == 5){
+			document.getElementById('product_quantity_value').value=quantity_value;
+			document.getElementById('quantity_value_hidden_js').value=quantity_value;
+		}
+		else {
+			quantity_value = quantity_value+1;
+			document.getElementById('product_quantity_value').value=quantity_value;
+			document.getElementById('quantity_value_hidden_js').value=quantity_value;
+		}
+	}
+	</script>
 </head>
 <body>
 	<div class="cont section group">
@@ -45,13 +69,21 @@
 		<div class="cont_element col span_2_of_2 ">
 			<div id="" class="product_content_div">
 				<div class="col span_1_of_5 " style="">
+					<?php
+						if(isset($_POST['buy_btn'])){
+							$buy_url = "../user/buy_product.php";
+						}
+					?>
 					<img src="<?php echo $product_image;?>" id="" class="product_picture"/>
-					<a href="../user/buy_product.php?product_id=<?php echo $product_id;?>" id="" class="">
-	          <input type="button" id="" class="product_btn buy_btn" value="BUY">
-	        </a>
-	        <a href=" " id="" class="">
-	          <input type="button"  id="" class="product_btn rent_btn" value="RENT">
-	        </a>
+					<form action="../user/buy_product.php" method="POST">
+	          <input type="submit" id="" class="product_btn buy_btn" name="buy_btn" value="BUY">
+						<input type="hidden" id="" name="product_id" value="<?php echo $product_id;?>">
+						<input type="hidden" id="quantity_value_hidden_js" name="quantity_value_hidden" value="1">
+					</form>
+					<form>
+						<input type="submit"  id="" class="product_btn rent_btn" value="RENT">
+						<input type="hidden" id="hidden_product_id" name="quantity_value_hidden" value="<?php echo $product_id;?>">
+					</form>
 				</div>
 				<div class="col span_4_of_5 product_content_name" style="">
 					<?php echo $product_name; ?>
@@ -64,28 +96,7 @@
 				<div class="col span_4_of_5 product_content_quantity_div" style="">
 					<div id="" class="product_content_quantity_function_title">Quantity</div>
 					<div id="" class="product_content_quantity_function_operation">
-						<script>
-						function minus_function(){
-							quantity_value = parseInt(document.getElementById('product_quantity_value').value);
-							if(quantity_value == 1){
-								document.getElementById('product_quantity_value').value=quantity_value;
-							}
-							else {
-								quantity_value = quantity_value-1;
-								document.getElementById('product_quantity_value').value=quantity_value;
-							}
-						}
-						function plus_function(){
-							quantity_value = parseInt(document.getElementById('product_quantity_value').value);
-							if(quantity_value == 5){
-								document.getElementById('product_quantity_value').value=quantity_value;
-							}
-							else {
-								quantity_value = quantity_value+1;
-								document.getElementById('product_quantity_value').value=quantity_value;
-							}
-						}
-						</script>
+
 						<input type="button" name="quantity_minus" value="-" onclick="minus_function()" class="minus_function_char">
 						<input type="number" id="product_quantity_value" name="product_quantity_value" value="1" disabled="disabled" class="quantity_value_input"/>
 						<input type="button" name="quantity_plus" value="+" onclick="plus_function()" class="plus_function_char">

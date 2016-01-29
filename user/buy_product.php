@@ -1,7 +1,6 @@
 <?php
 	include("../dataconn/dataconn.php");
-
-
+	$quantity_value_get = $_POST['quantity_value_hidden'];
 	if(!isset($_SESSION))
 	{
 		session_start();
@@ -20,6 +19,9 @@
     $product_rent_price = $product_row['Product_Rent_Price'];
     $product_describe = $product_row['Product_Description'];
   }while($product_row = mysql_fetch_array($product_exe));
+
+	$result = mysql_query("SELECT * FROM user WHERE User_ID = '$user_id'");
+	$row = mysql_fetch_assoc($result);
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,28 +42,93 @@
 
 		<?php include("../utility/user_header.php");?>
 		<?php include("../utility/navigation.php");?>
-		<div class="cont_element col span_2_of_2">
-			<div id="" class="purchase_div">
-				<span id="" class="purchase_title">Confirmation for Purchasing</span>
-				<div id="" class="purchase_product_div">
-					<div id="" class="span_5_of_1 purchase_product_img" >
-						<img src="<?php echo $product_image;?>" class="purchase_product_picture">
-					</div>
-						<div id="" class="purchase_product_title">
-							<?php echo $product_name;?>
-						</div>
-						<div id="" class="purchase_description_char">
-							<span id="" class="purchase_product_caption">PRICE : </span>
-							<span id="" class="purchase_product_value purchase_product_price">RM <?php echo $product_price;?></span>
-						</div>
-						<div id="" class="purchase_description_char purchase_product_amount">
-							<span id="" class="purchase_product_caption">AMOUNT : </span>
-							<span id="" class="purchase_product_value"><?php echo $product_price;?></span>
-						</div>
+		<div class="purchase_div">
+			<span id="" class="col span_5_of_5 purchase_title">
+				Purchase Confirmation
+			</span>
+			<div id="" class="col span_1_of_5">
+				<img src="<?php echo $product_image;?>" class="purchase_product_picture">
+			</div>
+			<div id="" class="col span_4_of_5 purchase_product_title" style="">
+				<?php echo $product_name;?>
+			</div>
+			<div id="" class="col span_4_of_5 purchase_quantity_function_div" style="">
+				<div id="" class="product_content_quantity_function_title">Quantity</div>
+				<div id="" class="product_content_quantity_function_operation">
+					<script>
+					price = '<?php echo $product_price;?>';
+					quantity_value = parseInt(document.getElementById('product_quantity_value').value);
+					function minus_function(){
+						quantity_value = parseInt(document.getElementById('product_quantity_value').value);
+						if(quantity_value == 1){
+							document.getElementById('product_quantity_value').value=quantity_value;
+							document.getElementById('total_price').value=parseFloat(quantity_value*price);
+						}
+						else {
+							quantity_value = quantity_value-1;
+							document.getElementById('product_quantity_value').value=quantity_value;
+							document.getElementById('total_price').value=parseFloat(quantity_value*price);
+						}
+					}
+					function plus_function(){
+						quantity_value = parseInt(document.getElementById('product_quantity_value').value);
+						if(quantity_value == 5){
+							document.getElementById('product_quantity_value').value=quantity_value;
+							document.getElementById('total_price').value=parseFloat(quantity_value*price);
+						}
+						else {
+							quantity_value = quantity_value+1;
+							document.getElementById('product_quantity_value').value=quantity_value;
+							document.getElementById('total_price').value=parseFloat(quantity_value*price);
+						}
+					}
+					</script>
+					<input type="button" name="quantity_minus" value="-" onclick="minus_function()" class="minus_function_char">
+					<input type="number" id="product_quantity_value" name="product_quantity_value" value="<?php echo $quantity_value_get;?>" disabled="disabled" class="quantity_value_input"/>
+					<input type="button" name="quantity_plus" value="+" onclick="plus_function()" class="plus_function_char">
 				</div>
 			</div>
+			<div id="" class="col span_4_of_5 purchase_product_price" style="">
+				RM <?php echo $product_price;?>
+			</div>
+			<div id="" class="col span_4_of_5 purchase_product_price purchase_product_total_border">
+				<span id="" class="currency_title">
+					Total Price : RM
+				</span>
+				<input type="number" name="" id="total_price" class="purchase_product_amount" value="<?php echo $quantity_value_get*$product_price;?>" disabled="disable"/>
+			</div>
 		</div>
+		<div class="purchase_div">
+			<span id="" class="col span_5_of_5" style="border:grey 1px solid;">
+				<?php echo $row["User_Name"]; ?>
+			</span>
+			<div id="" class="col span_3_of_5" style="border:grey 1px solid;">
+				address
+			</div>
+			<div id="" class="col span_2_of_5" style="border:grey 1px solid;float:right;">
+				Terms and condition
+			</div>
 
+		</div>
+		<!--<div id="" class="purchase_div">
+			<span id="" class="purchase_title">Confirmation for Purchasing</span>
+			<div id="" class="purchase_product_div">
+				<div id="" class="span_5_of_1 purchase_product_img" >
+					<img src="<?php echo $product_image;?>" class="purchase_product_picture">
+				</div>
+					<div id="" class="purchase_product_title">
+						<?php echo $product_name;?>
+					</div>
+					<div id="" class="purchase_description_char">
+						<span id="" class="purchase_product_caption">PRICE : </span>
+						<span id="" class="purchase_product_value purchase_product_price">RM <?php echo $product_price;?></span>
+					</div>
+					<div id="" class="purchase_description_char purchase_product_amount">
+						<span id="" class="purchase_product_caption">AMOUNT : </span>
+						<span id="" class="purchase_product_value"><?php echo $product_price;?></span>
+					</div>
+			</div>
+		</div>-->
 		<?php include("../utility/footer.php");?>
 
 	</div>
