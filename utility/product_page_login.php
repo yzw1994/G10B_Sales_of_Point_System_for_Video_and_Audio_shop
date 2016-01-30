@@ -40,11 +40,13 @@
 		if(quantity_value == 1){
 			document.getElementById('product_quantity_value').value=quantity_value;
 			document.getElementById('quantity_value_hidden_js').value=quantity_value;
+			document.getElementById('quantity_value_hidden_rent_js').value=quantity_value;
 		}
 		else {
 			quantity_value = quantity_value-1;
 			document.getElementById('product_quantity_value').value=quantity_value;
 			document.getElementById('quantity_value_hidden_js').value=quantity_value;
+			document.getElementById('quantity_value_hidden_rent_js').value=quantity_value;
 		}
 	}
 	function plus_function(){
@@ -52,11 +54,13 @@
 		if(quantity_value == 5){
 			document.getElementById('product_quantity_value').value=quantity_value;
 			document.getElementById('quantity_value_hidden_js').value=quantity_value;
+			document.getElementById('quantity_value_hidden_rent_js').value=quantity_value;
 		}
 		else {
 			quantity_value = quantity_value+1;
 			document.getElementById('product_quantity_value').value=quantity_value;
 			document.getElementById('quantity_value_hidden_js').value=quantity_value;
+			document.getElementById('quantity_value_hidden_rent_js').value=quantity_value;
 		}
 	}
 	</script>
@@ -75,14 +79,15 @@
 						}
 					?>
 					<img src="<?php echo $product_image;?>" id="" class="product_picture"/>
-					<form action="../user/buy_product.php" method="POST">
+					<form action="../user/buy_product.php" method="POST" target="_blank">
 	          <input type="submit" id="" class="product_btn buy_btn" name="buy_btn" value="BUY">
 						<input type="hidden" id="" name="product_id" value="<?php echo $product_id;?>">
 						<input type="hidden" id="quantity_value_hidden_js" name="quantity_value_hidden" value="1">
 					</form>
-					<form>
+					<form action="../user/rent_product.php" method="POST" target="_blank">
 						<input type="submit"  id="" class="product_btn rent_btn" value="RENT">
-						<input type="hidden" id="hidden_product_id" name="quantity_value_hidden" value="<?php echo $product_id;?>">
+						<input type="hidden" id="" name="product_id" value="<?php echo $product_id;?>">
+						<input type="hidden" id="quantity_value_hidden_rent_js" name="quantity_value_hidden" value="1">
 					</form>
 				</div>
 				<div class="col span_4_of_5 product_content_name" style="">

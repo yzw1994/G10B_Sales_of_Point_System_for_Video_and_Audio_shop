@@ -109,9 +109,18 @@
 .purchase_title {
   font-size: 28px;
   text-align: center;
-  background-color:rgba(255, 140, 0, 0.5);
+  background-color: #00CD66;
   font-weight: bold;
   color:white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.rent_infotitle {
+  font-size: 28px;
+  text-align: center;
+  background-color:rgba(255, 140, 0, 0.5);
+  font-weight: bold;
+  color:black;
   padding-top: 10px;
   padding-bottom: 10px;
 }
