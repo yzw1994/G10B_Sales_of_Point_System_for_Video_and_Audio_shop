@@ -27,7 +27,7 @@ if(isset($_POST['sendbtn'])){
 		$new_ps=$_POST["new_pass"];
 		$c_new_ps=$_POST["com_new_pass"];
 
-		$login_sql = "select * from User where User_ID =$user_id and User_Password = $old_ps";
+		$login_sql = "select * from User where User_ID ='".$user_id."' and User_Password = '".$old_ps."'";
 		$login_result = mysql_query($login_sql);
 
 
@@ -44,7 +44,7 @@ if(isset($_POST['sendbtn'])){
 	}
 	else {
 			$login_check = mysql_num_rows($login_result);
-			$change=mysql_query("update User set User_Password='$c_new_ps' where  User_Password = $old_ps");
+			$change=mysql_query("update User set User_Password='".$c_new_ps."' where  User_ID = '".$user_id."'");
 
 			if($change)
 				{
