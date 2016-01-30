@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 
-	<script>
+	<!--<script>
 				$('#searchfrm').keydown(function() {
 					var key = e.which;
 						if (key == 13) {
@@ -11,7 +11,7 @@
 				});
 	</script>
 	<script src="submit_on_enter.js" type="text/javascript"></script>
-
+-->
 </head>
 	<body>
 		<div id="" class="logo_div section group">
