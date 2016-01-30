@@ -81,7 +81,7 @@ EMAIL;
 
 <html>
 <head>
-	<title>Log In</title>
+	<title>Forget Password</title>
 	<link href="../css/login_page.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="../css/font/elegantlux/elegant_luxmager.css" type="text/css" charset="utf-8" />
 	<script src="../js/jquery-2.2.0.js"></script>
