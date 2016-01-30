@@ -10,7 +10,12 @@
 
     require("../dataconn/page_load.php")
 
-
+    if(isset($_POST["search"]))
+    {
+      $search_text = $_POST["Prodcut_Name"];
+      $search_result = mysql_query("SELECT * FROM product WHERE Product_Name like '%$search_text%'");
+      $row = mysql_fetch_assoc($search_result);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +31,7 @@
 
 </head>
 <body>
-  
+
 	<div class="cont section group">
 
 		<?php include("../utility/user_header.php");?>
