@@ -2,41 +2,63 @@
 <html>
 <?php
 		require("../dataconn/dataconn.php");
+			$reg_error_login="reg_normal";
 
 		if(!isset($_SESSION))
 		{
 			session_start();
+
 		}
+
+
 		$user_id = $_SESSION['user_id'];
 
 		require("../dataconn/page_load.php");
+			$status_password="";
 
-		$status_password="";
-		$old_ps=$_POST["old_pass"];
-		$new_ps=$_POST["new_pass"];
-		$c_new_ps=$_POST["com_new_pass"];
+
 
 
 if(isset($_POST['sendbtn'])){
 
-		$login_sql = "select * from user where User_ID = '".$user_id."' and user_password = '".$old_ps."'";
+
+
+		$old_ps=$_POST["old_pass"];
+		$new_ps=$_POST["new_pass"];
+		$c_new_ps=$_POST["com_new_pass"];
+
+		$login_sql = "select * from User where User_ID =$user_id and User_Password = $old_ps";
 		$login_result = mysql_query($login_sql);
 
-		$login_check = mysql_num_rows($login_result);
 
 	if($login_result==null)
 	{
 			$status_password="Please enter correct password!!";
+			$reg_error_login= "reg_error";
 	}
 	else if($new_ps!=$c_new_ps){
 
+
 		$status_password="Your new password not same with comfirm password!!";
+		$reg_error_login= "reg_error";
 	}
 	else {
-				mysql_query("UPDATE User SET User_Password='".$c_new_ps."' WHERE User_ID='".$user_id"' ");
+			$login_check = mysql_num_rows($login_result);
+			$change=mysql_query("update User set User_Password='$c_new_ps' where  User_Password = $old_ps");
 
-	}
+			if($change)
+				{
+				?>
+				<script>
+					alert("Password changed success !!!");
+					window.location = "../user/index.php";
+				</script>
+				<?php
 
+
+				}
+
+			}
 }
 
 
@@ -47,7 +69,7 @@ if(isset($_POST['sendbtn'])){
 
 <html>
 <head>
-	<title>Log In</title>
+	<title>Change Password</title>
 	<link href="../css/login_page.css" rel="stylesheet" type="text/css" />
 
 	<link rel="stylesheet" href="../css/font/elegantlux/elegant_luxmager.css" type="text/css" charset="utf-8" />
@@ -61,7 +83,7 @@ if(isset($_POST['sendbtn'])){
 		<div id="" class="input_div">
 			<form name="login" method="post" action="">
 				<span id="change_password">Change Password</span>
-				<input type="text" name="old_pass" value="" id="" placeholder="old password..." class="input_box_forget email"/>
+				<input type="password" name="old_pass" value="" id="" placeholder="old password..." class="input_box_forget email"/>
 				<input type="password" name="new_pass" value=""  id="" placeholder="new password..." class="input_box_forget password"/>
 				<input type="password" name="com_new_pass" value=""  id="" placeholder="Confirm your new password..." class="input_box_forget password"/>
 
