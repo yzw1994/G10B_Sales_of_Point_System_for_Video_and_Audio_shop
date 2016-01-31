@@ -8,7 +8,6 @@
 		<div id="" class="search_div col span_1_of_3">
 			<form action="search_result.php">
 				<p><input type="text" name="search" id="" class="search_bar" placeholder="Search..." onkeydown="if(event.keyCode == 13) { this.form.submit(); console.log('search on submit'); return false; }"/></p>
-			</form>
 		</div>
 		<div id="" class="col span_1_of_3 btn_group">
 			<p>
