@@ -22,6 +22,10 @@
 
 	$result = mysql_query("SELECT * FROM user WHERE User_ID = '$user_id'");
 	$row = mysql_fetch_assoc($result);
+
+	if(isset($_POST['rent_product'])){
+		$final_quantity = $_POST['product_quantity_value'];
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,6 +58,7 @@
 			</div>
 			<div id="" class="col span_4_of_5 purchase_quantity_function_div" style="">
 				<div id="" class="product_content_quantity_function_title">Quantity</div>
+				<form action="process_rent.php" method="POST">
 				<div id="" class="product_content_quantity_function_operation">
 					<script>
 					price = '<?php echo $product_rent_price;?>';
@@ -98,19 +103,23 @@
 				<input type="number" name="" id="total_price" class="purchase_product_amount" value="<?php echo $quantity_value_get*$product_rent_price;?>" disabled="disable"/>
 			</div>
 		</div>
-		<div class="purchase_div">
-			<div id="" class="col span_2_of_4 purchase_user_info" style="border:grey 1px solid;">
+		<div class="purchase_div user_info_div">
+			<div id="" class="col span_2_of_4 purchase_user_info" style="margin-left:15px;">
 				<?php echo $row["User_Name"]; ?><br/><br/>
 				<?php echo $row["User_Address"]; ?><br/><br/>
 				<?php echo $row["User_Phone"]; ?>
 			</div>
-			<div id="" class="col span_2_of_5 purchase_T_C" style="border:grey 1px solid;float:right;">
+			<div id="" class="col span_2_of_5 purchase_T_C" >
 				Terms and condition<br>
 				<hr>
 				sjagbxkasxsb,cjdshdjba,sdbxsc,svdbcjsdbjcbxjcbs,dvcbsvdmbsdjb,ksdhvxs,jjdbcmmsjdcbxjdsxgsv,cjshbxcj,hbjchssjagbxkasxsb,cjdshdjba,sdbxsc,svdbcjsdbjcbxjcbs,dvcbsvdmbsdjbksdhvxs,jjdbcmmsjdcbxjdsxgsv,cjshbxcj,hbjchsjagbxkasxsb,cjdshdjba,sdbxsc,svdbcjsdbjcbxjcbs,dvcbsvdmbsdjb,svdbcjsdbjcbxjcbs,dvcbsvdmbsdjb,svdbcjsdbjcbxjcbs,dvcbsvdmbsdjb,svdbcjsdbjcbxjcbs,dvcbsvdmbsdjb
 				<br>
 				<br>
-				<input type="submit" value="Buy Now" id="" class="buy_now_btn" name=""/>
+				<input type="hidden" id="quantity_value_hidden_final" name="quantity_value_final" value="<?php echo $quantity_value_get;?>">
+				<input type="hidden" id="user_id_hidden" name="product_id" value="<?php echo $product_id;?>">
+				<input type="submit" value="Rent Now" id="" class="buy_now_btn" name="rent_product"/>
+
+			</form>
 			</div>
 
 		</div>
