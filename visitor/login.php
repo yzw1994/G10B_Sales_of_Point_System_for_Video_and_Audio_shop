@@ -5,7 +5,9 @@
 
 
 	if(isset($_POST['loginbtn'])){
-		extract($_POST);
+
+		$email=$_POST['email'];
+		$password = md5($_POST['password']);
 		$login_sql = "select * from user where user_email = '".$email."' and user_password = '".$password."'";
 		$login_result = mysql_query($login_sql);
 
