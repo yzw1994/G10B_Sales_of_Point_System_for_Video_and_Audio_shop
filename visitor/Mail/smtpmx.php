@@ -7,35 +7,15 @@ class Mail_smtpmx extends Mail {
 
 
     var $_smtp = null;
-
-
     var $port = 25;
-
-
     var $mailname = 'localhost';
-
-
     var $timeout = 10;
-
-
     var $withNetDns = true;
-
-
     var $resolver;
-
-
     var $verp = false;
-
-
     var $vrfy = false;
-
-
     var $test = false;
-
-
     var $debug = false;
-
-
     var $errorCode = array(
         'not_connected' => array(
             'code'  => 1,
@@ -84,14 +64,12 @@ class Mail_smtpmx extends Mail {
         if (isset($params['mailname'])) {
             $this->mailname = $params['mailname'];
         } else {
-            // try to find a valid mailname
             if (function_exists('posix_uname')) {
                 $uname = posix_uname();
                 $this->mailname = $uname['nodename'];
             }
         }
 
-        // port number
         if (isset($params['port'])) {
             $this->_port = $params['port'];
         } else {
@@ -133,14 +111,14 @@ class Mail_smtpmx extends Mail {
             return $result;
         }
 
-        // Prepare headers
+
         $headerElements = $this->prepareHeaders($headers);
         if (is_a($headerElements, 'PEAR_Error')) {
             return $headerElements;
         }
         list($from, $textHeaders) = $headerElements;
 
-        // use 'Return-Path' if possible
+
         if (!empty($headers['Return-Path'])) {
             $from = $headers['Return-Path'];
         }
@@ -148,7 +126,7 @@ class Mail_smtpmx extends Mail {
             return $this->_raiseError('no_from');
         }
 
-        // Prepare recipients
+
         $recipients = $this->parseRecipients($recipients);
         if (is_a($recipients, 'PEAR_Error')) {
             return $recipients;
@@ -171,19 +149,19 @@ class Mail_smtpmx extends Mail {
             foreach ($mx as $mserver => $mpriority) {
                 $this->_smtp = new Net_SMTP($mserver, $this->port, $this->mailname);
 
-                // configure the SMTP connection.
+
                 if ($this->debug) {
                     $this->_smtp->setDebug(true);
                 }
 
-                // attempt to connect to the configured SMTP server.
+
                 $res = $this->_smtp->connect($this->timeout);
                 if (is_a($res, 'PEAR_Error')) {
                     $this->_smtp = null;
                     continue;
                 }
 
-                // connection established
+
                 if ($res) {
                     $connected = true;
                     break;
@@ -199,7 +177,7 @@ class Mail_smtpmx extends Mail {
                 return $this->_raiseError('not_connected', $info);
             }
 
-            // Verify recipient
+
             if ($this->vrfy) {
                 $res = $this->_smtp->vrfy($rcpt);
                 if (is_a($res, 'PEAR_Error')) {
@@ -208,7 +186,7 @@ class Mail_smtpmx extends Mail {
                 }
             }
 
-            // mail from:
+
             $args['verp'] = $this->verp;
             $res = $this->_smtp->mailFrom($from, $args);
             if (is_a($res, 'PEAR_Error')) {
@@ -216,14 +194,14 @@ class Mail_smtpmx extends Mail {
                 return $this->_raiseError('failed_set_from', $info);
             }
 
-            // rcpt to:
+
             $res = $this->_smtp->rcptTo($rcpt);
             if (is_a($res, 'PEAR_Error')) {
                 $info = array('rcpt' => $rcpt);
                 return $this->_raiseError('failed_set_rcpt', $info);
             }
 
-            // Don't send anything in test mode
+
             if ($this->test) {
                 $result = $this->_smtp->rset();
                 $res = $this->_smtp->rset();
@@ -236,7 +214,7 @@ class Mail_smtpmx extends Mail {
                 return true;
             }
 
-            // Send data
+
             $res = $this->_smtp->data("$textHeaders\r\n$body");
             if (is_a($res, 'PEAR_Error')) {
                 $info = array('rcpt' => $rcpt);
@@ -306,13 +284,13 @@ class Mail_smtpmx extends Mail {
         return true;
     }
 
-  
+
     function _raiseError($id, $info = array())
     {
         $code = $this->errorCode[$id]['code'];
         $msg = $this->errorCode[$id]['msg'];
 
-        // include info to messages
+        
         if (!empty($info)) {
             $search = array();
             $replace = array();

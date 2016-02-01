@@ -4,8 +4,6 @@ class Mail_sendmail extends Mail {
 
 
     var $sendmail_path = '/usr/sbin/sendmail';
-
-
     var $sendmail_args = '-i';
 
 
@@ -77,7 +75,7 @@ class Mail_sendmail extends Mail {
         fputs($mail, $body);
         $result = pclose($mail);
         if (version_compare(phpversion(), '4.2.3') == -1) {
-          
+
             $result = $result >> 8 & 0xFF;
         }
 

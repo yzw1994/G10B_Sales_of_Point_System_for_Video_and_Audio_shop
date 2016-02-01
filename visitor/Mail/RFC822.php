@@ -2,39 +2,17 @@
 
 class Mail_RFC822 {
 
-
     var $address = '';
-
-
     var $default_domain = 'localhost';
-
-
     var $nestGroups = true;
-
-
     var $validate = true;
-
-
     var $addresses = array();
-
-
     var $structure = array();
-
-
     var $error = null;
-
-
     var $index = null;
-
-
     var $num_groups = 0;
-
-
     var $mailRFC822 = true;
-
-
     var $limit = null;
-
 
     function Mail_RFC822($address = null, $default_domain = null, $nest_groups = null, $validate = null, $limit = null)
     {
@@ -45,14 +23,12 @@ class Mail_RFC822 {
         if (isset($limit))          $this->limit          = $limit;
     }
 
-
     function parseAddressList($address = null, $default_domain = null, $nest_groups = null, $validate = null, $limit = null)
     {
         if (!isset($this) || !isset($this->mailRFC822)) {
             $obj = new Mail_RFC822($address, $default_domain, $nest_groups, $validate, $limit);
             return $obj->parseAddressList();
         }
-
         if (isset($address))        $this->address        = $address;
         if (isset($default_domain)) $this->default_domain = $default_domain;
         if (isset($nest_groups))    $this->nestGroups     = $nest_groups;
@@ -63,8 +39,6 @@ class Mail_RFC822 {
         $this->addresses  = array();
         $this->error      = null;
         $this->index      = null;
-
-        // Unfold any long lines in $this->address.
         $this->address = preg_replace('/\r?\n/', "\r\n", $this->address);
         $this->address = preg_replace('/\r\n(\t| )+/', ' ', $this->address);
 
@@ -75,8 +49,7 @@ class Mail_RFC822 {
             return PEAR::raiseError($this->error);
         }
 
-        // Validate each address individually.  If we encounter an invalid
-        // address, stop iterating and return an error immediately.
+
         foreach ($this->addresses as $address) {
             $valid = $this->_validateAddress($address);
 
@@ -94,7 +67,6 @@ class Mail_RFC822 {
 
         return $this->structure;
     }
-
 
     function _splitAddresses($address)
     {
@@ -397,22 +369,18 @@ class Mail_RFC822 {
 
     function _validateQuotedString($qstring)
     {
-        // Leading and trailing "
         $qstring = substr($qstring, 1, -1);
-
-        // Perform check, removing quoted characters first.
         return !preg_match('/[\x0D\\\\"]/', preg_replace('/\\\\./', '', $qstring));
     }
 
 
     function validateMailbox(&$mailbox)
     {
-        // A couple of defaults.
         $phrase  = '';
         $comment = '';
         $comments = array();
 
-        // Catch any RFC822 comments and store them separately.
+
         $_mailbox = $mailbox;
         while (strlen(trim($_mailbox)) > 0) {
             $parts = explode('(', $_mailbox);
@@ -424,7 +392,7 @@ class Mail_RFC822 {
                 $comment    = $this->_splitCheck($parts, ')');
                 $comments[] = $comment;
 
-                // +2 is for the brackets
+
                 $_mailbox = substr($_mailbox, strpos($_mailbox, '('.$comment)+strlen($comment)+2);
             } else {
                 break;
@@ -437,7 +405,7 @@ class Mail_RFC822 {
 
         $mailbox = trim($mailbox);
 
-        // Check for name + route-addr
+
         if (substr($mailbox, -1) == '>' && substr($mailbox, 0, 1) != '<') {
             $parts  = explode('<', $mailbox);
             $name   = $this->_splitCheck($parts, '<');
@@ -449,9 +417,9 @@ class Mail_RFC822 {
                 return false;
             }
 
-        // Only got addr-spec
+
         } else {
-            // First snip angle brackets if present.
+
             if (substr($mailbox, 0, 1) == '<' && substr($mailbox, -1) == '>') {
                 $addr_spec = substr($mailbox, 1, -1);
             } else {
@@ -463,10 +431,8 @@ class Mail_RFC822 {
             }
         }
 
-        // Construct the object that will be returned.
-        $mbox = new stdClass();
 
-        // Add the phrase (even if empty) and comments
+        $mbox = new stdClass();
         $mbox->personal = $phrase;
         $mbox->comment  = isset($comments) ? $comments : array();
 
@@ -486,7 +452,7 @@ class Mail_RFC822 {
 
     function _validateRouteAddr($route_addr)
     {
-        // Check for colon.
+
         if (strpos($route_addr, ':') !== false) {
             $parts = explode(':', $route_addr);
             $route = $this->_splitCheck($parts, ':');
@@ -494,8 +460,7 @@ class Mail_RFC822 {
             $route = $route_addr;
         }
 
-        // If $route is same as $route_addr then the colon was in
-        // quotes or brackets or, of course, non existent.
+
         if ($route === $route_addr){
             unset($route);
             $addr_spec = $route_addr;
@@ -503,14 +468,14 @@ class Mail_RFC822 {
                 return false;
             }
         } else {
-            // Validate route part.
+
             if (($route = $this->_validateRoute($route)) === false) {
                 return false;
             }
 
             $addr_spec = substr($route_addr, strlen($route . ':'));
 
-            // Validate addr-spec part.
+
             if (($addr_spec = $this->_validateAddrSpec($addr_spec)) === false) {
                 return false;
             }
@@ -529,7 +494,7 @@ class Mail_RFC822 {
 
     function _validateRoute($route)
     {
-        // Split on comma.
+
         $domains = explode(',', trim($route));
 
         foreach ($domains as $domain) {
@@ -543,7 +508,7 @@ class Mail_RFC822 {
 
     function _validateDomain($domain)
     {
-        // Note the different use of $subdomains and $sub_domains
+
         $subdomains = explode('.', $domain);
 
         while (count($subdomains) > 0) {
@@ -557,7 +522,7 @@ class Mail_RFC822 {
                 return false;
         }
 
-        // Managed to get here, so return input.
+
         return $domain;
     }
 
@@ -570,7 +535,7 @@ class Mail_RFC822 {
             if (!$this->_validateAtom($subdomain)) return false;
         }
 
-        // Got here, so return successful.
+
         return true;
     }
 
@@ -585,13 +550,13 @@ class Mail_RFC822 {
     {
         $addr_spec = trim($addr_spec);
 
-        // Split on @ sign if there is one.
+
         if (strpos($addr_spec, '@') !== false) {
             $parts      = explode('@', $addr_spec);
             $local_part = $this->_splitCheck($parts, '@');
             $domain     = substr($addr_spec, strlen($local_part . '@'));
 
-        // No @ sign so assume the default domain.
+
         } else {
             $local_part = $addr_spec;
             $domain     = $this->default_domain;
@@ -600,7 +565,7 @@ class Mail_RFC822 {
         if (($local_part = $this->_validateLocalPart($local_part)) === false) return false;
         if (($domain     = $this->_validateDomain($domain)) === false) return false;
 
-        // Got here so return successful.
+
         return array('local_part' => $local_part, 'domain' => $domain);
     }
 
@@ -610,7 +575,7 @@ class Mail_RFC822 {
         $parts = explode('.', $local_part);
         $words = array();
 
-        // Split the local_part into words.
+
         while (count($parts) > 0){
             $words[] = $this->_splitCheck($parts, '.');
             for ($i = 0; $i < $this->index + 1; $i++) {
@@ -618,9 +583,9 @@ class Mail_RFC822 {
             }
         }
 
-        // Validate each word.
+
         foreach ($words as $word) {
-            // If this word contains an unquoted space, it is invalid. (6.2.4)
+
             if (strpos($word, ' ') && $word[0] !== '"')
             {
                 return false;
@@ -629,7 +594,7 @@ class Mail_RFC822 {
             if ($this->_validatePhrase(trim($word)) === false) return false;
         }
 
-        // Managed to get here, so return the input.
+        
         return $local_part;
     }
 
@@ -639,7 +604,7 @@ class Mail_RFC822 {
         return count(preg_split('/(?<!\\\\),/', $data));
     }
 
-  
+
     function isValidInetAddress($data, $strict = false)
     {
         $regex = $strict ? '/^([.0-9a-z_+-]+)@(([0-9a-z-]+\.)+[0-9a-z]{2,})$/i' : '/^([*+!.&#$|\'\\%\/0-9a-z^_`{}=?~:-]+)@(([0-9a-z-]+\.)+[0-9a-z]{2,})$/i';
