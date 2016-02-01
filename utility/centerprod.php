@@ -12,10 +12,10 @@
 
 ?>
 
-<div id="" class="new_pro_color1 pro_title">NEW ARRIVE VIDEO
+<div id="" class="new_pro_color2 pro_title1">COMING SOON
 </div>
 <?php
-	$product_sql = "select * from product where product_status = 1 and product_type = 1";
+	$product_sql = "select * from product where product_status = 3";
 	$product_result = mysql_query($product_sql);
 
 	$product_check = mysql_num_rows($product_result);
@@ -30,7 +30,7 @@
 			$product_price = $product_row['Product_Price'];
 
 			echo "
-				<div id='' class='pro_div'>
+				<div id='' class='pro_div1'>
 					<div id='' class='prod_pic'>
 						<a href='../utility/".$login_product."?product_id=".$product_id."' target='_blank' id='' class=''><img src='".$product_image."' id='' class='prod_pic_img'/></a>
 					</div>

@@ -12,14 +12,15 @@
 
 ?>
 
-<div id="" class="new_pro_color pro_title">New Arrive
+<div id="" class="new_pro_color pro_title">NEW ARRIVE AUDIO
 </div>
 <?php
-	$product_sql = "select * from product where product_status = 1";
+	$product_sql = "select * from product where product_status = 1 and product_type = 2";
 	$product_result = mysql_query($product_sql);
 
 	$product_check = mysql_num_rows($product_result);
 	$product_name = "";
+	$product_banner = "";
 	if($product_check!=0){
 		$product_row = mysql_fetch_array($product_result);
 		do{

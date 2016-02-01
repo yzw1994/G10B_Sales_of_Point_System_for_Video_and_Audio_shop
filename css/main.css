@@ -10,7 +10,7 @@ body {
 }
 .logo_div {
 	min-height:80px;
-	background-color:rgba(41, 41, 41, 0.4);
+	background-color:rgba(41, 41, 41, 0.2);
 	padding-bottom:10px;
 }
 .logo_images {
@@ -224,12 +224,18 @@ box-shadow:         0px 1px 15px 0px rgba(0, 0, 0, 0.83);
 	background-color:rgba(202, 225,	255, 0.8);
 	width:80%;
 	min-height:70%;
+	margin-left: auto;
+	margin-right: auto;
 	margin-bottom:30px !important;
 	z-index:1;
 }
 
 .cont_element {
 	margin:0px 4px auto !important;
+	width：100%；
+}
+.cont_element1 {
+	margin:0px auto !important;
 	width：100%；
 }
 /*slider*/
@@ -322,11 +328,30 @@ a.control_next {
 	float:left;
 	margin:10px 5px;
 }
+.pro_div1 {
+	background-color:white;
+	width:166px;
+	height:250px;
+	float:left;
+	margin:10px 0 0 11px;
+}
 .pro_char {
 	margin:0 auto;
 	text-align:center;
 }
 .new_pro_color {
+	background-color:rgba(0, 255, 0, 0.4);
+	color:black;
+}
+.new_pro_color1 {
+	background-color:rgba(205, 79, 57, 0.4);
+	color:black;
+}
+.new_pro_color2 {
+	background-color:rgba(255, 255, 0, 0.8);
+	color:black;
+}
+.new_pro_color3 {
 	background-color:rgba(0, 255, 0, 0.4);
 	color:black;
 }
@@ -336,6 +361,14 @@ a.control_next {
 	font-size:20px;
 	font-weight:800;
 	padding:10px 0;
+}
+.pro_title1 {
+	width:99%;
+	text-align:center;
+	font-size:20px;
+	font-weight:800;
+	padding:10px 0;
+	margin: 0 auto;
 }
 .prod_pic {
 	width:155px;

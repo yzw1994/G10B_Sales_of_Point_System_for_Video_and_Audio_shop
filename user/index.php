@@ -39,6 +39,9 @@
 		<div class="cont_element col span_1_of_2 pro_char">
 			<?php include("../utility/rightprod.php");?>
 		</div>
+		<div class="cont_element1 col span_2_of_2 pro_char">
+			<?php include("../utility/centerprod.php");?>
+		</div>
 		<?php include("../utility/footer.php");?>
 
 	</div>
