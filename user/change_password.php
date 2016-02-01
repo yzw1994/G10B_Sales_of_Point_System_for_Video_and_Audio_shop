@@ -23,9 +23,9 @@ if(isset($_POST['sendbtn'])){
 
 
 
-		$old_ps=$_POST["old_pass"];
-		$new_ps=$_POST["new_pass"];
-		$c_new_ps=$_POST["com_new_pass"];
+		$old_ps=md5($_POST["old_pass"]);
+		$new_ps=md5($_POST["new_pass"]);
+		$c_new_ps=md5($_POST["com_new_pass"]);
 
 		$login_sql = "select User_Password from User where User_ID ='".$user_id."' and User_Password = '".$old_ps."'";
 		$login_result = mysql_query($login_sql);
@@ -80,7 +80,7 @@ if(isset($_POST['sendbtn'])){
 <body>
 	<div id="" class="login_div">
 		<div id="" class="logo_div">
-			<a href="visitor.php"><img src="../images/logo.ico" alt="Blu Video and Audio Shop" id="" class="logo_images"/></a>
+			<a href="index.php"><img src="../images/logo.ico" alt="Blu Video and Audio Shop" id="" class="logo_images"/></a>
 		</div>
 		<div id="" class="input_div">
 			<form name="login" method="post" action="">
