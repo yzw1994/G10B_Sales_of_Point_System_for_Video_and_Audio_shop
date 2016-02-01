@@ -27,11 +27,12 @@ if(isset($_POST['sendbtn'])){
 		$new_ps=$_POST["new_pass"];
 		$c_new_ps=$_POST["com_new_pass"];
 
-		$login_sql = "select * from User where User_ID ='".$user_id."' and User_Password = '".$old_ps."'";
+		$login_sql = "select User_Password from User where User_ID ='".$user_id."' and User_Password = '".$old_ps."'";
 		$login_result = mysql_query($login_sql);
+		$login_check = mysql_num_rows($login_result);
 
 
-	if($login_result==null)
+	if($login_check==0)
 	{
 			$status_password="Please enter correct password!!";
 			$reg_error_login= "reg_error";
@@ -42,8 +43,9 @@ if(isset($_POST['sendbtn'])){
 		$status_password="Your new password not same with comfirm password!!";
 		$reg_error_login= "reg_error";
 	}
-	else {
-			$login_check = mysql_num_rows($login_result);
+	else if($login_check!=0)
+	{
+
 			$change=mysql_query("update User set User_Password='".$c_new_ps."' where  User_ID = '".$user_id."'");
 
 			if($change)
@@ -83,9 +85,9 @@ if(isset($_POST['sendbtn'])){
 		<div id="" class="input_div">
 			<form name="login" method="post" action="">
 				<span id="change_password">Change Password</span>
-				<input type="password" name="old_pass" value="" id="" placeholder="old password..." class="input_box_forget email"/>
-				<input type="password" name="new_pass" value=""  id="" placeholder="new password..." class="input_box_forget password"/>
-				<input type="password" name="com_new_pass" value=""  id="" placeholder="Confirm your new password..." class="input_box_forget password"/>
+				<input type="password" name="old_pass" value="" id="" placeholder="old password..." class="input_box_forget email" required/>
+				<input type="password" name="new_pass" value=""  id="" placeholder="new password..." class="input_box_forget password" required/>
+				<input type="password" name="com_new_pass" value=""  id="" placeholder="Confirm your new password..." class="input_box_forget password"required/>
 
 				<div id="" class="login_error">
 					<span id="" class="<?php echo $reg_error_login;?>"><?php echo $status_password;?>
