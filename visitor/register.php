@@ -10,8 +10,12 @@ $reg_error_pass = "reg_normal";
 		{
 
 			$email=$_POST["email"];
-			$pass=$_POST["password"];
-			$repass=$_POST["repassword"];
+			$unique_salt = hash('md5', microtime());
+			//$pass=hash('md5', $_POST['password'].'raNdoMStAticSaltHere'.$unique_salt);
+			//$repass=hash('md5', $_POST['repassword'].'raNdoMStAticSaltHere'.$unique_salt);
+			$pass = md5($_POST["password"]);
+			$repass = md5($_POST["repassword"]);
+
 			$phone=$_POST["phone"];
 			$bday=$_POST["bday"];
 			$address=$_POST["address"];
@@ -59,7 +63,7 @@ $reg_error_pass = "reg_normal";
 
 
 <head>
-	<title>Log In</title>
+	<title>Register</title>
 	<link href="../css/login_page.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="../css/font/elegantlux/elegant_luxmager.css" type="text/css" charset="utf-8" />
 	<script src="../js/jquery-2.2.0.js"></script>
