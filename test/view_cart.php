@@ -15,57 +15,40 @@ $action = isset($_GET['action']) ? $_GET['action'] : null; //the action
 
 <?php 
 $customer_id=$_SESSION['customer_id'];
-
-
 $result=mysql_query("select * from product");
 $row=mysql_fetch_assoc($result);
-
 switch($action) 
 { 
 //decide what to do 
-
 case "add":
     $_SESSION['cart'][$product_id] = $quantity;
 break;
-
 case "remove":
     $_SESSION['cart'][$product_id] = 0;
     unset($_SESSION['cart'][$product_id]);
 	header("Location: payment.php");//if the quantity is zero, remove it completely (using the 'unset' function) - otherwise is will show zero, then -1, -2 etc when the user keeps removing items. 
 break;
-
 case "empty":
     unset($_SESSION['cart']); //unset the whole cart, i.e. empty the cart. 
 	header("Location: payment.php");
 break;
 }
-
 //------- for checkout ---------
-
 if(isset($_SESSION['cart']) && $_SESSION['cart']) { 
-
 	$total = 0;
 	echo "<form name='cart' method='POST' action=''>";
     echo "<table border=\"1\" padding=\"3\" width=\"100%\" class=\"data-container\">"; 
 	 echo "<td colspan=\"4\" align=\"right\"><a href=\"payment.php?action=empty\" onclick=\"return confirm('Are you sure?');\"><img src=\"image/delete.png\"/></a></td>";
-
    
     foreach($_SESSION['cart'] as $product_id => $quantity) 
 	{ 
-
         $sql = sprintf("SELECT * FROM product WHERE Product_ID = %d;", $product_id); 
-
         $result = mysql_query($sql);
-
-
         if(mysql_num_rows($result) > 0)
 		{
-
             $itemsInfo = mysql_fetch_assoc($result);
-
             $cost = $itemsInfo["Product_Price"] * $quantity;
             $total = $total + $cost; //add to the total cost
-
             echo "<tr>";
            
             //show this information in table cells
@@ -77,7 +60,6 @@ if(isset($_SESSION['cart']) && $_SESSION['cart']) {
             echo "</tr>";
         }
     }
-
     //show the total
     echo "<tr>";
 	echo "<td colspan=\"2\" ></td>";
@@ -91,7 +73,7 @@ if(isset($_SESSION['cart']) && $_SESSION['cart']) {
 	?>
 	<br>
 	<div>
-	<span style="margin-left: 88%"><a href="product.php"><input type="submit" name="shopping_more"  class="custom-button" value="Back To Shopping"/></a></span>
+	<span style="margin-left: 88%"><a href="product3.php"><input type="submit" name="shopping_more"  class="custom-button" value="Back To Shopping"/></a></span>
 	</div>
 	
 
