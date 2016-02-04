@@ -39,8 +39,14 @@ if(isset($_SESSION['cart']) && $_SESSION['cart']) {
 	$total = 0;
 	
     echo "<table border=\"1\" padding=\"3\" width=\"100%\" class=\"data-container\">"; 
-	 echo "<td colspan=\"4\" align=\"right\"><a href=\"payment.php?action=empty\" onclick=\"return confirm('Are you sure?');\"><img src=\"image/delete.png\"/></a></td>";
-   
+	 echo "<td colspan=\"5\" align=\"right\"><a href=\"payment.php?action=empty\" onclick=\"return confirm('Are you sure?');\">Delete ALL</a></td>";
+   echo "<tr>";
+			echo "<td>Product Name</td>";
+			echo "<td>Unit Price</td>";
+			echo "<td>Quantity</td>";
+			echo "<td>Total Unit Price</td>";
+			echo "<td>Delete</td>";
+			echo "</tr>";
     foreach($_SESSION['cart'] as $product_id => $quantity) 
 	{ 
         $sql = sprintf("SELECT * FROM product WHERE Product_ID = %d;", $product_id); 
@@ -74,7 +80,7 @@ if(isset($_SESSION['cart']) && $_SESSION['cart']) {
 			
 	
 			echo "<td align=\"center\">RM $cost</td>";
-			echo "<td align=\"center\"><a href=\"$_SERVER[PHP_SELF]?action=remove&pid=$product_id\"><img src=\"images/delete.gif\"/></a></td>";
+			echo "<td align=\"center\"><a href=\"$_SERVER[PHP_SELF]?action=remove&pid=$product_id\">delete</a></td>";
             echo "</tr>";
         }
     }
