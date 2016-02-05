@@ -85,7 +85,7 @@ if(isset($_POST['sendbtn'])){
 		<div id="" class="input_div">
 			<form name="login" method="post" action="">
 				<span id="change_password">Change Password</span>
-				<input type="password" name="old_pass" value="" id="" placeholder="old password..." class="input_box_forget email" required/>
+				<input type="password" name="old_pass" value="" id="" placeholder="old password..." class="input_box_forget password" required/>
 				<input type="password" name="new_pass" value=""  id="" placeholder="new password..." class="input_box_forget password" required/>
 				<input type="password" name="com_new_pass" value=""  id="" placeholder="Confirm your new password..." class="input_box_forget password"required/>
 

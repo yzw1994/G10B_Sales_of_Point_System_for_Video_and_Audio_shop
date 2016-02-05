@@ -25,9 +25,9 @@ if(isset($_POST['sendbtn'])){
 	$login_check = mysql_num_rows($login_result);
 	randomPassword();
 	$newpassword = randomPassword();
+	$mdpassword = md5($newpassword);
 
-
-	$cforget=mysql_query("update user set User_Password='$newpassword' where User_Name='$name' and User_Email='$to'");
+	$cforget=mysql_query("update user set User_Password='$mdpassword' where User_Name='$name' and User_Email='$to'");
 
 
 

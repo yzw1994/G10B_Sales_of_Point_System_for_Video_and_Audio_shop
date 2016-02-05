@@ -95,10 +95,10 @@
       <div id="" class="cart_control_div">
 
         <span id="" class="cart_select_all right_border_white">
-          <input type="checkbox" name="deleteall" id="" class="cart_delete_all"/>
+          <input type="checkbox" name="selectall" id="" class="cart_delete_all"/>
           SELECT ALL
         </span>
-        <span id="" class="cart_delete_all right_border_white">
+        <span id="" class="cart_delete_all right_border_white" name="deleteall">
           DELETE ALL
         </span>
 
