@@ -27,25 +27,7 @@
 
 </head>
 <body>
-<table border=1>
- <?php
-        	while($row = mysql_fetch_assoc($productList))
-			{
-        		echo '<form name="category" action="" method="post"/>';
-        		echo '<tr>';
-				
-        		echo '<td>'.$row["Product_Name"].'</td>';
-   
-        		echo '<td>Price: RM'.$row["Product_Price"].'</td>';							
-				echo '<td> <input type="hidden" name="quantity"  value="1" ></td>';		
-				echo '<td><span style="padding: 5px 9px"><input type="submit" name="cart" value="Add To Cart" /></td>';
-        		echo '</tr>';
-        		echo '<input type="hidden" name="pid" value="'.$row["Product_ID"].'"/>';
-        		echo '<input type="hidden" name="action" value="add"/>';
-        		echo '</form>';
-        	}
-        ?>
-</table>
+
 	<div class="cont section group">
 
 		<?php include("../utility/user_header.php");?>
