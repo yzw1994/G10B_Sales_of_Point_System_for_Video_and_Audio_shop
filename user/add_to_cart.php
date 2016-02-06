@@ -8,9 +8,42 @@
 	}
 	$user_id = $_SESSION['user_id'];
 
-	require("../dataconn/page_load.php")
 
 
+	$productQuery = "SELECT * FROM product";
+$productList = mysql_query($productQuery) or die(mysql_error());
+
+if(isset($_POST["cart"]))
+{
+	$product_id = $_POST['pid']; //the product id
+	$action = $_POST['action']; //the action
+	$quantity = $_POST['quantity'];
+	//if there is an product_id and that product_id doesn't exist display an error message
+
+
+	switch($action)
+	{ //decide what to do 
+	
+	
+    case "add":
+	if($_SESSION['cart'][$product_id]>0)
+	{
+		?>
+		<script>
+		alert("already added");
+		window.location.href="checkout.php";
+		</script>
+		
+		<?php
+	}else
+	{
+        $_SESSION['cart'][$product_id] = $quantity;
+        header("Location:payment.php");
+    }
+	break;
+
+	}
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,6 +60,25 @@
 
 </head>
 <body>
+<table border=1>
+ <?php
+        	while($row = mysql_fetch_assoc($productList))
+			{
+        		echo '<form name="category" action="" method="post"/>';
+        		echo '<tr>';
+				
+        		echo '<td>'.$row["Product_Name"].'</td>';
+   
+        		echo '<td>Price: RM'.$row["Product_Price"].'</td>';							
+				echo '<td> <input type="hidden" name="quantity"  value="1" ></td>';		
+				echo '<td><span style="padding: 5px 9px"><input type="submit" name="cart" value="Add To Cart" /></td>';
+        		echo '</tr>';
+        		echo '<input type="hidden" name="pid" value="'.$row["Product_ID"].'"/>';
+        		echo '<input type="hidden" name="action" value="add"/>';
+        		echo '</form>';
+        	}
+        ?>
+</table>
 	<div class="cont section group">
 
 		<?php include("../utility/user_header.php");?>
