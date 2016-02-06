@@ -10,40 +10,7 @@
 
 
 
-	$productQuery = "SELECT * FROM product";
-$productList = mysql_query($productQuery) or die(mysql_error());
 
-if(isset($_POST["cart"]))
-{
-	$product_id = $_POST['pid']; //the product id
-	$action = $_POST['action']; //the action
-	$quantity = $_POST['quantity'];
-	//if there is an product_id and that product_id doesn't exist display an error message
-
-
-	switch($action)
-	{ //decide what to do 
-	
-	
-    case "add":
-	if($_SESSION['cart'][$product_id]>0)
-	{
-		?>
-		<script>
-		alert("already added");
-		window.location.href="checkout.php";
-		</script>
-		
-		<?php
-	}else
-	{
-        $_SESSION['cart'][$product_id] = $quantity;
-        header("Location:payment.php");
-    }
-	break;
-
-	}
-}
 ?>
 <!DOCTYPE html>
 <html>
