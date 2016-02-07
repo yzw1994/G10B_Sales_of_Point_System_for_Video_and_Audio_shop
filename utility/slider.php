@@ -9,7 +9,7 @@ if(isset($_SESSION['user_id']) && $_SESSION['user_id']) {
   $check_login_url = "../visitor/login.php";
   $login_product="product_page.php";
 }
-$product_sql = "select * from product";
+$product_sql = "select * from product where product_status != 0 and product_stock != 0";
 $product_exe = mysql_query($product_sql);
 $product_row = mysql_num_rows($product_exe);
 $product_image = "";

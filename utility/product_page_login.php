@@ -42,8 +42,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="../js/main.js"></script>
 	<script>
-
+		var user_id = <?php echo $user_id;?>;
+		var product_id = <?php echo $product_id?>;
 	</script>
+	<script src="../js/add_to_cart.js"></script>
 </head>
 <body>
 	<div class="cont section group">
@@ -108,6 +110,7 @@
 				</div>
 				<div class="col span_4_of_5 product_content_name" style="">
 					<?php echo $product_name; ?>
+					<span id="" class="add_to_cart_span"><input type="button" id="add_to_cart_function" name="add_to_cart_checkbox" value="Add To Cart"/></span>
 				</div>
 
 				<div class="col span_4_of_5 product_content_price" style="">

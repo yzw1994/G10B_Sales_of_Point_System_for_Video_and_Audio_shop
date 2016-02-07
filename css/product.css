@@ -224,3 +224,9 @@
   padding-left: 15px;
   background-color:;
 }
+.add_to_cart_span {
+  float:right;
+  font-size: 16px;
+  background-color: rgba(255, 192, 203, 0.5);;
+  padding:10px;
+}
