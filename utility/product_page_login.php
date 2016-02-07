@@ -20,6 +20,7 @@
     $product_price = $product_row['Product_Price'];
     $product_rent_price = $product_row['Product_Rent_Price'];
     $product_describe = $product_row['Product_Description'];
+		$product_stock = $product_row['Product_Stock'];
   }while($product_row = mysql_fetch_array($product_exe));
 ?>
 <!DOCTYPE html>
@@ -34,35 +35,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="../js/main.js"></script>
 	<script>
-	url_quantity_val = "";
-	function minus_function(){
-		quantity_value = parseInt(document.getElementById('product_quantity_value').value);
-		if(quantity_value == 1){
-			document.getElementById('product_quantity_value').value=quantity_value;
-			document.getElementById('quantity_value_hidden_js').value=quantity_value;
-			document.getElementById('quantity_value_hidden_rent_js').value=quantity_value;
-		}
-		else {
-			quantity_value = quantity_value-1;
-			document.getElementById('product_quantity_value').value=quantity_value;
-			document.getElementById('quantity_value_hidden_js').value=quantity_value;
-			document.getElementById('quantity_value_hidden_rent_js').value=quantity_value;
-		}
-	}
-	function plus_function(){
-		quantity_value = parseInt(document.getElementById('product_quantity_value').value);
-		if(quantity_value == 5){
-			document.getElementById('product_quantity_value').value=quantity_value;
-			document.getElementById('quantity_value_hidden_js').value=quantity_value;
-			document.getElementById('quantity_value_hidden_rent_js').value=quantity_value;
-		}
-		else {
-			quantity_value = quantity_value+1;
-			document.getElementById('product_quantity_value').value=quantity_value;
-			document.getElementById('quantity_value_hidden_js').value=quantity_value;
-			document.getElementById('quantity_value_hidden_rent_js').value=quantity_value;
-		}
-	}
+
 	</script>
 </head>
 <body>
@@ -77,17 +50,29 @@
 						if(isset($_POST['buy_btn'])){
 							$buy_url = "../user/buy_product.php";
 						}
+
+						$product_out_of_stock = "";
+						if($product_stock == 0){
+							$product_out_of_stock = "disabled='disabled'";
+							$product_out_of_stock_css = "product_disabled";
+							$product_out_of_stock_status = "Out Of Stock!";
+						}
+						else {
+							$product_out_of_stock = "";
+							$product_out_of_stock_css = "";
+							$product_out_of_stock_status = "";
+						}
 					?>
 					<img src="<?php echo $product_image;?>" id="" class="product_picture"/>
 					<form action="../user/buy_product.php" method="POST" target="_blank">
-	          <input type="submit" id="" class="product_btn buy_btn" name="buy_btn" value="BUY">
+	          <input type="submit" id="" class="product_btn buy_btn <?php echo $product_out_of_stock_css;?>" name="buy_btn" value="BUY" <?php echo $product_out_of_stock;?>>
 						<input type="hidden" id="" name="product_id" value="<?php echo $product_id;?>">
-						<input type="hidden" id="quantity_value_hidden_js" name="quantity_value_hidden" value="1">
+						<input type="hidden" id="quantity_value_hidden_js" name="stock_value_hidden" value="<?php echo $product_stock;?>">
 					</form>
 					<form action="../user/rent_product.php" method="POST" target="_blank">
-						<input type="submit"  id="" class="product_btn rent_btn" value="RENT">
+						<input type="submit"  id="" class="product_btn rent_btn <?php echo $product_out_of_stock_css;?>" value="RENT" <?php echo $product_out_of_stock;?>>
 						<input type="hidden" id="" name="product_id" value="<?php echo $product_id;?>">
-						<input type="hidden" id="quantity_value_hidden_rent_js" name="quantity_value_hidden" value="1">
+						<input type="hidden" id="quantity_value_hidden_rent_js" name="stock_value_hidden" value="<?php echo $product_stock;?>">
 					</form>
 				</div>
 				<div class="col span_4_of_5 product_content_name" style="">
@@ -99,13 +84,11 @@
 					<span id="" class="rent_title"> / Rent :</span> RM <?php echo $product_rent_price; ?>
 				</div>
 				<div class="col span_4_of_5 product_content_quantity_div" style="">
-					<div id="" class="product_content_quantity_function_title">Quantity</div>
+					<div id="" class="product_content_quantity_function_title">Stock</div>
 					<div id="" class="product_content_quantity_function_operation">
-
-						<input type="button" name="quantity_minus" value="-" onclick="minus_function()" class="minus_function_char">
-						<input type="number" id="product_quantity_value" name="product_quantity_value" value="1" disabled="disabled" class="quantity_value_input"/>
-						<input type="button" name="quantity_plus" value="+" onclick="plus_function()" class="plus_function_char">
+						<input type="number" id="product_quantity_value" name="product_quantity_value" value="<?php echo $product_stock;?>" disabled="disabled" class="quantity_value_input"/>
 					</div>
+					<span id="" class="out_of_stock_status"><?php echo $product_out_of_stock_status;?></span>
 				</div>
 				<div class="col span_4_of_5 product_content_description" style="">
 					<?php echo $product_describe; ?>

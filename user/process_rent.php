@@ -17,18 +17,27 @@ if(isset($_POST['rent_product'])){
   $product_image = "";
   do {
     $product_rent_price = $product_row['Product_Rent_Price'];
+    $product_stock = $product_row['Product_Stock'];
   }while($product_row = mysql_fetch_array($product_exe));
-
   $quantity_value_final = $_POST['quantity_value_final'];
-  $total_price_value = $product_rent_price*$quantity_value_final;
-  $final_submit_SQL = "INSERT INTO `rent`(`Rent_Type`, `Rent_Date`, `Rent_Exp_Date`, `Rent_Price`, `User_ID`, `Product_ID`) VALUES ('1','".$date."','".$ex_date."',".$total_price_value.",".$user_id." ,".$product_id.")";
-  $final_submit_SQL_exe = mysql_query($final_submit_SQL);
-  if (!$final_submit_SQL_exe) {
+  $update_product_stock=$product_stock-$quantity_value_final;
+  $update_prduct_sql = "UPDATE `product` SET `Product_Stock`= ".$update_product_stock." WHERE Product_ID = ".$product_id."";
+  $product_update_SQL_exe = mysql_query($update_prduct_sql);
+  if (!$product_update_SQL_exe) {
+      echo   $update_prduct_sql;
       die('Invalid query: ' . mysql_error());
-      echo   $final_submit_SQL;
   }
   else {
-    header("Location: index.php");
+    $total_price_value = $product_rent_price*$quantity_value_final;
+    $final_submit_SQL = "INSERT INTO `rent`(`Rent_Type`, `Rent_Date`, `Rent_Exp_Date`, `Rent_Price`, `User_ID`, `Product_ID`) VALUES ('1','".$date."','".$ex_date."',".$total_price_value.",".$user_id." ,".$product_id.")";
+    $final_submit_SQL_exe = mysql_query($final_submit_SQL);
+    if (!$final_submit_SQL_exe) {
+        die('Invalid query: ' . mysql_error());
+        echo   $final_submit_SQL;
+    }
+    else {
+      header("Location: index.php");
+    }
   }
 }
 ?>

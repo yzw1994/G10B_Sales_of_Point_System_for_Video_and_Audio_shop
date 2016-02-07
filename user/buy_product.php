@@ -1,6 +1,6 @@
 <?php
 	include("../dataconn/dataconn.php");
-	$quantity_value_get = $_POST['quantity_value_hidden'];
+	$stock_value_get = $_POST['stock_value_hidden'];
 	if(!isset($_SESSION))
 	{
 		session_start();
@@ -76,7 +76,7 @@
 					}
 					function plus_function(){
 						quantity_value = parseInt(document.getElementById('product_quantity_value').value);
-						if(quantity_value == 5){
+						if(quantity_value == <?php echo $stock_value_get;?>){
 							document.getElementById('product_quantity_value').value=quantity_value;
 							document.getElementById('quantity_value_hidden_final').value=quantity_value;
 							document.getElementById('total_price').value=parseFloat(quantity_value*price);
@@ -90,7 +90,7 @@
 					}
 					</script>
 					<input type="button" name="quantity_minus" value="-" onclick="minus_function()" class="minus_function_char">
-					<input type="number" id="product_quantity_value" name="product_quantity_value" value="<?php echo $quantity_value_get;?>" disabled="disabled" class="quantity_value_input"/>
+					<input type="number" id="product_quantity_value" name="product_quantity_value" value="1" disabled="disabled" class="quantity_value_input"/>
 					<input type="button" name="quantity_plus" value="+" onclick="plus_function()" class="plus_function_char">
 				</div>
 			</div>
@@ -101,7 +101,7 @@
 				<span id="" class="currency_title">
 					Total Price : RM
 				</span>
-				<input type="number" name="" id="total_price" class="purchase_product_amount" value="<?php echo $quantity_value_get*$product_price;?>" disabled="disable"/>
+				<input type="number" name="" id="total_price" class="purchase_product_amount" value="<?php echo 1*$product_price;?>" disabled="disable"/>
 			</div>
 		</div>
 		<div class="purchase_div user_info_div">
@@ -116,7 +116,7 @@
 				sjagbxkasxsb,cjdshdjba,sdbxsc,svdbcjsdbjcbxjcbs,dvcbsvdmbsdjb,ksdhvxs,jjdbcmmsjdcbxjdsxgsv,cjshbxcj,hbjchssjagbxkasxsb,cjdshdjba,sdbxsc,svdbcjsdbjcbxjcbs,dvcbsvdmbsdjbksdhvxs,jjdbcmmsjdcbxjdsxgsv,cjshbxcj,hbjchsjagbxkasxsb,cjdshdjba,sdbxsc,svdbcjsdbjcbxjcbs,dvcbsvdmbsdjb,svdbcjsdbjcbxjcbs,dvcbsvdmbsdjb,svdbcjsdbjcbxjcbs,dvcbsvdmbsdjb,svdbcjsdbjcbxjcbs,dvcbsvdmbsdjb
 				<br>
 				<br>
-					<input type="hidden" id="quantity_value_hidden_final" name="quantity_value_final" value="<?php echo $quantity_value_get;?>">
+					<input type="hidden" id="quantity_value_hidden_final" name="quantity_value_final" value="1">
 					<input type="hidden" id="user_id_hidden" name="product_id" value="<?php echo $product_id;?>">
 					<input type="submit" value="Buy Now" id="" class="buy_now_btn" name="purchase_product"/>
 				</form>

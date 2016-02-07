@@ -211,3 +211,14 @@
   height: 30px;
   float: right;
 }
+.product_disabled {
+  background-color: grey !important;
+}
+.out_of_stock_status {
+  float:left;
+  display:block;
+  color:red;
+  width:200px;
+  text-align: center;
+  background-color:;
+}
