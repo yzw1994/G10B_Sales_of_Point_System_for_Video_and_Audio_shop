@@ -20,6 +20,13 @@
     $product_describe = $product_row['Product_Description'];
   }while($product_row = mysql_fetch_array($product_exe));
 
+	$user_rent_limit_sql = "select * from user where user_id = ".$user_id." ";
+  $user_rent_limit_exe = mysql_query($user_rent_limit_sql);
+  $user_rent_limit_row = mysql_num_rows($user_rent_limit_exe);
+  do {
+    $user_rent_limit_result = $user_rent_limit_row['User_Rent_Limit'];
+  }while($user_rent_limit_row = mysql_fetch_array($user_rent_limit_exe));
+
 	$result = mysql_query("SELECT * FROM user WHERE User_ID = '$user_id'");
 	$row = mysql_fetch_assoc($result);
 
@@ -79,7 +86,7 @@
 					}
 					function plus_function(){
 						quantity_value = parseInt(document.getElementById('product_quantity_value').value);
-						if(quantity_value == 5){
+						if(quantity_value == (5-<?php echo $user_rent_limit_result;?>)){
 							document.getElementById('product_quantity_value').value=quantity_value;
 							document.getElementById('total_price').value=parseFloat(quantity_value*price);
 							document.getElementById('quantity_value_hidden_final').value=quantity_value;

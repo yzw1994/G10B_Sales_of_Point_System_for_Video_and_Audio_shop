@@ -20,6 +20,23 @@ if(isset($_POST['rent_product'])){
     $product_stock = $product_row['Product_Stock'];
   }while($product_row = mysql_fetch_array($product_exe));
   $quantity_value_final = $_POST['quantity_value_final'];
+
+  $check_user_limit_sql = "select User_Rent_Limit from user where user_id = ".$user_id;
+  $check_user_limit_exe = mysql_query($check_user_limit_sql);
+  $check_user_limit_row = mysql_num_rows($check_user_limit_exe);
+  do {
+    $check_user_limit_result = $check_user_limit_row['User_Rent_Limit'];
+  }while($check_user_limit_row = mysql_fetch_array($check_user_limit_exe));
+
+  $check_user_limit_result = $check_user_limit_result+$quantity_value_final;
+
+  $update_rent_limit_sql = "UPDATE `user` SET `User_Rent_Limit`= ".$check_user_limit_result." WHERE User_ID = ".$user_id;
+  $update_rent_limit_exe = mysql_query($update_rent_limit_sql);
+  if (!$update_rent_limit_exe) {
+      die('Invalid query: ' . mysql_error());
+      echo   $update_rent_limit_sql;
+  }
+
   $update_product_stock=$product_stock-$quantity_value_final;
   $update_prduct_sql = "UPDATE `product` SET `Product_Stock`= ".$update_product_stock." WHERE Product_ID = ".$product_id."";
   $product_update_SQL_exe = mysql_query($update_prduct_sql);

@@ -75,13 +75,15 @@
   float: left;
 }
 .quantity_value_input {
-  width:30px;
+  width:60px;
+  display:inline-block;
   border:none;
   height:20px;
-  padding-left: 20px;
+  padding-left:10px;
+  text-align: center;
 }
 .plus_function_char {
-  margin-left: -5px;
+  margin-left: -10px;
 }
 .minus_function_char {
   margin-right: -6px;
@@ -218,7 +220,7 @@
   float:left;
   display:block;
   color:red;
-  width:200px;
-  text-align: center;
+  min-width:200px;
+  padding-left: 15px;
   background-color:;
 }
