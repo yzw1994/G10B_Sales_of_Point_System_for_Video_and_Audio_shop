@@ -48,29 +48,29 @@ table
 				<div style="background:white; padding: 10px 55px;"><img src="../img/user_photo.gif" style="border:1px solid black; padding: 5px;" /></div>
 				<p style="text-align:center; line-height: 20px;">Welcome, testing</p>
 				<ul id="home">
-					<li class="b1"><a class="icon profile" href="admin_personal_profile.html" >View profile</a></li>
-					<li class="b1"><a class="icon logout" href="../index.html">Log Out</a></li>
+					<li class="b1"><a class="icon profile" href="" >View profile</a></li>
+					<li class="b1"><a class="icon logout" href="../visitor/visitor.php">Log Out</a></li>
 				</ul>
 			</div>
 			<div class="box">
 				<div class="h_title">Product</div>
 				<ul>
-					<li class="b1"><a class="icon add_product" href="admin_add_timetable.html">Add Product</a></li>
-					<li class="b2"><a class="icon delete_product" href="admin_view_fixtimetable.html">Delete Product</a></li>
-					<li class="b2"><a class="icon delete_product" href="admin_view_timetable.html">Product List</a></li>
+					<li class="b1"><a class="icon add_product" href="">Add Product</a></li>
+					<li class="b2"><a class="icon delete_product" href="">Delete Product</a></li>
+					<li class="b2"><a class="icon delete_product" href="">Product List</a></li>
 				</ul>
 			</div>
 			<div class="box">
 				<div class="h_title">Graph</div>
 				<ul>
-					<li class="b1"><a class="icon delete_product" href="admin_add_timetable.html">View Report</a></li>
+					<li class="b1"><a class="icon delete_product" href="">View Report</a></li>
 				</ul>
 			</div>
 			<div class="box">
 				<div class="h_title">Manage Users</div>
 				<ul>
-					<li class="b1"><a class="icon add_user" href="admin_add_staff.html">Add User</a></li>
-					<li class="b2"><a class="icon delete_user" href="admin_view_staff.html">Delete User</a></li>
+					<li class="b1"><a class="icon add_user" href="">Add User</a></li>
+					<li class="b2"><a class="icon delete_user" href="">Delete User</a></li>
 				</ul>
 			</div>
 		</div>
@@ -108,7 +108,7 @@ table
 						</tr>
 					</table>
 					<div style="margin-left: 180px;">
-						<button class="edit" type="button" onclick="location.href='admin_updateprofile.html';" style="background: #F3F3F3 url(../img/i_edit.png) no-repeat 4px center; padding-left: 25px;">Edit</button>
+						<button class="edit" type="button" onclick="location.href='';" style="background: #F3F3F3 url(../img/i_edit.png) no-repeat 4px center; padding-left: 25px;">Edit</button>
 					</div>
 				</div>
 				</form>
