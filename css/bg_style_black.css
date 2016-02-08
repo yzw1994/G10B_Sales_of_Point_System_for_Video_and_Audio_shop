@@ -1,0 +1,20 @@
+body
+{
+	background: #f3f3f3 url(../img/bg_top.jpg) repeat-x;
+}
+#sidebar .box .h_title
+{
+	background: url(../img/bg_box_head.jpg) repeat-x;
+}
+#main .full_w .h_title, #main .half_w .h_title
+{
+	background: url(../img/bg_box_head.jpg) repeat-x;
+}
+table th
+{ 
+	background: url(../img/bg_box_head.jpg) repeat-x;
+}
+#footer
+{
+	background: url(../img/bg_top.jpg) repeat-x top center;
+}
