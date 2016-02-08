@@ -81,6 +81,12 @@ body {
 	color:white;
 
 }
+.user_btn img {
+	width:100%;
+	height:100%;
+	object-fit: cover;       /* Scale the image so it covers whole area, thus will likely crop */
+  	object-position: center; /* Center the image within the element */
+}
 .reg_btn {
 	margin-right:-5px;
 }

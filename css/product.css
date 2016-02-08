@@ -227,6 +227,21 @@
 .add_to_cart_span {
   float:right;
   font-size: 16px;
-  background-color: rgba(255, 192, 203, 0.5);;
-  padding:10px;
+  background-color: ;
+}
+.add_to_cart_span input {
+  background-color:silver;
+  border:none;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+  transition: 0.5s;
+  text-align: center;
+  width:100px;
+}
+.add_to_cart_span input:hover {
+  background-color: #FF4500;
+  font-weight: bold;
+  color:white;
+  transform: scale(1.2);
 }
