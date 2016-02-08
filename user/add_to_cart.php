@@ -33,66 +33,56 @@
 		<?php include("../utility/user_header.php");?>
 		<?php include("../utility/navigation.php");?>
 		<div class="cont_element col span_2_of_2">
-      <div id="" class="cart_prod_div span_5_of_5">
-          <a href="../utility/product_page.php" target="_blank" id="" class="cart_prod_link">
-            <div id="" class="span_1_of_5 right_border">
-              <div id="" class="cart_prod_image">
-                <img src="../images/cover1.jpg" id="" class=""/>
-              </div>
-            </div>
-          </a>
-          <div id="" class="span_4_of_5">
-              <span id="" class="cart_prod_title">
-                <a href="../utility/product_page.php" target="_blank" id="" class="cart_prod_link">adelle</a>
-              </span>
+		<?php
+			$display_cart_sql = "SELECT * FROM cart inner join product WHERE cart.product_id = product.product_id and cart.user_id =".$user_id;
+			$total_price = 0;
+			$display_cart_exe = mysql_query($display_cart_sql);
+			$display_cart_row = mysql_num_rows($display_cart_exe);
+			while($display_cart_row = mysql_fetch_array($display_cart_exe)){
+				$product_id = $display_cart_row['Product_ID'];
+				$product_name = $display_cart_row['Product_Name'];
+				$product_image = $display_cart_row['Product_Pic'];
+				$product_describe = $display_cart_row['Product_Description'];
+				$product_price = $display_cart_row['Product_Price'];
+				echo "
+				<div id='' class='cart_prod_div span_5_of_5'>
+	          <a href='../utility/product_page_login.php?product_id=".$product_id."' target='_blank' id='' class='cart_prod_link'>
+	            <div id='' class='span_1_of_5 right_border'>
+	              <div id='' class='cart_prod_image'>
+	                <img src='".$product_image."' id='' class=''/>
+	              </div>
+	            </div>
+	          </a>
+	          <div id='' class='span_4_of_5'>
+	              <span id='' class='cart_prod_title'>
+	                <a href='../utility/product_page_login.php?product_id=".$product_id."' target='_blank' id='' class='cart_prod_link'>
+									".$product_name."
+									</a>
+	              </span>
 
-            <span id="" class="cart_prod_checkbox">
-              <input type="checkbox" id="" class="" name=""/>
-            </span>
-            <span id="" class="cart_prod_description right_border_dotted">
-              jshb asjnxja,lsxnajsm xsjanxja asjnxja xbjsvaddssjhsc aksnc kasnnkjx sabxaskcjcnkbckb ashcb bnjxh bmjsa b
-            </span>
-            <span id="" class="cart_prod_price right_border_dotted">
-              RM 9.90
-            </span>
-            <span id="" class="cart_prod_price right_border_dotted">
-							Amount :
-							<span id="" class="cart_count_result">
-		            1
-		          </span>
-            </span>
-          </div>
-      </div>
-			<div id="" class="cart_prod_div span_5_of_5">
-          <a href="../utility/product_page.php" target="_blank" id="" class="cart_prod_link">
-            <div id="" class="span_1_of_5 right_border">
-              <div id="" class="cart_prod_image">
-                <img src="../images/cover1.jpg" id="" class=""/>
-              </div>
-            </div>
-          </a>
-          <div id="" class="span_4_of_5">
-              <span id="" class="cart_prod_title">
-                <a href="../utility/product_page.php" target="_blank" id="" class="cart_prod_link">adelle</a>
-              </span>
+	            <span id='' class='cart_prod_checkbox'>
+	              <input type='checkbox' id='' class='' name=''/>
+	            </span>
+	            <span id='' class='cart_prod_description right_border_dotted'>
+	            ".$product_describe."
+	            </span>
+	            <span id='' class='cart_prod_price right_border_dotted'>
+	            RM ".$product_price."
+	            </span>
+	            <span id='' class='cart_prod_price right_border_dotted'>
+	              Amount :
+								<span id='' class='cart_count_result'>
+			            1
+			          </span>
+	            </span>
+	          </div>
+	      </div>
+				";
+				$total_price+=$product_price;
+			};
+		?>
 
-            <span id="" class="cart_prod_checkbox">
-              <input type="checkbox" id="" class="" name=""/>
-            </span>
-            <span id="" class="cart_prod_description right_border_dotted">
-              jshb asjnxja,lsxnajsm xsjanxja asjnxja xbjsvaddssjhsc aksnc kasnnkjx sabxaskcjcnkbckb ashcb bnjxh bmjsa b
-            </span>
-            <span id="" class="cart_prod_price right_border_dotted">
-              RM 9.90
-            </span>
-            <span id="" class="cart_prod_price right_border_dotted">
-              Amount :
-							<span id="" class="cart_count_result">
-		            1
-		          </span>
-            </span>
-          </div>
-      </div>
+
       <div id="" class="cart_control_div">
 
         <span id="" class="cart_select_all right_border_white">
@@ -114,7 +104,7 @@
         <span id="" class="cart_count_total">
           TOTAL :
           <span id="" class="cart_count_result">
-            RM 9.90
+          <?php echo $total_price;?>
           </span>
         </span>
 
