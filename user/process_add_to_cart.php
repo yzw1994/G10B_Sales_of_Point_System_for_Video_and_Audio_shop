@@ -12,19 +12,20 @@
 	    $add_to_cart_sql = "INSERT INTO `cart`(`Added_Date`, `Product_ID`, `User_ID`) VALUES ('$date', ".$product_id." , ".$user_id." )";
 	    $add_to_cart_exe = mysql_query($add_to_cart_sql);
 	    if (!$add_to_cart_exe) {
-	        die('Invalid query: ' . mysql_error());
-	        echo $add_to_cart_sql;
+	      die('Invalid query: ' . mysql_error());
+	      echo "FAIL";
 	    }
 	    else {
+				echo "SUCCESS";
 	    }
 		}
 		else {
-			echo "cart exist";
+			echo "EXIST";
 		}
 
   }
   else {
-    echo "cannot get";
+    echo "FAIL";
   }
 
 ?>

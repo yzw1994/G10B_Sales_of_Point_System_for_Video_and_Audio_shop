@@ -5,8 +5,17 @@ jQuery(document).ready(function ($) {
       type: "POST",
       url: "../user/process_add_to_cart.php?",
       data: 'user_id='+user_id+'&product_id='+product_id,
-      success: function(){
-        alert("Add to cart success!");
+      success: function(result){
+        if(result == "SUCCESS"){
+          alert("Add to cart success!");
+        }
+        else if(result == "EXIST") {
+          alert("Product is already in your cart!");
+        }
+        else if(result == "FAIL") {
+          alert("Add to cart fail!");
+        }
+
       }
     });
 	});
@@ -18,15 +27,34 @@ jQuery(document).ready(function ($) {
     var select_item;
 	  select_item = check_delete_array.join(',') + ",";
     if(select_item.length > 1){
-      /*$.ajax({
+      $.ajax({
         type: "POST",
         url: "../user/process_delete_cart.php?",
-        data: 'user_id='+user_id+'&product_id='+product_id,
-        success: function(){
-          alert("Add to cart success!");
+        data: 'cart_id='+check_delete_array,
+        success: function(result){
+          if(result == "SUCCESS"){
+            alert(" success!");
+
+
+
+            $("#delete_checkbox_value:checked").each(function() {
+          		$(this).closest('#cart_control_outer').remove();
+
+          	});
+
+            if ($('#cart_control_outer').length > 0) {
+
+            }
+            else {
+              $("<div id='' class='empty_cart_div span_5_of_5'>Your cart is empty!</div>").insertBefore(".cart_control_div");
+            }
+          }
+          else if(result == "FAIL") {
+            alert(" fail!");
+          }
+
         }
-      });*/
-      alert('user_id='+user_id+'&product_id='+check_delete_array);
+      });
   	}else{
   		alert("Please at least one of the checkbox");
   	}

@@ -36,7 +36,7 @@
 		<div class="cont_element col span_2_of_2">
 		<form name="cart_form" action="" method="POST">
 		<?php
-			$display_cart_sql = "SELECT * FROM cart inner join product WHERE cart.product_id = product.product_id and cart.user_id =".$user_id;
+			$display_cart_sql = "SELECT * FROM cart inner join product WHERE cart.product_id = product.product_id and cart.user_id =".$user_id." ORDER BY product.product_name ASC";
 			$total_price = 0;
 			$display_cart_exe = mysql_query($display_cart_sql);
 			$display_cart_row = mysql_num_rows($display_cart_exe);
@@ -50,34 +50,33 @@
 					$cart_id = $display_cart_row['Cart_ID'];
 
 					echo "
-					<div id='' class='cart_prod_div span_5_of_5'>
+					<div id='cart_control_outer' class='cart_prod_div span_5_of_5'>
 		          <a href='../utility/product_page_login.php?product_id=".$product_id."' target='_blank' id='' class='cart_prod_link'>
 		            <div id='' class='span_1_of_5 right_border cart_prod_image'>
 		                <img src='".$product_image."' id='' class=''/>
 		            </div>
 		          </a>
-		          <div id='' class='span_4_of_5'>
+		          <div id='cart_control_inner' class='span_4_of_5'>
 		              <span id='' class='cart_prod_title'>
 		                <a href='../utility/product_page_login.php?product_id=".$product_id."' target='_blank' id='' class='cart_prod_link'>
 										".$product_name."
 										</a>
 		              </span>
-
-		            <span id='' class='cart_prod_checkbox'>
-		              <input type='checkbox' id='delete_checkbox_value' class='' name='' value='".$cart_id."'/>
-		            </span>
-		            <span id='' class='cart_prod_description right_border_dotted'>
-		            ".$product_describe."
-		            </span>
-		            <span id='' class='cart_prod_price right_border_dotted'>
-		            RM ".$product_price."
-		            </span>
-		            <span id='' class='cart_prod_price right_border_dotted'>
-		              Amount :
-									<span id='' class='cart_count_result'>
-				            1
-				          </span>
-		            </span>
+									<span id='' class='cart_prod_checkbox'>
+										<input type='checkbox' id='delete_checkbox_value' class='' name='' value='".$cart_id."'/>
+		            	</span>
+		            	<span id='' class='cart_prod_description right_border_dotted'>
+		            		".$product_describe."
+		            	</span>
+		            	<span id='' class='cart_prod_price right_border_dotted'>
+		            		RM ".$product_price."
+		            	</span>
+		            	<span id='' class='cart_prod_price right_border_dotted'>
+		              	Amount :
+										<span id='' class='cart_count_result'>
+				            	1
+				          	</span>
+		            	</span>
 		          </div>
 		      </div>
 					";
@@ -95,6 +94,7 @@
 		<script>
 		 var user_id = <?php echo $user_id;?>;
 		 var product_id = <?php echo $product_id;?>;
+		 var cart_id = <?php echo $cart_id;?>;
 		</script>
 
       <div id="" class="cart_control_div">
@@ -104,7 +104,7 @@
           SELECT ALL
         </span>
         <span id="delete_cart" class="cart_delete_all right_border_white" name="deleteall">
-          DELETE ALL
+          DELETE
         </span>
 
 
