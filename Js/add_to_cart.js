@@ -46,7 +46,7 @@ jQuery(document).ready(function ($) {
 
             $("#delete_checkbox_value:checked").each(function() {
           		$(this).closest('#cart_control_outer').remove();
-
+              $( "#choosen_value" ).text(0);
           	});
 
             if ($('#cart_control_outer').length > 0) {
@@ -54,6 +54,8 @@ jQuery(document).ready(function ($) {
             }
             else {
               $("<div id='' class='empty_cart_div span_5_of_5'>Your cart is empty!</div>").insertBefore(".cart_control_div");
+              $( "#choosen_value" ).text(0);
+              $('#check_all_checkbox').checked = false;
             }
           }
           else if(result == "FAIL") {
@@ -80,6 +82,7 @@ jQuery(document).ready(function ($) {
             $( "input[name='selectall']:checked" ).on( "click", accumulate_checked_value );
 
         });
+
     }
     else {
       $(':checkbox').each(function() {
