@@ -25,7 +25,9 @@
 	<script src="../js/jquery-2.2.0.js"></script>
 	<script src="../js/main.js"></script>
 	<script src="../js/add_to_cart.js"></script>
+	<script>
 
+	</script>
 </head>
 <body>
 
@@ -100,7 +102,7 @@
       <div id="" class="cart_control_div">
 
         <span id="" class="cart_select_all right_border_white">
-          <input type="checkbox" name="selectall" id="" class="cart_delete_all"/>
+          <input type="checkbox" name="selectall" id="check_all_checkbox" onClick="" class="cart_delete_all"/>
           SELECT ALL
         </span>
         <span id="delete_cart" class="cart_delete_all right_border_white" name="deleteall">

@@ -19,6 +19,7 @@ jQuery(document).ready(function ($) {
       }
     });
 	});
+
   $('#delete_cart').click(function(){
     var check_delete_array = [];
     $("#delete_checkbox_value:checked").each(function() {
@@ -59,4 +60,17 @@ jQuery(document).ready(function ($) {
   		alert("Please at least one of the checkbox");
   	}
 	});
+
+  $('#check_all_checkbox').click(function(event) {
+    if(this.checked) {
+        $(':checkbox').each(function() {
+            this.checked = true;
+        });
+    }
+    else {
+      $(':checkbox').each(function() {
+          this.checked = false;
+      });
+    }
+  });
 });
