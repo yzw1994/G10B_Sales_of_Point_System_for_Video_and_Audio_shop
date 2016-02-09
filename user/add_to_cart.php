@@ -36,6 +36,10 @@
 		<?php include("../utility/user_header.php");?>
 		<?php include("../utility/navigation.php");?>
 		<div class="cont_element col span_2_of_2">
+		<div id="" class="rent_and_buy_control_div">
+			<input type="button" name="" id="" class="buy_control_div_btn" value="BUY"/>
+			<input type="button" name="" id="" class="rent_control_div_btn" value="RENT"/>
+		</div>
 		<form name="cart_form" action="" method="POST">
 		<?php
 			$display_cart_sql = "SELECT * FROM cart inner join product WHERE cart.product_id = product.product_id and cart.user_id =".$user_id." ORDER BY product.product_name ASC";
@@ -65,13 +69,13 @@
 										</a>
 		              </span>
 									<span id='' class='cart_prod_checkbox'>
-										<input type='checkbox' id='delete_checkbox_value' class='' name='delete_checkbox_value' value='".$cart_id."'/>
+										<input type='checkbox' id='checkbox_value' class='' name='checkbox_value' value='".$cart_id."'/>
 		            	</span>
 		            	<span id='' class='cart_prod_description right_border_dotted'>
 		            		".$product_describe."
 		            	</span>
 		            	<span id='' class='cart_prod_price right_border_dotted'>
-		            		RM ".$product_price."
+		            		RM<input type='number' id='product_price_input' name='product_price_input' value='".$product_price."' disabled='disabled'/>
 		            	</span>
 		            	<span id='' class='cart_prod_price right_border_dotted'>
 		              	Amount :

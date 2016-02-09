@@ -84,6 +84,15 @@
   width: 150px;
   text-align:center;
 }
+.cart_prod_price #product_price_input {
+  border:none;
+  width:100px;
+  text-align: center;
+  background-color: white;
+  color:red;
+  font-size: 22px;
+  font-family: elegant_luxmager;
+}
 .cart_prod_checkbox {
   width:30px;
   height: 25px;
@@ -165,7 +174,37 @@
   margin: 10px auto;
   text-align: center;
   padding:10px;
-  background-color: rgba(245, 245, 245, 0.5);;
+  background-color: rgba(245, 245, 245, 0.5);
 }
-#cart_control_outer {
+.rent_and_buy_control_div {
+  display: block;
+  width: 95%;
+  min-height:20px;
+  overflow: hidden;
+  font-size: 25px;
+  color:red;
+  margin: 10px auto;
+  text-align: center;
+}
+.buy_control_div_btn {
+  width:50%;
+  background-color: #3CB371;
+  height:30px;
+  float:left;
+  border:none;
+  color:white;
+}
+.buy_control_div_btn:hover {
+  background-color: #00CD66;
+}
+.rent_control_div_btn {
+  width:50%;
+  height:30px;
+  background-color: #ED9121;
+  float:left;
+  border:none;
+  color:white;
+}
+.rent_control_div_btn:hover {
+  background-color: orange;
 }

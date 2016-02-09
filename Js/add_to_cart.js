@@ -22,7 +22,7 @@ jQuery(document).ready(function ($) {
 
 
   var accumulate_checked_value = function() {
-    var number_of_checked = $( "input[name='delete_checkbox_value']:checked" ).length;
+    var number_of_checked = $( "input[name='checkbox_value']:checked" ).length;
     $( "#choosen_value" ).text( number_of_checked );
   };
   accumulate_checked_value();
@@ -30,7 +30,7 @@ jQuery(document).ready(function ($) {
 
   $('#delete_cart').click(function(){
     var check_delete_array = [];
-    $("#delete_checkbox_value:checked").each(function() {
+    $("#checkbox_value:checked").each(function() {
   		check_delete_array.push($(this).val());
   	});
     var select_item;
@@ -44,7 +44,7 @@ jQuery(document).ready(function ($) {
           if(result == "SUCCESS"){
             alert(" success!");
 
-            $("#delete_checkbox_value:checked").each(function() {
+            $("#checkbox_value:checked").each(function() {
           		$(this).closest('#cart_control_outer').remove();
               $( "#choosen_value" ).text(0);
           	});
@@ -55,7 +55,6 @@ jQuery(document).ready(function ($) {
             else {
               $("<div id='' class='empty_cart_div span_5_of_5'>Your cart is empty!</div>").insertBefore(".cart_control_div");
               $( "#choosen_value" ).text(0);
-              $('#check_all_checkbox').checked = false;
             }
           }
           else if(result == "FAIL") {
@@ -75,7 +74,7 @@ jQuery(document).ready(function ($) {
             this.checked = true;
 
             var accumulate_checked_value = function() {
-              var number_of_checked = $( "input[name='delete_checkbox_value']:checked" ).length;
+              var number_of_checked = $( "input[name='checkbox_value']:checked" ).length;
               $( "#choosen_value" ).text( number_of_checked );
             };
             accumulate_checked_value();
@@ -89,7 +88,7 @@ jQuery(document).ready(function ($) {
           this.checked = false;
 
           var accumulate_checked_value = function() {
-            var number_of_checked = $( "input[name='delete_checkbox_value']:checked" ).length;
+            var number_of_checked = $( "input[name='checkbox_value']:checked" ).length;
             $( "#choosen_value" ).text( number_of_checked );
           };
           accumulate_checked_value();
