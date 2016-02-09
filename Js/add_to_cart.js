@@ -20,6 +20,14 @@ jQuery(document).ready(function ($) {
     });
 	});
 
+
+  var accumulate_checked_value = function() {
+    var number_of_checked = $( "input[name='delete_checkbox_value']:checked" ).length;
+    $( "#choosen_value" ).text( number_of_checked );
+  };
+  accumulate_checked_value();
+  $( "input[type=checkbox]" ).on( "click", accumulate_checked_value );
+
   $('#delete_cart').click(function(){
     var check_delete_array = [];
     $("#delete_checkbox_value:checked").each(function() {
@@ -35,8 +43,6 @@ jQuery(document).ready(function ($) {
         success: function(result){
           if(result == "SUCCESS"){
             alert(" success!");
-
-
 
             $("#delete_checkbox_value:checked").each(function() {
           		$(this).closest('#cart_control_outer').remove();
@@ -65,11 +71,27 @@ jQuery(document).ready(function ($) {
     if(this.checked) {
         $(':checkbox').each(function() {
             this.checked = true;
+
+            var accumulate_checked_value = function() {
+              var number_of_checked = $( "input[name='delete_checkbox_value']:checked" ).length;
+              $( "#choosen_value" ).text( number_of_checked );
+            };
+            accumulate_checked_value();
+            $( "input[name='selectall']:checked" ).on( "click", accumulate_checked_value );
+
         });
     }
     else {
       $(':checkbox').each(function() {
           this.checked = false;
+
+          var accumulate_checked_value = function() {
+            var number_of_checked = $( "input[name='delete_checkbox_value']:checked" ).length;
+            $( "#choosen_value" ).text( number_of_checked );
+          };
+          accumulate_checked_value();
+          $( "input[name='selectall']:checked" ).on( "click", accumulate_checked_value );
+
       });
     }
   });

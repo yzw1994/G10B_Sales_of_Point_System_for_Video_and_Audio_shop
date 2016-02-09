@@ -65,7 +65,7 @@
 										</a>
 		              </span>
 									<span id='' class='cart_prod_checkbox'>
-										<input type='checkbox' id='delete_checkbox_value' class='' name='' value='".$cart_id."'/>
+										<input type='checkbox' id='delete_checkbox_value' class='' name='delete_checkbox_value' value='".$cart_id."'/>
 		            	</span>
 		            	<span id='' class='cart_prod_description right_border_dotted'>
 		            		".$product_describe."
@@ -112,8 +112,8 @@
 
         <span id="" class="cart_item_amount right_border_white">
           CHOOSED ITEM :
-          <span id="" class="cart_count_result">
-            1
+          <span id="choosen_value" class="cart_count_result">
+
           </span>
         </span>
 
