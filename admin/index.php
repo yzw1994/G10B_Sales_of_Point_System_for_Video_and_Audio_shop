@@ -1,7 +1,21 @@
+<?php
+  include("../dataconn/dataconn.php");
+  if(!isset($_SESSION))
+	{
+		session_start();
+	}
+	$user_id = $_SESSION['user_id'];
+
+	require("../dataconn/page_load.php");
+
+	$user_id = $_SESSION['user_id'];
+	$result = mysql_query("SELECT * FROM user WHERE User_ID = '$user_id'");
+	$row = mysql_fetch_assoc($result);
+?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Admin > Personal Details</title>
+<title>Admin > Index</title>
 <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="../css/bg_style_black.css" media="screen" />
 <!--<link rel="shortcut icon" href="../img/mmu_icon.png" type="image/png">-->
@@ -22,8 +36,15 @@ table
   				<!--<img src="../img/logo_bg.png" style="position:absolute; width: 490px; margin: -128px 0 0 -50px;">-->
   				<!--<img src="../img/mmu_logo.png" alt="MMU Logo" style="position:absolute; width: 160px;">-->
   				<!--<img src="../img/title.png" alt="System Title" style="position:absolute; width: 200px; margin-left: 200px;">-->
-  				<img src="../img/logo.ico" alt="Blu Video and Audio Shop" id="" class="logo_images" style="position:absolute; width: 85px; margin: -15px 0 0 -50px;"/>
-  				<p id="" class="shop_name" style="font-size:25px;display:;background-color:;width:100%;color:white; margin-left:50px; margin-top:10px;">Blu Video And Audio Shop</p>
+  				<!--<img src="../img/logo.ico" alt="Blu Video and Audio Shop" id="" class="logo_images" style="position:absolute; width: 85px; margin: -15px 0 0 -50px;"/>-->
+          <?php echo "<img src='".$row['User_Profile_Pic']."' style='border:1px solid black' padding='5px' height='150px' width='150px'/>";?><!--call image by php-->
+          <form action="upload_profile_picture.php?user_id=<?php echo $row['User_ID'];?>" id="upload_profile" enctype="multipart/form-data" method="post">
+              <button class="file-upload">
+              <input type="file" name="edit_profile_pic" accept="image/x-png, image/gif, image/jpeg" id="edit_profile" class="file-input"/>
+              Upload Photo
+              </button>
+          </form>
+          <p id="" class="shop_name" style="font-size:25px;display:;background-color:;width:100%;color:white; margin-left:50px; margin-top:10px;">Blu Video And Audio Shop</p>
   			</div>
 
   		</div>
@@ -84,7 +105,7 @@ table
   				<div>
   					<table>
   						<tr>
-  							<td colspan="2" style="font-size: 18pt; font-weight:bold;">User's Profile</td>
+  							<td colspan="2" style="font-size: 18pt; font-weight:bold;"><?php echo $row["User_Name"] ?>'s Profile</td>
   						</tr>
   						<tr>
   							<td><b>Admin ID</b></td>
@@ -92,15 +113,19 @@ table
   						</tr>
   						<tr>
   							<td><b>Email</b> </td>
-  							<td>yapzhanwei@hotmail.com</td>
+  							<td><?php echo $row["User_Email"] ?></td>
   						</tr>
   						<tr>
   							<td><b>Contact No.</b></td>
-  							<td>012-3456789</td>
+  							<td><?php echo $row["User_Phone"] ?></td>
   						</tr>
   						<tr>
   							<td><b>Username</b></td>
-  							<td>1121115935</td>
+  							<td><?php echo $row["User_Name"] ?></td>
+  						</tr>
+              <tr>
+  							<td><b>Position</b></td>
+  							<td><?php echo $row[""] ?></td>
   						</tr>
   					</table>
   					<div style="margin-left: 180px;">
