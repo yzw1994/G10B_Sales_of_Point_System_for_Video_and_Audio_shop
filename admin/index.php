@@ -1,4 +1,4 @@
-<?php
+<!--<?php
   include("../dataconn/dataconn.php");
   if(!isset($_SESSION))
 	{
@@ -11,7 +11,7 @@
 	$user_id = $_SESSION['user_id'];
 	$result = mysql_query("SELECT * FROM user WHERE User_ID = '$user_id'");
 	$row = mysql_fetch_assoc($result);
-?>
+?>-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +50,7 @@ table
   		</div>
   		<div id="nav">
   			<ul>
-  				<li class="upp"><a href="../visitor/visitor.php">Home</a></li>
+  				<li class="upp"><a href="#">Home</a></li>
   				<li class="upp"><a href="#">Rent & Sales</a>
   					<ul>
   						<li><a href="">List of video</a></li>
@@ -70,7 +70,7 @@ table
   				<p style="text-align:center; line-height: 20px;">Welcome, testing</p>
   				<ul id="home">
   					<li class="b1"><a class="icon profile" href="" >View profile</a></li>
-  					<li class="b1"><a class="icon logout" href="../visitor/visitor.php">Log Out</a></li>
+  					<li class="b1"><a class="icon logout" href="">Log Out</a></li>
   				</ul>
   			</div>
   			<div class="box">
