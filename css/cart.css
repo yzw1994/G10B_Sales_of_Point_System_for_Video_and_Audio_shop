@@ -2,12 +2,13 @@
   display:block;
   min-height: 45px;
   overflow: hidden;
-  width:93%;
-  margin: 10px auto 0 auto;
+  width:100%;
+  margin: 10px auto 0 -25px;
   padding-top: 20px;
+
   padding-left: 15px;
   padding-right: 25px;
-  background-color: rgba(125, 125, 125, 0.5);
+  background-color: rgba(222, 222, 222, 1);
 }
 .cart_prod_div{
   background-color: white;
@@ -123,7 +124,7 @@
 .right_border_white {
   border-right-style: dotted;;
   border-right-width: 1px;
-  border-right-color: white;
+  border-right-color: grey;
 }
 .cart_select_all {
   padding-right: 10px;
@@ -221,4 +222,13 @@
 }
 #rent_disable {
   background-color: grey !important;
+}
+.price_total_amount {
+  float:left;
+  clear:left;
+  margin: 0px 0px 10px 10px;
+  font-size: 20px;
+  color: black;
+  width: auto;
+  text-align:center;
 }

@@ -48,7 +48,6 @@
 		<form name="cart_form" action="" method="POST">
 		<?php
 			$display_cart_sql = "SELECT * FROM cart inner join product WHERE cart.product_id = product.product_id and cart.user_id =".$user_id." ORDER BY product.product_name ASC";
-			$total_price = 0;
 			$display_cart_exe = mysql_query($display_cart_sql);
 			$display_cart_row = mysql_num_rows($display_cart_exe);
 			if($display_cart_row){
@@ -92,10 +91,19 @@
 										<input type='number' id='product_quantity_value".$cart_id."' name='product_quantity_value' value='1' disabled='disabled' class='quantity_value_input'/>
 										<input type='button' id='".$cart_id."' name='quantity_plus' value='+' onclick='' class='plus_function_char'>
 		            	</span>
+									<span id='' class='price_total_amount'>
+					          Total Purchase: RM
+					          <span id='product_purchase_ttl_price".$cart_id."' class='cart_count_result'>
+					          	".$product_price."
+					          </span>
+										/ Rent: RM
+										<span id='product_rent_ttl_price".$cart_id."' class='cart_count_result'>
+						          ".$product_rent_price."
+					          </span>
+					        </span>
 		          </div>
 		      </div>
 					";
-					$total_price+=$product_price;
 				};
 			}
 			else {
@@ -129,13 +137,19 @@
 
           </span>
         </span>
-
-        <span id="" class="cart_count_total">
-          TOTAL :
+				<script>
+					var total_price_value = 0;
+				</script>
+        <!--<span id="" class="cart_count_total">
+          TOTAL BUY: RM
           <span id="" class="cart_count_result">
-          <?php echo $total_price;?>
+          	111110
           </span>
-        </span>
+					/ RENT: RM
+					<span id="" class="cart_count_result">
+          1111110
+          </span>
+        </span>-->
 				<?php
 					$rent_btn_css = "";
 					$rent_btn_disble = "";
