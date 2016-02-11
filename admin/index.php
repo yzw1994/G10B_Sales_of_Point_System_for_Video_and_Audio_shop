@@ -16,6 +16,7 @@
 <title>Admin > Index</title>
 <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="../css/bg_style_black.css" media="screen" />
+<script type="text/javascript" src="../Js/jquery-2.2.0.js"></script>
 <!--<link rel="shortcut icon" href="../img/mmu_icon.png" type="image/png">-->
 <!--<script type="text/javascript" src="../timer.js"></script>-->
 <style type="text/css">
@@ -29,27 +30,44 @@ table
 <script>
 	function adminedit()
 	{
-		document.getElementById('edit_ID').contentEditable= true;
 		document.getElementById('edit_Email').contentEditable= true;
 		document.getElementById('edit_Contact').contentEditable= true;
 		document.getElementById('edit_Name').contentEditable= true;
-    setInterval(update(str),5)
 	}
-	function update(str) {
-		if (str.length == 0) {
-        document.getElementById("edit_Email").innerHTML = "";
-        return;
-    } else {
-			var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("edit_Email").innerHTML = xmlhttp.responseText;
-            }
-        };
-        xmlhttp.open("GET", "update_profile.php?q=" + str, true);
-        xmlhttp.send();
-    }
+	function saveUpdate(str) {
+		var id = $('#edit_ID').html();
+		var email = $('#edit_Email').html();
+		var contact = $('#edit_Contact').html();
+		var username = $('#edit_Name').html();
+		
+		console.log("ID : " + id + ", email : " + email + ", contact : " + contact + ", username : " + username);
+
+		$.ajax({
+			type: "POST",
+			url: "updateProfile.php",
+			dataType: "json",
+			data: {
+				userid: id,
+				email: email,
+				contact: contact,
+				username: username
+			},
+			success: function(data) {
+				alert("update successful");
+			}
+			
+		});
 	}
+	
+	function init() {
+		$('.profile-details').on('click', function() {
+			adminedit();
+		});
+	}
+	
+	$(document).ready(function(){
+		init();
+	});
 </script>
 <?php
  ?>
@@ -125,23 +143,23 @@ table
 						</tr>
 						<tr>
 							<td><b>Admin ID</b></td>
-							<td id="edit_ID" contenteditable="false" onkeyup="keyup(this.value)"><?php echo $row['User_ID'];?></td>
+							<td id="edit_ID" contenteditable="false" class="profile-details"><?php echo $row['User_ID'];?></td>
 						</tr>
 						<tr>
 							<td><b>Email</b> </td>
-							<td id="edit_Email" contenteditable="false" onkeyup="keyup(this.value)"><?php echo $row['User_Email'];?></td>
+							<td id="edit_Email" contenteditable="false" class="profile-details"><?php echo $row['User_Email'];?></td>
 						</tr>
 						<tr>
 							<td><b>Contact No.</b></td>
-							<td id="edit_Contact" contenteditable="false" onkeyup="keyup(this.value)"><?php echo $row['User_Phone'];?></td>
+							<td id="edit_Contact" contenteditable="false" class="profile-details"><?php echo $row['User_Phone'];?></td>
 						</tr>
 						<tr>
 							<td><b>Username</b></td>
-							<td id="edit_Name" contenteditable="false" onkeyup="keyup(this.value)"><?php echo $row['User_Name'];?></td>
+							<td id="edit_Name" contenteditable="false" class="profile-details"><?php echo $row['User_Name'];?></td>
 						</tr>
 						</table>
 					<div style="margin-left: 180px;">
-						<button class="edit" name="editbutton" type="button" onclick="adminedit()" style="background: #F3F3F3 url(../img/i_edit.png) no-repeat 4px center; padding-left: 25px;">Edit</button>
+						<button class="edit" name="editbutton" type="button" onclick="saveUpdate();" style="background: #F3F3F3 url(../img/i_edit.png) no-repeat 4px center; padding-left: 25px;">Save</button>
 						</div>
 				</div>
 				</form>
