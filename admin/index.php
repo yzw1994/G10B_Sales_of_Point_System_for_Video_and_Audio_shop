@@ -39,7 +39,7 @@ table
 		var email = $('#edit_Email').html();
 		var contact = $('#edit_Contact').html();
 		var username = $('#edit_Name').html();
-		
+
 		console.log("ID : " + id + ", email : " + email + ", contact : " + contact + ", username : " + username);
 
 		$.ajax({
@@ -54,17 +54,20 @@ table
 			},
 			success: function(data) {
 				alert("update successful");
-			}
-			
+			},
+      error: function (jqXHR, status, err) {
+        alert("update failed");
+     }
+
 		});
 	}
-	
+
 	function init() {
 		$('.profile-details').on('click', function() {
 			adminedit();
 		});
 	}
-	
+
 	$(document).ready(function(){
 		init();
 	});
