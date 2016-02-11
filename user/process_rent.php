@@ -46,7 +46,7 @@ if(isset($_POST['rent_product'])){
   }
   else {
     $total_price_value = $product_rent_price*$quantity_value_final;
-    $final_submit_SQL = "INSERT INTO `rent`(`Rent_Type`, `Rent_Date`, `Rent_Exp_Date`, `Rent_Price`, `User_ID`, `Product_ID`) VALUES ('1','".$date."','".$ex_date."',".$total_price_value.",".$user_id." ,".$product_id.")";
+    $final_submit_SQL = "INSERT INTO `rent`(`Rent_Type`, `Rent_Date`, `Rent_Exp_Date`, `Rent_Price`, `Rent_Quantity`, `User_ID`, `Product_ID`) VALUES ('1','".$date."','".$ex_date."',".$total_price_value.",".$quantity_value_final.",".$user_id." ,".$product_id.")";
     $final_submit_SQL_exe = mysql_query($final_submit_SQL);
     if (!$final_submit_SQL_exe) {
         die('Invalid query: ' . mysql_error());

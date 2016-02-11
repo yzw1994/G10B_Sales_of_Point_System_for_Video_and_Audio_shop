@@ -148,7 +148,7 @@
 						$rent_btn_disble = "";
 					}
 				?>
-				<input type="button" id="" class="cart_purchase_btn" value="BUY">
+				<input type="button" id="buy_product_btn" class="cart_purchase_btn" value="BUY">
         <input type="button" id="<?php echo $rent_btn_css;?>" class="cart_purchase_btn" value="RENT" <?php echo $rent_btn_disble;?>>
       </div>
 		</div>
