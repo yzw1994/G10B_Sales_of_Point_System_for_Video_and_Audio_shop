@@ -36,10 +36,10 @@
 		<?php include("../utility/user_header.php");?>
 		<?php include("../utility/navigation.php");?>
 		<div class="cont_element col span_2_of_2">
-		<div id="" class="rent_and_buy_control_div">
+		<!--<div id="" class="rent_and_buy_control_div">
 			<input type="button" name="" id="" class="buy_control_div_btn" value="BUY"/>
 			<input type="button" name="" id="" class="rent_control_div_btn" value="RENT"/>
-		</div>
+		</div>-->
 		<form name="cart_form" action="" method="POST">
 		<?php
 			$display_cart_sql = "SELECT * FROM cart inner join product WHERE cart.product_id = product.product_id and cart.user_id =".$user_id." ORDER BY product.product_name ASC";
@@ -53,6 +53,7 @@
 					$product_image = $display_cart_row['Product_Pic'];
 					$product_describe = $display_cart_row['Product_Description'];
 					$product_price = $display_cart_row['Product_Price'];
+					$product_rent_price = $display_cart_row['Product_Rent_Price'];
 					$cart_id = $display_cart_row['Cart_ID'];
 
 					echo "
@@ -75,13 +76,14 @@
 		            		".$product_describe."
 		            	</span>
 		            	<span id='' class='cart_prod_price right_border_dotted'>
-		            		RM<input type='number' id='product_price_input' name='product_price_input' value='".$product_price."' disabled='disabled'/>
+		            		Buy: RM<input type='number' id='product_price_input' name='product_price_input' value='".$product_price."' disabled='disabled'/>/&nbsp;
+										Rent: RM<input type='number' id='product_price_input' name='product_price_input' value='".$product_rent_price."' disabled='disabled'/>
 		            	</span>
-		            	<span id='' class='cart_prod_price right_border_dotted'>
+		            	<span id='' class='cart_prod_amount'>
 		              	Amount :
-										<span id='' class='cart_count_result'>
-				            	1
-				          	</span>
+										<input type='button' name='quantity_minus' value='-' onclick='minus_function()' class='minus_function_char'>
+										<input type='number' id='product_quantity_value' name='product_quantity_value' value='1' disabled='disabled' class='quantity_value_input'/>
+										<input type='button' name='quantity_plus' value='+' onclick='plus_function()' class='plus_function_char'>
 		            	</span>
 		          </div>
 		      </div>
@@ -127,9 +129,11 @@
           <?php echo $total_price;?>
           </span>
         </span>
-
+				<button id="" class="cart_purchase_btn">
+          BUY
+        </button>
         <button id="" class="cart_purchase_btn">
-          PURCHASE
+          RENT
         </button>
       </div>
 		</div>
