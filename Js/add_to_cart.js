@@ -144,8 +144,8 @@ jQuery(document).ready(function ($) {
     }
 
     if(check_rental_array.length>0){
-      if(sum_total>5){
-        alert("Maximum 5 rental only!");
+      if(sum_total>user_rent_limit){
+        alert("Maximum 5 rental only, you still can have "+user_rent_limit+" rental");
       }
       else {
         alert('cart_id='+check_rental_array+"&rent_quantity="+quantity_value_array);

@@ -31,6 +31,7 @@
 	<script src="../js/main.js"></script>
 	<script src="../js/add_to_cart.js"></script>
 	<script>
+		var user_rent_limit = 5-parseInt('<?php echo $rent_limit_value;?>');
 	</script>
 </head>
 <body>
