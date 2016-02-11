@@ -219,3 +219,6 @@
 .rent_control_div_btn:hover {
   background-color: orange;
 }
+#rent_disable {
+  background-color: grey !important;
+}

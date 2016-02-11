@@ -7,7 +7,12 @@
 		session_start();
 	}
 	$user_id = $_SESSION['user_id'];
-
+  $check_rent_limit_sql = "select * from user where user_id = ".$user_id." ";
+  $check_rent_limit_exe = mysql_query($check_rent_limit_sql);
+  $check_rent_limit_row = mysql_num_rows($check_rent_limit_exe);
+  do {
+    $rent_limit_value = $check_rent_limit_row['User_Rent_Limit'];
+  }while($check_rent_limit_row = mysql_fetch_array($check_rent_limit_exe));
 
 
 
@@ -26,7 +31,6 @@
 	<script src="../js/main.js"></script>
 	<script src="../js/add_to_cart.js"></script>
 	<script>
-
 	</script>
 </head>
 <body>
@@ -131,12 +135,20 @@
           <?php echo $total_price;?>
           </span>
         </span>
-				<button id="" class="cart_purchase_btn">
-          BUY
-        </button>
-        <button id="" class="cart_purchase_btn">
-          RENT
-        </button>
+				<?php
+					$rent_btn_css = "";
+					$rent_btn_disble = "";
+					if($rent_limit_value >= 5){
+						$rent_btn_css = "rent_disable";
+						$rent_btn_disble = "disable='disable'";
+					}
+					else {
+						$rent_btn_css = "rent_product_btn";
+						$rent_btn_disble = "";
+					}
+				?>
+				<input type="button" id="" class="cart_purchase_btn" value="BUY">
+        <input type="button" id="<?php echo $rent_btn_css;?>" class="cart_purchase_btn" value="RENT" <?php echo $rent_btn_disble;?>>
       </div>
 		</div>
 		</form>

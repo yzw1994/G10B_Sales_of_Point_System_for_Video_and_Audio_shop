@@ -68,6 +68,9 @@ jQuery(document).ready(function ($) {
   	}
 	});
 
+
+
+
   $('#check_all_checkbox').click(function(event) {
     if(this.checked) {
         $(':checkbox').each(function() {
@@ -125,5 +128,51 @@ jQuery(document).ready(function ($) {
       plus_value = quantity_value+1;
       $('#product_quantity_value'+id).val(plus_value);
     }
+  });
+
+  $('#rent_product_btn').click(function() {
+    var check_rental_array = [];
+    var quantity_value_array = [];
+    var sum_total = 0;
+    $("#checkbox_value:checked").each(function() {
+  		check_rental_array.push($(this).val());
+  	});
+
+    for(i=0;i<check_rental_array.length;i++){
+      quantity_value_array[i] = parseInt($('#product_quantity_value'+check_rental_array[i]).val());
+      sum_total += quantity_value_array[i];
+    }
+
+    if(check_rental_array.length>0){
+      if(sum_total>5){
+        alert("Maximum 5 rental only!");
+      }
+      else {
+        alert('cart_id='+check_rental_array+"&rent_quantity="+quantity_value_array);
+        /*$.ajax({
+          type: "POST",
+          url: "../user/process_cart_rent.php?",
+          data: 'cart_id='+check_rental_array+"&rent_quantity="+quantity_value_array,
+
+          success: function(result){
+            if(result == "SUCCESS"){
+              alert("Rent success!");
+            }
+            else if(result == "FAIL") {
+              alert("Rent fail!");
+            }
+
+          }
+        });*/
+      }
+    }
+    else{
+  		alert("Please at least rent 1 item!");
+  	}
+  });
+
+
+  $('#rent_disable').click(function(){
+    alert("You have reach the maximum of rental, please return product!")
   });
 });
