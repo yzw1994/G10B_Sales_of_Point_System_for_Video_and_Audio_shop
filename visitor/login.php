@@ -1,4 +1,7 @@
 <?php
+
+
+
 	require("../dataconn/dataconn.php");
 
 	$reg_error_login="reg_normal";
@@ -8,10 +11,15 @@
 
 		$email=$_POST['email'];
 		$password = md5($_POST['password']);
-		$login_sql = "select * from user where user_email = '".$email."' and user_password = '".$password."'";
+		$loginadm_sql = "select * from user where user_email = '".$email."' and user_password = '".$password."' and User_Privilege='2' " ;
+		$login_sql = "select * from user where user_email = '".$email."' and user_apassword = '".$password."'" ;
+
 		$login_result = mysql_query($login_sql);
+		$loginadm_result = mysql_query($loginadm_sql);
 
 		$login_check = mysql_num_rows($login_result);
+		$loginadm_check = mysql_num_rows($loginadm_result);
+
 
 		if($login_check==1){
 			$row = mysql_fetch_assoc($login_result);
@@ -19,12 +27,17 @@
 			$_SESSION['user_id'] = $row["User_ID"];
 			header("Location: ../user/index.php");
 		}
+		else if ($loginadm_check==1) {
+			$row = mysql_fetch_assoc($loginadm_result);
+			session_start();
+			$_SESSION['user_id'] = $row["User_ID"];
+			header("Location: ../admin/index.php");
+
+		}
 		else {
 				$reg_error_login= "reg_error";
 		}
-
-	}
-?>
+} ?>
 
 <html>
 <head>
