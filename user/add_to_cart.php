@@ -54,6 +54,7 @@
 					$product_describe = $display_cart_row['Product_Description'];
 					$product_price = $display_cart_row['Product_Price'];
 					$product_rent_price = $display_cart_row['Product_Rent_Price'];
+					$product_stock = $display_cart_row['Product_Stock'];
 					$cart_id = $display_cart_row['Cart_ID'];
 
 					echo "
@@ -81,9 +82,10 @@
 		            	</span>
 		            	<span id='' class='cart_prod_amount'>
 		              	Amount :
-										<input type='button' name='quantity_minus' value='-' onclick='minus_function()' class='minus_function_char'>
-										<input type='number' id='product_quantity_value' name='product_quantity_value' value='1' disabled='disabled' class='quantity_value_input'/>
-										<input type='button' name='quantity_plus' value='+' onclick='plus_function()' class='plus_function_char'>
+										<input type='hidden' id='stock_value".$cart_id."' value='".$product_stock."'>
+										<input type='button' id='".$cart_id."' name='quantity_minus' value='-' onclick='' class='minus_function_char'>
+										<input type='number' id='product_quantity_value".$cart_id."' name='product_quantity_value' value='1' disabled='disabled' class='quantity_value_input'/>
+										<input type='button' id='".$cart_id."' name='quantity_plus' value='+' onclick='' class='plus_function_char'>
 		            	</span>
 		          </div>
 		      </div>

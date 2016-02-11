@@ -98,7 +98,32 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  function plus_function() {
-    $('#product_quantity_value').value+=1;
-  }
+  $(".minus_function_char").click(function() {
+    var id = $(this).attr('id'); // $(this) refers to button that was clicked
+    var quantity_value = parseInt($('#product_quantity_value'+id).val());
+    var minus_value;
+    if(quantity_value == 1){
+      minus_value = quantity_value;
+      $('#product_quantity_value'+id).val(minus_value);
+    }
+    else {
+      minus_value = quantity_value-1;
+      $('#product_quantity_value'+id).val(minus_value);
+    }
+  });
+
+  $(".plus_function_char").click(function() {
+    var id = $(this).attr('id'); // $(this) refers to button that was clicked
+    var quantity_value = parseInt($('#product_quantity_value'+id).val());
+    var stock_value = parseInt($('#stock_value'+id).val());
+    var plus_value;
+    if(quantity_value == stock_value){
+      plus_value = quantity_value1;
+      $('#product_quantity_value'+id).val(plus_value);
+    }
+    else {
+      plus_value = quantity_value+1;
+      $('#product_quantity_value'+id).val(plus_value);
+    }
+  });
 });
