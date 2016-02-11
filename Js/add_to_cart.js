@@ -97,4 +97,8 @@ jQuery(document).ready(function ($) {
       });
     }
   });
+
+  function plus_function() {
+    
+  }
 });
