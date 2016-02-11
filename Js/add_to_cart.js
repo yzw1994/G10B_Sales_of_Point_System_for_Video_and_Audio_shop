@@ -99,6 +99,6 @@ jQuery(document).ready(function ($) {
   });
 
   function plus_function() {
-    
+    $('#product_quantity_value').value+=1;
   }
 });
