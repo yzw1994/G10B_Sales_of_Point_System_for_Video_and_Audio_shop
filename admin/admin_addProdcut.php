@@ -10,6 +10,24 @@
 	$result = mysql_query("SELECT * FROM user WHERE User_ID = '$user_id'");
 	$row = mysql_fetch_assoc($result);
 ?>
+
+<?php
+	if(isset($_POST['addbtn']))
+	{
+
+		$prodname = $_POST["pname"];
+		$proddes = $_POST['pdesc'];
+		$prodcat = $_POST['pcat'];
+		$prodpri=$_POST['ppri'];
+		$prodrentpri=$_POST['prent'];
+		$prodstoc=$_POST['pstoc'];
+		$prodstatus=$_POST['pstat'];
+
+		mysql_query("INSERT into product (Product_Name,Product_Description,Product_Category,Product_Price,Product_Rent_Prince,Product_Stock,Product_Status) values
+		('$prodname','$proddes','$prodcat','$prodpri','$prodrentpri','$prodstoc','$prodstatus')");
+		header("Location:index.php");
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +35,6 @@
 <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="../css/bg_style_black.css" media="screen" />
 <script type="text/javascript" src="../Js/jquery-2.2.0.js"></script>
-<!--<link rel="shortcut icon" href="../img/mmu_icon.png" type="image/png">-->
 <script type="text/javascript" src="../Js/timer.js"></script>
 <style type="text/css">
 table
@@ -27,65 +44,17 @@ table
 }
 </style>
 </head>
-<script>
-	function adminedit()
-	{
-		document.getElementById('edit_Email').contentEditable= true;
-		document.getElementById('edit_Contact').contentEditable= true;
-		document.getElementById('edit_Name').contentEditable= true;
-	}
-	function saveUpdate(str) {
-		var id = $('#edit_ID').html();
-		var email = $('#edit_Email').html();
-		var contact = $('#edit_Contact').html();
-		var username = $('#edit_Name').html();
 
-		console.log("ID : " + id + ", email : " + email + ", contact : " + contact + ", username : " + username);
 
-		$.ajax({
-			type: "POST",
-			url: "updateProfile.php",
-			dataType: "json",
-			data: {
-				userid: id,
-				email: email,
-				contact: contact,
-				username: username
-			},
-			success: function(data) {
-				alert("update successful");
-			},
-      error: function (jqXHR, status, err) {
-        alert("update failed");
-     }
-
-		});
-	}
-
-	function init() {
-		$('.profile-details').on('click', function() {
-			adminedit();
-		});
-	}
-
-	$(document).ready(function(){
-		init();
-	});
-</script>
-<?php
- ?>
 <body>
 <div class="wrap">
 	<div id="header">
 		<div id="top">
 			<div class="left">
-				<!--<img src="../img/logo_bg.png" style="position:absolute; width: 490px; margin: -128px 0 0 -50px;">-->
-				<!--<img src="../img/mmu_logo.png" alt="MMU Logo" style="position:absolute; width: 160px;">-->
-				<!--<img src="../img/title.png" alt="System Title" style="position:absolute; width: 200px; margin-left: 200px;">-->
 				<img src="../img/logo.ico" alt="Blu Video and Audio Shop" id="" class="logo_images" style="position:absolute; width: 85px; margin: -15px 0 0 -50px;"/>
 				<p id="" class="shop_name" style="font-size:25px;display:;background-color:;width:100%;color:white; margin-left:50px; margin-top:10px;">Blu Video And Audio Shop</p>
 			</div>
-      <div class="right">
+			<div class="right">
 				<div class="align-right">
 					<p><span id="timer"></span></p>
 				</div>
@@ -139,36 +108,59 @@ table
 		</div>
 		<div id="main">
 			<div class="full_w">
-				<div class="h_title">Personal Details</div>
-				<form name="" method="get">
-				<div style="float:left;">
-					<img src="../img/user_photo.gif" style="border:1px solid black; padding: 5px; height: 150px; width: 150px;" />
-				</div>
+				<div class="h_title">Admin Panel</div>
+          <!--Upload Product Picture-->
 				<div>
-					<table>
-						<tr>
-							<td colspan="2" style="font-size: 18pt; font-weight:bold;">User's Profile</td>
-						</tr>
-						<tr>
-							<td><b>Admin ID</b></td>
-							<td id="edit_ID" contenteditable="false" class="profile-details"><?php echo $row['User_ID'];?></td>
-						</tr>
-						<tr>
-							<td><b>Email</b> </td>
-							<td id="edit_Email" contenteditable="false" class="profile-details"><?php echo $row['User_Email'];?></td>
-						</tr>
-						<tr>
-							<td><b>Contact No.</b></td>
-							<td id="edit_Contact" contenteditable="false" class="profile-details"><?php echo $row['User_Phone'];?></td>
-						</tr>
-						<tr>
-							<td><b>Username</b></td>
-							<td id="edit_Name" contenteditable="false" class="profile-details"><?php echo $row['User_Name'];?></td>
-						</tr>
-						</table>
-					<div style="margin-left: 180px;">
-						<button class="edit" name="editbutton" type="button" onclick="saveUpdate();" style="background: #F3F3F3 url(../img/i_edit.png) no-repeat 4px center; padding-left: 25px;">Save</button>
-						</div>
+          <form name="productDetails" method="POST">
+            <table>
+              <tr>
+                <td>Name</td>
+                <td><input type="text" name="pname" size="67"/></td>
+              </tr>
+
+              <tr>
+                <td>Description</td>
+                <td><textarea rows="3" cols="51" name="pdesc"></textarea></td>
+              </tr>
+
+              <tr>
+                <td>Category</td>
+                <td><input type="text" name="pcat" size="67"/></td>
+              </tr>
+
+              <tr>
+                <td>Price</td>
+                <td><input type="text" name="pprice" size="67"/></td>
+              </tr>
+
+              <tr>
+                <td>Rent price</td>
+                <td><input type="text" name="prent" size="67"/></td>
+              </tr>
+
+              <tr>
+                <td>Stock</td>
+                <td><input type="text" name="pstoc" size="67"/></td>
+              </tr>
+
+              <tr>
+                <td>Status</td>
+                <td><select name="pstat">
+      						<option value="active">Active</option>
+      						<option value="unactive">Inactive</option>
+      					</select></td>
+              </tr>
+
+              <tr>
+                <td></td>
+                <td></td>
+              </tr>
+  					</table>
+
+          <div style="margin-left: 180px;">
+						<button class="add" name="addbtn" type="submit"  style="background: #F3F3F3 url(../img/i_edit.png) no-repeat 4px center; padding-left: 25px;">Add Now</button>
+					</div>
+          </form>
 				</div>
 				</form>
 			</div>
