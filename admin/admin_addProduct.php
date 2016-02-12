@@ -49,6 +49,9 @@ table
 	width: 50%;
 	margin-left: 180px;
 }
+.textfield{
+  width:250px;
+}
 </style>
 </head>
 
@@ -122,32 +125,32 @@ table
             <table>
               <tr>
                 <td>Name</td>
-                <td><input type="text" name="pname" size="67"/></td>
+                <td><input type="text" name="pname" size="67" class="textfield"/></td>
               </tr>
 
               <tr>
                 <td>Description</td>
-                <td><textarea rows="3" cols="51" name="pdesc"></textarea></td>
+                <td><textarea rows="3" cols="51" name="pdesc" class="textfield"></textarea></td>
               </tr>
 
               <tr>
                 <td>Category</td>
-                <td><input type="text" name="pcat" size="67"/></td>
+                <td><input type="text" name="pcat" class="textfield"/></td>
               </tr>
 
               <tr>
                 <td>Price</td>
-                <td><input type="text" name="pprice" size="67"/></td>
+                <td><input type="text" name="pprice" class="textfield"/></td>
               </tr>
 
               <tr>
                 <td>Rent price</td>
-                <td><input type="text" name="prent" size="67"/></td>
+                <td><input type="text" name="prent" class="textfield"/></td>
               </tr>
 
               <tr>
                 <td>Stock</td>
-                <td><input type="text" name="pstoc" size="67"/></td>
+                <td><input type="text" name="pstoc" class="textfield"/></td>
               </tr>
 
               <tr>
