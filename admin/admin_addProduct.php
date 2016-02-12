@@ -14,18 +14,25 @@
 <?php
 	if(isset($_POST['addbtn']))
 	{
-
+    echo "isset button";
 		$prodname = $_POST["pname"];
 		$proddes = $_POST['pdesc'];
 		$prodcat = $_POST['pcat'];
-		$prodpri=$_POST['ppri'];
+		$prodpri=$_POST['pprice'];
 		$prodrentpri=$_POST['prent'];
 		$prodstoc=$_POST['pstoc'];
 		$prodstatus=$_POST['pstat'];
 
-		mysql_query("INSERT into product (Product_Name,Product_Description,Product_Category,Product_Price,Product_Rent_Prince,Product_Stock,Product_Status) values
-		('$prodname','$proddes','$prodcat','$prodpri','$prodrentpri','$prodstoc','$prodstatus')");
-		header("Location:index.php");
+    $sql = "INSERT into product (Product_Name,Product_Description,Product_Category,Product_Price,Product_Rent_Price,Product_Stock,Product_Status) values
+		('$prodname','$proddes','$prodcat','$prodpri','$prodrentpri','$prodstoc','$prodstatus')";
+		$result = mysql_query($sql);
+    if($result) {
+      echo "query successful";
+    }
+    else{
+      echo "query failed";
+    }
+		// header("Location:index.php");
   }
 ?>
 <!DOCTYPE html>
@@ -146,8 +153,8 @@ table
               <tr>
                 <td>Status</td>
                 <td><select name="pstat">
-      						<option value="active">Active</option>
-      						<option value="unactive">Inactive</option>
+      						<option value="1">Active</option>
+      						<option value="2">Inactive</option>
       					</select></td>
               </tr>
 
