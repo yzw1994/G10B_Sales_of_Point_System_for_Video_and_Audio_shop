@@ -28,6 +28,7 @@
 	<title>Search_result</title>
 	<link rel="icon" href="images/favicon.png" type="image/x-icon" sizes="16x16">
 	<link href="../css/main.css" rel="stylesheet" type="text/css" />
+  <link href="../css/product.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="../css/font/elegantlux/elegant_luxmager.css" type="text/css" charset="utf-8" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- 	<script src="../js/jquery-2.2.0.js"></script> -->
@@ -43,8 +44,8 @@
 		<div class="cont_element col span_2_of_2 slider_div">
 		<!--<?php include("../utility/slider.php");?>-->
 		</div>
-		<div class="cont_element col span_2_of_2 pro_char">
-			<div class="new_pro_color pro_title">Search Result</div>
+		<div class="cont_element1 col span_2_of_2 pro_char">
+			<div class="new_pro_color pro_title1">Search Result</div>
 			<?php
 				if($total_result == 0) {
 					include("../utility/prod_not_found.php");
@@ -57,7 +58,7 @@
 						$product_image = $row['Product_Pic'];
 						$product_price = $row['Product_Price'];
 
-						echo "<div id='' class='pro_div'>
+						echo "<div id='' class='pro_div1'>
 								<div id='' class='prod_pic'>
 									<a href='../utility/".$login_product."?product_id=".$product_id."' target='_blank' id='' class=''><img src='".$product_image."' id='' class='prod_pic_img'/></a>
 								</div>
@@ -75,12 +76,7 @@
 				}
 			?>
 		</div>
-		<div class="cont_element col span_1_of_2 pro_char">
-			<?php include("../utility/leftprod.php");?>
-		</div>
-		<div class="cont_element col span_1_of_2 pro_char">
-			<?php include("../utility/rightprod.php");?>
-		</div>
+
 		<?php include("../utility/footer.php");?>
 
 	</div>
