@@ -11,6 +11,7 @@
     $product_price = $product_row['Product_Price'];
     $product_rent_price = $product_row['Product_Rent_Price'];
     $product_describe = $product_row['Product_Description'];
+    $product_stock = $product_row['Product_Stock'];
   }while($product_row = mysql_fetch_array($product_exe));
 ?>
 <!DOCTYPE html>
@@ -33,26 +34,62 @@
 		<?php include("../utility/navigation.php");?>
     <div class="cont_element col span_2_of_2 ">
       <div id="" class="product_content_div">
-        <div id="" class="product_cover">
-          <img src="<?php echo $product_image;?>" id="" class="product_picture"/>
-        </div>
+				<div class="col span_1_of_5 " style="">
+					<?php
+						if(isset($_POST['buy_btn'])){
+							$buy_url = "../user/buy_product.php";
+						}
 
-        <div id="" class="product_content_name">
-          <?php echo $product_name; ?>
-        </div>
-        <div id="" class="product_content_price">
-          <span id="" class="buy_title">Buy :</span> RM <?php echo $product_price; ?><span id="" class="rent_title"> / Rent :</span> RM <?php echo $product_rent_price; ?>
-        </div>
-        <div id="" class="product_content_description">
-          <?php echo $product_describe; ?>
-        </div>
-        <a href="../visitor/login.php" id="" class="">
-          <input type="button" id="" class="product_btn buy_btn" value="BUY">
-        </a>
-        <a href="../visitor/login.php" id="" class="">
-          <input type="button"  id="" class="product_btn rent_btn" value="RENT">
-        </a>
-      </div>
+						$product_out_of_stock_buy = "";
+						$product_out_of_stock_rent = "";
+						$product_out_of_stock_buy_css = "";
+						$product_out_of_stock_rent_css = "";
+						$product_out_of_stock_status = "";
+
+						if($product_stock == 0){
+							$product_out_of_stock_buy = "disabled='disabled'";
+							$product_out_of_stock_rent = "disabled='disabled'";
+							$product_out_of_stock_buy_css = "product_disabled";
+							$product_out_of_stock_rent_css = "product_disabled";
+							$product_out_of_stock_status = "Out Of Stock!";
+						}
+
+						else{
+							$product_out_of_stock_buy = "";
+							$product_out_of_stock_rent = "";
+							$product_out_of_stock_buy_css = "";
+							$product_out_of_stock_rent_css = "";
+							$product_out_of_stock_status = "";
+						}
+
+					?>
+					<img src="<?php echo $product_image;?>" id="" class="product_picture"/>
+          <a href="../visitor/login.php" id="" class="">
+            <input type="button" id="" class="product_btn buy_btn <?php echo $product_out_of_stock_buy_css;?>" value="BUY">
+          </a>
+          <a href="../visitor/login.php" id="" class="">
+            <input type="button"  id="" class="product_btn rent_btn <?php echo $product_out_of_stock_buy_css;?>" value="RENT">
+          </a>
+				</div>
+				<div class="col span_4_of_5 product_content_name" style="">
+					<?php echo $product_name; ?>
+				</div>
+
+				<div class="col span_4_of_5 product_content_price" style="">
+					<span id="" class="buy_title">Buy :</span> RM <?php echo $product_price; ?>
+					<span id="" class="rent_title"> / Rent :</span> RM <?php echo $product_rent_price; ?>
+				</div>
+				<div class="col span_4_of_5 product_content_quantity_div" style="">
+					<div id="" class="product_content_quantity_function_title">Stock</div>
+					<div id="" class="product_content_quantity_function_operation">
+						<input type="number" id="product_quantity_value" name="product_quantity_value" value="<?php echo $product_stock;?>" disabled="disabled" class="quantity_value_input"/>
+					</div>
+					<span id="" class="out_of_stock_status"><?php echo $product_out_of_stock_status;?></span>
+				</div>
+				<div class="col span_4_of_5 product_content_description" style="">
+					<?php echo $product_describe; ?>
+				</div>
+			</div>
 		</div>
 		<?php include("../utility/footer.php");?>
 

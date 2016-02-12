@@ -2,19 +2,19 @@
 		<div class="col span_2_of_2 nav_content">
 			<ul id="" class="nav_item">
 				<li>
-					<a href="">HIGHLIGHTS</a>
+					<a href="<?php echo $navigation_link;?>cat=1">HIGHLIGHTS</a>
 				</li>
 				<li>
-					<a href="">VIDEO</a>
+					<a href="<?php echo $navigation_link;?>cat=2">VIDEO</a>
 				</li>
 				<li>
-					<a href="">AUDIO</a>
+					<a href="<?php echo $navigation_link;?>cat=3">AUDIO</a>
 				</li>
 				<li>
-					<a href="">COMING SOON</a>
+					<a href="<?php echo $navigation_link;?>cat=4">COMING SOON</a>
 				</li>
 				<li>
-					<a href="">kkkkkk</a>
+					<a href="<?php echo $navigation_link;?>cat=5">kkkkkk</a>
 				</li>
 			</ul>
 		</div>

@@ -361,6 +361,22 @@ a.control_next {
 	background-color:rgba(0, 255, 0, 0.4);
 	color:black;
 }
+.new_pro_color4 {
+	background-color:rgba(240, 128, 128, 0.8);
+	color:black;
+}
+.new_pro_color5 {
+	background-color:rgba(205, 79, 57, 0.4);
+	color:black;
+}
+.new_pro_color6 {
+	background-color:rgba(0, 255, 0, 0.4);
+	color:black;
+}
+.new_pro_color7 {
+	background-color:rgba(255, 255, 0, 0.8);
+	color:black;
+}
 .pro_title {
 	width:100%;
 	text-align:center;
@@ -374,7 +390,7 @@ a.control_next {
 	font-size:20px;
 	font-weight:800;
 	padding:10px 0;
-	margin: 0 auto;
+	margin: 10px auto 0;
 }
 .prod_pic {
 	width:155px;

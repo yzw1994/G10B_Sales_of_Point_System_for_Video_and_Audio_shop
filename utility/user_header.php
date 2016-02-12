@@ -36,6 +36,9 @@
 			<a href="../user/change_password.php" id="" class="menu_item"><span>Change Password</span></a>
 			<a href="" id="" class="menu_item"><span>Setting</span></a>
 			<a href="<?php echo $logoutAction ;?>" id="" class="menu_item logout"><span>Log Out</span></a>
-		</div>	
+		</div>
 	</div>
 </div>
+<?php
+	$navigation_link = "../user/navigation_link.php?";
+?>

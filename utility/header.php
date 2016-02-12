@@ -1,6 +1,6 @@
 <div id="" class="logo_div section group">
 		<div id="" class="col span_1_of_3">
-		<a href="" id="" class="logo_link" id="">
+		<a href="../visitor/visitor.php" id="" class="logo_link" id="">
 			<img src="../images/logo.ico" alt="Blu Video and Audio Shop" id="" class="logo_images"/>
 			<p id="" class="shop_name">Blu Video And Audio Shop</p>
 		</a>
@@ -17,3 +17,6 @@
 		</div>
 
 	</div>
+<?php
+	$navigation_link = "../visitor/navigation_link.php?";
+?>

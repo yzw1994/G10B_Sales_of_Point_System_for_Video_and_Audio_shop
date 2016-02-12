@@ -10,7 +10,23 @@
 
 	require("../dataconn/page_load.php");
 
-
+  $category_id = $_REQUEST['cat'];
+  $destination_link = "";
+  if($category_id == 1){
+    $destination_link = "../utility/highlights.php";
+  }
+  else if($category_id == 2){
+    $destination_link = "../utility/video.php";
+  }
+  else if($category_id == 3){
+      $destination_link = "../utility/audio.php";
+  }
+  else if($category_id == 4){
+      $destination_link = "../utility/comingsoon.php";
+  }
+  else if($category_id == 5){
+      $destination_link = "../utility/highlights.php";
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,17 +46,8 @@
 
 		<?php include("../utility/user_header.php");?>
 		<?php include("../utility/navigation.php");?>
-		<div class="cont_element col span_2_of_2 slider_div">
-		<?php include("../utility/slider.php");?>
-		</div>
-		<div class="cont_element col span_1_of_2 pro_char">
-			<?php include("../utility/leftprod.php");?>
-		</div>
-		<div class="cont_element col span_1_of_2 pro_char">
-			<?php include("../utility/rightprod.php");?>
-		</div>
 		<div class="cont_element1 col span_2_of_2 pro_char">
-			<?php include("../utility/centerprod.php");?>
+			<?php include($destination_link);?>
 		</div>
 		<?php include("../utility/footer.php");?>
 
