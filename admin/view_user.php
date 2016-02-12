@@ -140,37 +140,7 @@ table
 		<div id="main">
 			<div class="full_w">
 				<div class="h_title">Personal Details</div>
-				<form name="" method="get">
-				<div style="float:left;">
-					<img src="../img/user_photo.gif" style="border:1px solid black; padding: 5px; height: 150px; width: 150px;" />
-				</div>
-				<div>
-					<table>
-						<tr>
-							<td colspan="2" style="font-size: 18pt; font-weight:bold;">User's Profile</td>
-						</tr>
-						<tr>
-							<td><b>Admin ID</b></td>
-							<td id="edit_ID" contenteditable="false" class="profile-details"><?php echo $row['User_ID'];?></td>
-						</tr>
-						<tr>
-							<td><b>Email</b> </td>
-							<td id="edit_Email" contenteditable="false" class="profile-details"><?php echo $row['User_Email'];?></td>
-						</tr>
-						<tr>
-							<td><b>Contact No.</b></td>
-							<td id="edit_Contact" contenteditable="false" class="profile-details"><?php echo $row['User_Phone'];?></td>
-						</tr>
-						<tr>
-							<td><b>Username</b></td>
-							<td id="edit_Name" contenteditable="false" class="profile-details"><?php echo $row['User_Name'];?></td>
-						</tr>
-						</table>
-					<div style="margin-left: 180px;">
-						<button class="edit" name="editbutton" type="button" onclick="saveUpdate();" style="background: #F3F3F3 url(../img/i_edit.png) no-repeat 4px center; padding-left: 25px;">Save</button>
-						</div>
-				</div>
-				</form>
+				
 			</div>
 		</div>
 	</div>
