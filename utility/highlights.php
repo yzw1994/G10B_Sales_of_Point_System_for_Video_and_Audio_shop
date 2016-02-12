@@ -48,7 +48,7 @@
 		}while($product_row = mysql_fetch_array($product_result));
 	}
 	else {
-		echo "No product found!";
+		include("../utility/prod_not_found.php");
 	}
 
 

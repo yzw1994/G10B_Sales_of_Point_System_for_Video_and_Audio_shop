@@ -245,3 +245,9 @@
   color:white;
   transform: scale(1.2);
 }
+.product_not_found {
+  width:100%;
+  background-color: ;
+  font-size: 29px;
+  margin: 15px auto 0;
+}
