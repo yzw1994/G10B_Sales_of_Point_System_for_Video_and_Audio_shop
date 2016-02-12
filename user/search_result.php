@@ -14,7 +14,7 @@
 		$sql = "SELECT * FROM product WHERE Product_Name like '%$search_text%'";
 		$search_result = mysql_query($sql);
 		$total_result = mysql_num_rows($search_result);
-		
+
 		if(!$search_result) {
 			echo "Query failed: " . mysql_error();
 			exit;
@@ -43,20 +43,20 @@
 		<div class="cont_element col span_2_of_2 slider_div">
 		<!--<?php include("../utility/slider.php");?>-->
 		</div>
-		<div class="cont_element col span_2_of_2">
+		<div class="cont_element col span_2_of_2 pro_char">
 			<div class="new_pro_color pro_title">Search Result</div>
 			<?php
 				if($total_result == 0) {
-					echo "No result found!";
+					include("../utility/prod_not_found.php");
 				}
 				else {
-					echo "Total results : " . $total_result;
+					echo "<div id='' class='product_result'>Total results : " . $total_result."</div>";
 					while($row = mysql_fetch_assoc($search_result)) {
 						$product_id = $row['Product_ID'];
 						$product_name = $row['Product_Name'];
 						$product_image = $row['Product_Pic'];
 						$product_price = $row['Product_Price'];
-						
+
 						echo "<div id='' class='pro_div'>
 								<div id='' class='prod_pic'>
 									<a href='../utility/".$login_product."?product_id=".$product_id."' target='_blank' id='' class=''><img src='".$product_image."' id='' class='prod_pic_img'/></a>
@@ -67,7 +67,7 @@
 								<a href='../utility/".$login_product."?product_id=".$product_id."' target='_blank' id='' class='prod_price'>
 								RM ".$product_price."
 								</a>
-			
+
 								<a href='../utility/".$login_product."?product_id=".$product_id."' name='buy_product' onclick='buy_assignLink()' class='prod_btn prod_buy'>BUY</a>
 								<a href='../utility/".$login_product."?product_id=".$product_id."' name='rent_product' onclick='rent_assignLink()' class='prod_btn prod_rent'>RENT</a>
 							</div>";
