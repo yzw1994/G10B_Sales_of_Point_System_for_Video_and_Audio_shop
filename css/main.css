@@ -365,12 +365,20 @@ box-shadow:         0px 1px 15px 0px rgba(0, 0, 0, 0.83);
 	text-transform: uppercase;
 	padding:5px;
 	margin: 5px;
+	color:white;
+	outline:0;
 }
 .transaction_buy_btn {
-
+	background-color:  #3CB371;
 }
 .transaction_rent_btn {
-
+	background-color: silver;
+}
+.transaction_buy_btn:hover {
+	background-color: #00CD66 !important;
+}
+.transaction_rent_btn:hover {
+	background-color: orange !important;
 }
 .date_title_char {
 	color: black;

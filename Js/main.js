@@ -49,11 +49,20 @@ jQuery(document).ready(function ($) {
 	});
 
   $('#show_rent_div_history_btn').click(function(){
+    $(this).css("background-color","#ED9121");
+    $('#show_buy_div_history_btn').css("background-color","silver");
     $('#rent_history_div_control').slideDown('slow').delay(1500).show();
     $('#buy_history_div_control').hide();
+
   });
+
+  $('#show_buy_div_history_btn').css("background-color","#3CB371");
+
   $('#show_buy_div_history_btn').click(function(){
+    $(this).css("background-color","#3CB371");
+    $('#show_rent_div_history_btn').css("background-color","silver");
     $('#rent_history_div_control').hide();
     $('#buy_history_div_control').slideDown('slow').delay(1500).show();
+
   });
 });
