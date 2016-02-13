@@ -23,9 +23,33 @@
 <style type="text/css">
 table
 {
-	width: 100%;
+	width: 800px;
 	margin-left: 10px;
-  border: 2px solid black;
+
+}
+.name{
+  width:100px;
+}
+.des{
+  width:10px;
+}
+.cat{
+
+}
+.pri{
+
+}
+.rpri{
+
+}
+.stk{
+
+}
+.dat{
+
+}
+.sta{
+
 }
 </style>
 </head>
@@ -73,9 +97,9 @@ table
 			<div class="box">
 				<div class="h_title">Product</div>
 				<ul>
-					<li class="b1"><a class="icon add_product" href="admin_addProduct.php">Add Product</a></li>
+          <li class="b1"><a class="icon add_product" href="admin_addProduct.php">Add Product</a></li>
 					<li class="b2"><a class="icon delete_product" href="">Delete Product</a></li>
-					<li class="b2"><a class="icon delete_product" href="">Product List</a></li>
+					<li class="b2"><a class="icon delete_product" href="admin_prodList.php">Product List</a></li>
 				</ul>
 			</div>
 			<div class="box">
@@ -92,46 +116,48 @@ table
 				</ul>
 			</div>
 		</div>
-		<div id="main">
+		<div id="main" class="content">
 			<div class="full_w">
-				<div class="h_title">Product Added</div>
+				<div class="h_title" >Product Added</div>
 				<form name="" method="get">
 
-				<div>
-					<table>
+				<!-- <div> -->
+					<table style="font-size: 15px; width:100px;">
               <tr>
-      					<th>Name</th>
-      					<th>Description</th>
-      					<th>Category</th>
-      					<th>Price</th>
-      					<th>Rent price</th>
-      					<th>Stock</th>
-      					<th>Date</th>
-      					<th>Status</th>
+      					<th class="">Name</th>
+      					<th class="">Description</th>
+      					<th class="">Category</th>
+      					<th class="">Price</th>
+      					<th class="">Rent price</th>
+      					<th class="">Stock</th>
+      					<th class="">Date</th>
+      					<th class="">Status</th>
+                <th class="">Status</th>
+                <th class="">Status</th>
       				</tr>
       			<?php
-      				while($row = mysql_fetch_assoc($result1))
+      				while($row1 = mysql_fetch_assoc($result1))
       				{
 
       				?>
       				<tr>
-      					<td><?php echo $row1["Product_Name"];?></td>
-                <td><?php echo $row1["Product_Description"];?></td>
-                <td><?php echo $row1["Product_Category"];?></td>
-      					<td><?php echo $row1["Product_Price"];?></td>
-      					<td><?php echo $row1["Product_Rent_Price"];?></td>
-      					<td><?php echo $row1["Product_Stock"];?></td>
-      					<td><?php echo $row1["Product_Date"];?></td>
-      					<td><?php echo $row1["Product_Status"];?></td>
-      					<td><a href="admin_edit_product.php?pid=<?php echo $row["Product_ID"]; ?>'">Modify</a></td> -->
-      					<td><a onclick="return confirmation()" href="admin_delete_product.php?pid=<?php echo $row["Product_ID"]; ?>">Delete</a></td>
+      					<td class="nam"><?php echo $row1["Product_Name"];?></td>
+                <td class="des"><?php echo $row1["Product_Description"];?></td>
+                <td class="cat"><?php echo $row1["Product_Category"];?></td>
+      					<td class="pri"><?php echo $row1["Product_Price"];?></td>
+      					<td class="rpri"><?php echo $row1["Product_Rent_Price"];?></td>
+      					<td class="stk"><?php echo $row1["Product_Stock"];?></td>
+      					<td class="dat"><?php echo $row1["Product_Date"];?></td>
+      					<td class="sta"><?php echo $row1["Product_Status"];?></td>
+      					<td class=""><a href="admin_edit_product.php?pid=<?php echo $row["Product_ID"]; ?>'">Modify</a></td>
+      					<td class=""><a onclick="return confirmation()" href="admin_delete_product.php?pid=<?php echo $row["Product_ID"]; ?>">Delete</a></td>
       				</tr>
 
       			<?php
       				}
       			?>
 					</table>
-				</div>
+				<!-- </div> -->
 				</form>
 			</div>
 		</div>

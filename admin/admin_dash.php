@@ -70,9 +70,9 @@ table
 			<div class="box">
 				<div class="h_title">Product</div>
 				<ul>
-					<li class="b1"><a class="icon add_product" href="admin_addProduct.php">Add Product</a></li>
+          <li class="b1"><a class="icon add_product" href="admin_addProduct.php">Add Product</a></li>
 					<li class="b2"><a class="icon delete_product" href="">Delete Product</a></li>
-					<li class="b2"><a class="icon delete_product" href="">Product List</a></li>
+					<li class="b2"><a class="icon delete_product" href="admin_prodList.php">Product List</a></li>
 				</ul>
 			</div>
 			<div class="box">
@@ -100,9 +100,9 @@ table
 		<th>New Products</th>
 		<th>Product Picture</th>
 	<tr>
-<?php 
+<?php
 $sql="select * from product where Product_Date=CURDATE()";
-$productlist=mysql_query($sql);	
+$productlist=mysql_query($sql);
 while($row = mysql_fetch_assoc($productlist))
 {
 		echo "<tr>";
@@ -116,9 +116,9 @@ while($row = mysql_fetch_assoc($productlist))
 		<th>New Customer</th>
 		<th>Profile Picture</th>
 	<tr>
-<?php 
+<?php
 $sql="select * from user where User_Date=CURDATE() and User_Privilege=2";
-$productlist=mysql_query($sql);	
+$productlist=mysql_query($sql);
 while($row = mysql_fetch_assoc($productlist))
 {
 		echo "<tr>";
@@ -127,7 +127,7 @@ while($row = mysql_fetch_assoc($productlist))
 		echo "</tr>";
 }?>
 </table>
-					
+
 				</div>
 				</form>
 			</div>

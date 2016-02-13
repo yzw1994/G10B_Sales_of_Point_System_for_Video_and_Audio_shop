@@ -120,7 +120,7 @@ table
 				<ul>
 					<li class="b1"><a class="icon add_product" href="admin_addProduct.php">Add Product</a></li>
 					<li class="b2"><a class="icon delete_product" href="">Delete Product</a></li>
-					<li class="b2"><a class="icon delete_product" href="">Product List</a></li>
+					<li class="b2"><a class="icon delete_product" href="admin_prodList.php">Product List</a></li>
 				</ul>
 			</div>
 			<div class="box">
