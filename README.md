@@ -1,7 +1,11 @@
 G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 =======
-## Go to Xampp website ##
-[Sites Using React](https://github.com/facebook/react/wiki/Sites-Using-React)
+## Go to Xampp website and download the installer ##
+[Xampp control panel download link here...](https://www.apachefriends.org/download.html)
+
+
+----------
+
 
 ## Install xampp ##
 ![enter image description here](https://lh3.googleusercontent.com/zD8RQhn_yNvu9cQx1oQvCcaaSx7DgBfx6H_IDPFVRnOnX3kQd1YlqwQNo1btaUEl2Ns=s0 "installer.JPG")
@@ -11,7 +15,13 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 
 
 ## Click Continue On Installer ##
-![enter image description here](https://lh3.googleusercontent.com/m8Zal9YlwzJcbOO3zOZufo4l97NhqLEpu-G7hSV3rn3SGVmuuNuexbpuDnAtga1KF_E=s0 "installer2.JPG")
+![Keep click next until installer is finish install](https://lh3.googleusercontent.com/m8Zal9YlwzJcbOO3zOZufo4l97NhqLEpu-G7hSV3rn3SGVmuuNuexbpuDnAtga1KF_E=s0 "installer2.JPG")
+
+
+----------
+
+## Start xampp controller ##
+![Click start button of Apache and Mysql](https://github.com/blu94/G10B_Sales_of_Point_System_for_Video_and_Audio_shop/blob/master/readmeimage/xampp%20controller.PNG)
 
 
 ----------
