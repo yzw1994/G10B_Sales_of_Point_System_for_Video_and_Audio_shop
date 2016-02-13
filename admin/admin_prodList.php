@@ -8,33 +8,9 @@
 	require("../dataconn/page_load.php");
 	$user_id = $_SESSION['user_id'];
 	$result = mysql_query("SELECT * FROM user WHERE User_ID = '$user_id'");
+  $result1 = mysql_query("SELECT * FROM product");
 	$row = mysql_fetch_assoc($result);
-?>
-
-<?php
-	if(isset($_POST['addbtn']))
-	{
-    echo "isset button";
-		$prodname = $_POST["pname"];
-		$proddes = $_POST['pdesc'];
-		$prodcat = $_POST['pcat'];
-		$prodpri=$_POST['pprice'];
-		$prodrentpri=$_POST['prent'];
-		$prodstoc=$_POST['pstoc'];
-    $proddate=$_POST['pdate'];
-		$prodstatus=$_POST['pstat'];
-
-    $sql = "INSERT into product (Product_Name,Product_Description,Product_Category,Product_Price,Product_Rent_Price,Product_Stock,Product_Date,Product_Status) values
-		('$prodname','$proddes','$prodcat','$prodpri','$prodrentpri','$prodstoc','$proddate','$prodstatus')";
-		$result = mysql_query($sql);
-    if($result) {
-      echo "query successful";
-    }
-    else{
-      echo "query failed";
-    }
-		 header("Location:admin_prodList.php");
-  }
+  $row1 = mysql_fetch_assoc($result1);
 ?>
 <!DOCTYPE html>
 <html>
@@ -47,16 +23,15 @@
 <style type="text/css">
 table
 {
-	width: 50%;
-	margin-left: 180px;
-}
-.textfield{
-  width:250px;
+	width: 100%;
+	margin-left: 10px;
+  border: 2px solid black;
 }
 </style>
 </head>
 
-
+<?php
+ ?>
 <body>
 <div class="wrap">
 	<div id="header">
@@ -119,64 +94,43 @@ table
 		</div>
 		<div id="main">
 			<div class="full_w">
-				<div class="h_title">Admin Panel</div>
-          <!--Upload Product Picture-->
+				<div class="h_title">Product Added</div>
+				<form name="" method="get">
+
 				<div>
-          <form name="productDetails" method="POST">
-            <table>
+					<table>
               <tr>
-                <td>Name</td>
-                <td><input type="text" name="pname" size="67" class="textfield"/></td>
-              </tr>
+      					<th>Name</th>
+      					<th>Description</th>
+      					<th>Category</th>
+      					<th>Price</th>
+      					<th>Rent price</th>
+      					<th>Stock</th>
+      					<th>Date</th>
+      					<th>Status</th>
+      				</tr>
+      			<?php
+      				while($row = mysql_fetch_assoc($result1))
+      				{
 
-              <tr>
-                <td>Description</td>
-                <td><textarea rows="3" cols="51" name="pdesc" class="textfield"></textarea></td>
-              </tr>
+      				?>
+      				<tr>
+      					<td><?php echo $row1["Product_Name"];?></td>
+                <td><?php echo $row1["Product_Description"];?></td>
+                <td><?php echo $row1["Product_Category"];?></td>
+      					<td><?php echo $row1["Product_Price"];?></td>
+      					<td><?php echo $row1["Product_Rent_Price"];?></td>
+      					<td><?php echo $row1["Product_Stock"];?></td>
+      					<td><?php echo $row1["Product_Date"];?></td>
+      					<td><?php echo $row1["Product_Status"];?></td>
+      					<td><a href="admin_edit_product.php?pid=<?php echo $row["Product_ID"]; ?>'">Modify</a></td> -->
+      					<td><a onclick="return confirmation()" href="admin_delete_product.php?pid=<?php echo $row["Product_ID"]; ?>">Delete</a></td>
+      				</tr>
 
-              <tr>
-                <td>Category</td>
-                <td><input type="text" name="pcat" class="textfield"/></td>
-              </tr>
-
-              <tr>
-                <td>Price</td>
-                <td><input type="text" name="pprice" class="textfield"/></td>
-              </tr>
-
-              <tr>
-                <td>Rent price</td>
-                <td><input type="text" name="prent" class="textfield"/></td>
-              </tr>
-
-              <tr>
-                <td>Stock</td>
-                <td><input type="text" name="pstoc" class="textfield"/></td>
-              </tr>
-
-              <tr>
-                <td>Date</td>
-                <td><input type="date" name="pdate" class="textfield"/></td>
-              </tr>
-
-              <tr>
-                <td>Status</td>
-                <td><select name="pstat">
-      						<option value="1">Active</option>
-      						<option value="2">Inactive</option>
-      					</select></td>
-              </tr>
-
-              <tr>
-                <td></td>
-                <td></td>
-              </tr>
-  					</table>
-
-          <div style="margin-left: 180px;">
-						<button class="add" name="addbtn" type="submit"  style="background: #F3F3F3 url(../img/i_add.png) no-repeat 4px center; padding-left: 25px;">Add Now</button>
-					</div>
-          </form>
+      			<?php
+      				}
+      			?>
+					</table>
 				</div>
 				</form>
 			</div>
