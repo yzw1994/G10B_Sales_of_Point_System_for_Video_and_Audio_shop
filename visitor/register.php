@@ -38,7 +38,7 @@ $reg_error_pass = "reg_normal";
 
 		else
 		{
-			mysql_query("insert into user(User_Name,User_Password,User_Email,User_Phone,User_Address,User_Dob,User_Subscribe_Status,User_Privilege)values('$name','$pass','$email','$phone','$address','$bday','1','2')");
+			mysql_query("insert into user(User_Name,User_Password,User_Email,User_Phone,User_Address,User_Dob,User_Subscribe_Status,User_Privilege)values('$name','$pass','$email','$phone','$address','$bday','Enable','2')");
 
 			?>
 			<script type="text/javascript">

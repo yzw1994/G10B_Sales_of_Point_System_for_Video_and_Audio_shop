@@ -9,7 +9,7 @@
 	$user_id = $_SESSION['user_id'];
 	$result = mysql_query("SELECT * FROM user WHERE User_ID = '$user_id'");
 	$row = mysql_fetch_assoc($result);
-  $user_list = mysql_query("SELECT * FROM user");
+  $user_list = mysql_query("SELECT * FROM user where User_Privilege='2'");
   $user_rows = mysql_num_rows($user_list);
 
 ?>
@@ -136,7 +136,7 @@ table
 				<div class="h_title">Manage Users</div>
 				<ul>
 					<li class="b1"><a class="icon add_user" href="view_user.php">User List</a></li>
-					<li class="b2"><a class="icon delete_user" href="delete_user.php">Disable User</a></li>
+					<li class="b2"><a class="icon delete_user" href="disable_user.php">Disable User</a></li>
 				</ul>
 			</div>
 		</div>
