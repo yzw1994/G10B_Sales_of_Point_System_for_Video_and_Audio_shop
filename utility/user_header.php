@@ -34,7 +34,7 @@
 		<img src="../images/menu.png" title="menu" id="" class=""/>
 		<div id="menu_content_function" class="menu_content">
 			<a href="../user/change_password.php" id="" class="menu_item"><span>Change Password</span></a>
-			<a href="" id="" class="menu_item"><span>Setting</span></a>
+			<a href="../user/history.php" id="" class="menu_item" target="_blank"><span>Transaction History</span></a>
 			<a href="<?php echo $logoutAction ;?>" id="" class="menu_item logout"><span>Log Out</span></a>
 		</div>
 	</div>
