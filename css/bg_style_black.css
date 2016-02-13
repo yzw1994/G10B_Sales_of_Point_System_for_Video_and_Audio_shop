@@ -11,10 +11,54 @@ body
 	background: url(../img/bg_box_head.jpg) repeat-x;
 }
 table th
-{ 
+{
 	background: url(../img/bg_box_head.jpg) repeat-x;
 }
 #footer
 {
 	background: url(../img/bg_top.jpg) repeat-x top center;
+}
+
+.admin_table_ID{
+font-weight: normal;
+color:silver;
+background-color:white;
+font-size: 13px;
+
+}
+
+.admin_table_email{
+	font-weight: normal;
+	font-size: 13px;
+
+}
+.admin_table_name{
+	font-weight: normal;
+	font-size: 13px;
+
+}
+
+.admin_table_phone{
+	font-weight: normal;
+font-size: 13px;
+}
+
+.admin_table_address{
+	font-weight: normal;
+font-size: 13px;
+}
+
+.admin_table_birthday{
+	font-weight: normal;
+	font-size: 13px;
+}
+
+.admin_table_status{
+	font-weight: normal;
+	font-size: 13px;
+}
+
+
+.admin_table {
+	
 }

@@ -9,6 +9,9 @@
 	$user_id = $_SESSION['user_id'];
 	$result = mysql_query("SELECT * FROM user WHERE User_ID = '$user_id'");
 	$row = mysql_fetch_assoc($result);
+  $user_list = mysql_query("SELECT * FROM user");
+  $user_rows = mysql_num_rows($user_list);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -93,7 +96,7 @@ table
 		</div>
 		<div id="nav">
 			<ul>
-				<li class="upp"><a href="../visitor/visitor.php">Home</a></li>
+				<li class="upp"><a href="../admin/index.php">Home</a></li>
 				<li class="upp"><a href="#">Rent & Sales</a>
 					<ul>
 						<li><a href="">List of video</a></li>
@@ -137,10 +140,46 @@ table
 				</ul>
 			</div>
 		</div>
-		<div id="main">
+    <div id="main">
 			<div class="full_w">
-				<div class="h_title">Personal Details</div>
-				
+				<div class="h_title">User Details</div>
+
+            <table style="margin-left:200px;">
+
+              <tr class="admin_table">
+                    <th></th>
+                    <th class="admin_table_ID">User ID</th>
+                    <th class="admin_table_email">User Email</th>
+                    <th class="admin_table_name">User Name</th>
+                    <th class="admin_table_phone">User Phone</th>
+                    <th class="admin_table_address">User Address</th>
+                    <th class="admin_table_birthday">User birthday</th>
+                    <th class="admin_table_birthday">User Rent Limit</th>
+                    <th class="admin_table_status">User Subscirbe status</th>
+                </tr>
+              <?php
+
+              while(  $u_rows = mysql_fetch_assoc($user_list))
+              {
+
+
+              ?>
+                <tr>
+                      <td></td>
+                      <td class="admin_table_ID"><?php echo $u_rows['User_ID']?></td>
+                      <td class="admin_table_email"><?php echo $u_rows['User_Email']?></td>
+                      <td class="admin_table_name"><?php echo $u_rows['User_Name']?></td>
+                      <td class="admin_table_phone"><?php echo $u_rows['User_Phone']?></td>
+                      <td class="admin_table_address"><?php echo $u_rows['User_Address']?></td>
+                      <td class="admin_table_birthday"><?php echo $u_rows['User_Dob']?></td>
+                      <td class="admin_table_status"><?php echo $u_rows['User_Rent_Limit']?></td>
+                      <td class="admin_table_status"><?php echo $u_rows['User_Subscribe_Status']?></td>
+                  </tr>
+                <?php
+              }
+                 ?>
+
+            </table>
 			</div>
 		</div>
 	</div>
