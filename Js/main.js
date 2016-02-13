@@ -46,7 +46,14 @@ jQuery(document).ready(function ($) {
 
 	$("#menu_function").click(function () {
 		$("#menu_content_function").toggle(200);
-	}
+	});
 
-	);
+  $('#show_rent_div_history_btn').click(function(){
+    $('#rent_history_div_control').slideDown('slow').delay(1500).show();
+    $('#buy_history_div_control').hide();
+  });
+  $('#show_buy_div_history_btn').click(function(){
+    $('#rent_history_div_control').hide();
+    $('#buy_history_div_control').slideDown('slow').delay(1500).show();
+  });
 });
