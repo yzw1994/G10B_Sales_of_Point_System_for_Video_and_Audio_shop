@@ -1,6 +1,9 @@
 G10B Sales of Point System for Video and Audio shop
 =======
 
+G10B_Sales_of_Point_System_for_Video_and_Audio_shop
+=======
+
 ## Install xampp ##
 ![enter image description here](https://lh3.googleusercontent.com/zD8RQhn_yNvu9cQx1oQvCcaaSx7DgBfx6H_IDPFVRnOnX3kQd1YlqwQNo1btaUEl2Ns=s0 "installer.JPG")
 ## Click Continue On Installer ##
@@ -9,8 +12,10 @@ G10B Sales of Point System for Video and Audio shop
 ![enter image description here](https://lh3.googleusercontent.com/-eAzrGn0-FAE/VrzgSC1iczI/AAAAAAAAAD4/ZqbqAHNXCVQ/s0/phpmyadmin.JPG "phpmyadmin.JPG")
 ## Import database ##
 ![enter image description here](https://lh3.googleusercontent.com/E7iCJM9MKgKAI7Fpua_sB4-EwA7Pu_zTWidsV2i7fc33m6fwMiJId5tYwnRH3vXGp_g=s0 "import.JPG")
-## Choose file to import and click go ##
+## Choose file to import and and after finish choosing file click go ##
 ![enter image description here](https://lh3.googleusercontent.com/K2vMJAfzN97tQ-a0p9VSdefXZiVpES8G-WxgNH8SJMuBUXWwCtqmx5Wxfe1ulb-xzbw=s0 "import2.JPG")
+## Following this file source and click sales_of_point_system.sql ##
+![enter image description here](https://lh3.googleusercontent.com/QXLfZb36bsttuK_jcoKMdzfk4Ct7v4j-idcop7MCqVJolpl0xUBvwevGCj05eddzgDM=s0 "import3.JPG")
 ## Register to system ##
 ![enter image description here](https://lh3.googleusercontent.com/VKUXFV-Q14uH3wyJeFWmwmQGG4VnIO5Kdh-gdKekMWl_i1a4lP6L9pn_L9qiSYi7jgk=s0 "register.JPG")
 ## After finish register then click register to continue##
