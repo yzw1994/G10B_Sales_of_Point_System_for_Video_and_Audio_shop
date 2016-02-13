@@ -1,11 +1,5 @@
 G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 =======
-## Go to Xampp website and download the installer ##
-[Xampp control panel download link here...](https://www.apachefriends.org/download.html)
-
-
-----------
-
 
 ## Install xampp ##
 ![enter image description here](https://lh3.googleusercontent.com/zD8RQhn_yNvu9cQx1oQvCcaaSx7DgBfx6H_IDPFVRnOnX3kQd1YlqwQNo1btaUEl2Ns=s0 "installer.JPG")
@@ -15,13 +9,13 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 
 
 ## Click Continue On Installer ##
-![Keep click next until installer is finish install](https://lh3.googleusercontent.com/m8Zal9YlwzJcbOO3zOZufo4l97NhqLEpu-G7hSV3rn3SGVmuuNuexbpuDnAtga1KF_E=s0 "installer2.JPG")
+![enter image description here](https://lh3.googleusercontent.com/m8Zal9YlwzJcbOO3zOZufo4l97NhqLEpu-G7hSV3rn3SGVmuuNuexbpuDnAtga1KF_E=s0 "installer2.JPG")
 
 
 ----------
 
-## Start xampp controller ##
-![Click start button of Apache and Mysql](https://github.com/blu94/G10B_Sales_of_Point_System_for_Video_and_Audio_shop/blob/master/readmeimage/xampp%20controller.PNG)
+## Start Apache and MySQL ##
+![enter image description here](https://lh3.googleusercontent.com/-tYID1O32pH8/Vr8QODx0KXI/AAAAAAAAAF4/1mZG5Pg3thQ/s0/startxammp.JPG "startxammp.JPG")
 
 
 ----------
@@ -50,6 +44,20 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 
 ## Following this file source and click sales_of_point_system.sql ##
 ![enter image description here](https://lh3.googleusercontent.com/QXLfZb36bsttuK_jcoKMdzfk4Ct7v4j-idcop7MCqVJolpl0xUBvwevGCj05eddzgDM=s0 "import3.JPG")
+
+
+----------
+
+
+## Download the file from Github ##
+![enter image description here](https://lh3.googleusercontent.com/KuW-jZ2lUwSam6P4B3WRzFc8aRDwCBFgakF89kPQ6ZwpQ5-CGVGj-4MzGUAdc-Uy2WE=s0 "github.JPG")
+
+
+----------
+
+
+## Extract the file to windowC/xampp/htdocs##
+![enter image description here](https://lh3.googleusercontent.com/MdYuvQsyMJrsRzJXg2bD7bzswmuQ__WoOxSYfDVwe-UafnxHWbxNadQL5jVh6vEFbl4=s0 "htdoc.JPG")
 
 
 ----------
