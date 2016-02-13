@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.6
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2016 at 02:42 PM
+-- Generation Time: Feb 13, 2016 at 07:42 AM
 -- Server version: 5.6.16
--- PHP Version: 5.5.9
+-- PHP Version: 5.5.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -67,36 +67,40 @@ CREATE TABLE IF NOT EXISTS `manage` (
 
 CREATE TABLE IF NOT EXISTS `product` (
   `Product_ID` int(15) NOT NULL AUTO_INCREMENT,
-  `Product_Name` varchar(300) NOT NULL,
-  `Product_Description` varchar(1000) NOT NULL,
-  `Product_Pic` varchar(1000) NOT NULL DEFAULT '../images/default_album.jpg',
+  `Product_Name` varchar(255) NOT NULL,
+  `Product_Description` varchar(255) NOT NULL,
+  `Product_Pic` varchar(255) NOT NULL DEFAULT '../images/default_album.jpg',
   `Product_Type` int(15) NOT NULL,
-  `Product_Category` varchar(500) NOT NULL,
+  `Product_Category` varchar(255) NOT NULL,
   `Product_Price` double NOT NULL,
   `Product_Rent_Price` double NOT NULL DEFAULT '10',
   `Product_Stock` int(11) NOT NULL,
+  `Product_Date` date NOT NULL,
   `Product_Status` varchar(15) NOT NULL,
   PRIMARY KEY (`Product_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`Product_ID`, `Product_Name`, `Product_Description`, `Product_Pic`, `Product_Type`, `Product_Category`, `Product_Price`, `Product_Rent_Price`, `Product_Stock`, `Product_Status`) VALUES
-(1, 'adellssssssssssssssssssssssssssss', 'yasfcvbayvs,bs,gkiu,bxh,sjbxgjgxbsd', '../images/default_album.jpg', 2, 'jazz', 35.99, 10, 9, '1'),
-(2, 'Unorthodox Jukebox', 'usygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll', '../images/default_album.jpg', 2, 'jazz', 49.9, 11.99, 95, '1'),
-(3, 'The Avengers', 'Avengerssdcfvgbhnkjmerctvgbuhnkjgvhaskxivkjygxybsdahjbclhfuywebd', '../images/default_album.jpg', 1, 'Adventure', 59.99, 29.99, 20, '1'),
-(4, 'Avengers: Age of Ultron', 'AvengerssdcfvgbhnkjmerctvgbuhnkjgvhaskxivkjygxybsdahjbclhfuywebdAvengerssdcfvgbhnkjmerctvgbuhnkjgvhaskxivkjygxybsdahjbclhfuywebd', '../images/default_album.jpg', 1, 'Adventure', 67.99, 27.99, 0, '1'),
-(5, 'Batman v Superman: Dawn of Justice', 'Batman v Superman: Dawn of Justiceafdgzna bv ??Xv ZMHGXv as bx,jhb xmnzbxmn sx,vh,xasv x XnZ???????????????????DFDS CSSCS', '../images/default_album.jpg', 1, 'Action', 60, 30, 23, '3'),
-(6, 'Suicide Squad ', 'Suicide Squadqskwnsijanuxbaskxb,kjasb,kgvausdvjsvxkh,vdcgulewvhb,sjdab,abedkjgewldv,sdgvg awgeksxhvc,j,sgai.dewdwedewdewe', '../images/default_album.jpg', 1, 'Action', 60.99, 29.99, 12, '3'),
-(9, 'London Has Fallen', 'Actionsahjveufbgugbzuygfoub fgyakevufegkufgqk fugkuyqfdwefefearf', '../images/default_album.jpg', 1, 'Action', 99.99, 10, 69, '3'),
-(10, 'Triple 9', 'dwedwedweaferhrtgretafef', '../images/default_album.jpg', 1, 'Fantasy', 19.99, 10, 25, '3'),
-(11, 'Miracles from Heaven', 'FAGHZJXJVASHBJXHMSAVHJXB,HSGYXJHB SXHSGUJASXXSSAXSAX', '../images/default_album.jpg', 1, 'Story', 40.99, 10, 54, '3'),
-(12, 'I Saw the Light', 'qstrwqhnisqwfcsuwqxebuwegwbdnlwbgzydtg wuad5wafeDYyfiyesgdcdbskhjdcsd', '../images/default_album.jpg', 1, 'Story', 39.99, 10, 411, '3'),
-(13, 'Doctor Strange', '12twf12ygwyt2fe7qhuzerzwigbxuetrfliegryxfrkzezgvwtfdfewhxferfer', '../images/default_album.jpg', 1, 'Sci-fi', 88.99, 10, 32, '3'),
-(14, 'Fantastic Beasts and Where to Find Them', 'qwhguwgeuydvbeuhfbgiyetgfoigeyitgbwuzhbwegfduegqfyrgfbouyqrgfuerbqgffiyerfzerferfqerfer', '../images/default_album.jpg', 1, 'Fantasy', 90.99, 10, 53, '3'),
-(15, 'The Founder ', 'hwgvyzvweyidwugfiywgfuwgfqyurbqerybedhvayiubzhdszyibchbajzcbkjdgfkcbjhflb fuebfuakengbfefaerferfref', '../images/default_album.jpg', 1, 'Drama', 67.99, 10, 43, '3');
+INSERT INTO `product` (`Product_ID`, `Product_Name`, `Product_Description`, `Product_Pic`, `Product_Type`, `Product_Category`, `Product_Price`, `Product_Rent_Price`, `Product_Stock`, `Product_Date`, `Product_Status`) VALUES
+(1, 'adellssssssssssssssssssssssssssss', 'yasfcvbayvs,bs,gkiu,bxh,sjbxgjgxbsd', '../images/default_album.jpg', 2, 'jazz', 35.99, 10, 9, '0000-00-00', '1'),
+(2, 'Unorthodox Jukebox', 'usygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,j', '../images/default_album.jpg', 2, 'jazz', 49.9, 11.99, 95, '0000-00-00', '1'),
+(3, 'The Avengers', 'Avengerssdcfvgbhnkjmerctvgbuhnkjgvhaskxivkjygxybsdahjbclhfuywebd', '../images/default_album.jpg', 1, 'Adventure', 59.99, 29.99, 20, '0000-00-00', '1'),
+(4, 'Avengers: Age of Ultron', 'AvengerssdcfvgbhnkjmerctvgbuhnkjgvhaskxivkjygxybsdahjbclhfuywebdAvengerssdcfvgbhnkjmerctvgbuhnkjgvhaskxivkjygxybsdahjbclhfuywebd', '../images/default_album.jpg', 1, 'Adventure', 67.99, 27.99, 0, '0000-00-00', '1'),
+(5, 'Batman v Superman: Dawn of Justice', 'Batman v Superman: Dawn of Justiceafdgzna bv ??Xv ZMHGXv as bx,jhb xmnzbxmn sx,vh,xasv x XnZ???????????????????DFDS CSSCS', '../images/default_album.jpg', 1, 'Action', 60, 30, 23, '0000-00-00', '3'),
+(6, 'Suicide Squad ', 'Suicide Squadqskwnsijanuxbaskxb,kjasb,kgvausdvjsvxkh,vdcgulewvhb,sjdab,abedkjgewldv,sdgvg awgeksxhvc,j,sgai.dewdwedewdewe', '../images/default_album.jpg', 1, 'Action', 60.99, 29.99, 12, '0000-00-00', '3'),
+(9, 'London Has Fallen', 'Actionsahjveufbgugbzuygfoub fgyakevufegkufgqk fugkuyqfdwefefearf', '../images/default_album.jpg', 1, 'Action', 99.99, 10, 69, '0000-00-00', '3'),
+(10, 'Triple 9', 'dwedwedweaferhrtgretafef', '../images/default_album.jpg', 1, 'Fantasy', 19.99, 10, 25, '0000-00-00', '3'),
+(11, 'Miracles from Heaven', 'FAGHZJXJVASHBJXHMSAVHJXB,HSGYXJHB SXHSGUJASXXSSAXSAX', '../images/default_album.jpg', 1, 'Story', 40.99, 10, 54, '0000-00-00', '3'),
+(12, 'I Saw the Light', 'qstrwqhnisqwfcsuwqxebuwegwbdnlwbgzydtg wuad5wafeDYyfiyesgdcdbskhjdcsd', '../images/default_album.jpg', 1, 'Story', 39.99, 10, 411, '0000-00-00', '3'),
+(13, 'Doctor Strange', '12twf12ygwyt2fe7qhuzerzwigbxuetrfliegryxfrkzezgvwtfdfewhxferfer', '../images/default_album.jpg', 1, 'Sci-fi', 88.99, 10, 32, '0000-00-00', '3'),
+(14, 'Fantastic Beasts and Where to Find Them', 'qwhguwgeuydvbeuhfbgiyetgfoigeyitgbwuzhbwegfduegqfyrgfbouyqrgfuerbqgffiyerfzerferfqerfer', '../images/default_album.jpg', 1, 'Fantasy', 90.99, 10, 53, '0000-00-00', '3'),
+(15, 'The Founder ', 'hwgvyzvweyidwugfiywgfuwgfqyurbqerybedhvayiubzhdszyibchbajzcbkjdgfkcbjhflb fuebfuakengbfefaerferfref', '../images/default_album.jpg', 1, 'Drama', 67.99, 10, 43, '0000-00-00', '3'),
+(16, '123', '1234 test', '../images/default_album.jpg', 0, 'jazz', 12.5, 15, 3, '0000-00-00', '1'),
+(17, '123', '1234 test', '../images/default_album.jpg', 0, 'jazz', 12.5, 15, 3, '0000-00-00', '1'),
+(18, 'test', 'test', '../images/default_album.jpg', 0, 'test', 12, 12, 5, '1994-12-04', '1');
 
 -- --------------------------------------------------------
 
@@ -166,7 +170,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `User_Rent_Limit` int(11) NOT NULL DEFAULT '0',
   `User_Privilege` varchar(15) NOT NULL,
   PRIMARY KEY (`User_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `user`
@@ -176,7 +180,9 @@ INSERT INTO `user` (`User_ID`, `User_Name`, `User_Password`, `User_Email`, `User
 (1, 'Yap Cheng Wei', '', 'yapchengwei@gmail.com', '../user/profile_picture/1U18071.jpg', '0109333724', 'dygsankjefvdsjfdsjdesb xiywegjxvd', '1994-06-06', '', 0, ''),
 (2, 'Koh Chee Guan ', '123123123', 'yuanyuan0331@live.com', '../images/default_pic.jpg', '0177601692', 'sad sad ixora ', '2194-02-11', '', 0, ''),
 (3, 'yyy', '123', 'kkk@hsa', '../images/default_pic.jpg', '000000000', 'kajsinmajslas', '0001-06-06', '1', 0, '2'),
-(4, 'BLUycw', '827ccb0eea8a706c4c34a16891f84e7b', 'cheng.wei1@hotmail.com', '../user/profile_picture/4U10418372_4799357158319_3118693698156310696_n.jpg', '0109333724', 'wasdrfgyufdsgjhjesdfghjigdgfghjkidsfgh', '1994-06-06', '1', 0, '2');
+(4, 'BLUycw', '827ccb0eea8a706c4c34a16891f84e7b', 'cheng.wei1@hotmail.com', '../user/profile_picture/4U10418372_4799357158319_3118693698156310696_n.jpg', '0109333724', 'wasdrfgyufdsgjhjesdfghjigdgfghjkidsfgh', '1994-06-06', '1', 0, '2'),
+(5, 'Johny Ang', '05da9d587437a3f58cf91a8694448793', 'ahs_imd@hotmail.com', '../images/default_pic.jpg', '0123456789', 'No.63, Jalan Ria 10, Taman Ria', '0000-00-00', '1', 0, '2'),
+(6, 'yzw', 'c03ff2cbc8056f61241a8a34e7aea8f9', 'zhanweiyap@hotmail.com', '../images/default_pic.jpg', '0100000000', '33D Bunga Raya', '1994-05-16', '1', 0, '1');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

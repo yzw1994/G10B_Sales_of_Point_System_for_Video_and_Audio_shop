@@ -21,10 +21,11 @@
 		$prodpri=$_POST['pprice'];
 		$prodrentpri=$_POST['prent'];
 		$prodstoc=$_POST['pstoc'];
+    $proddate=$_POST['pdate'];
 		$prodstatus=$_POST['pstat'];
 
-    $sql = "INSERT into product (Product_Name,Product_Description,Product_Category,Product_Price,Product_Rent_Price,Product_Stock,Product_Status) values
-		('$prodname','$proddes','$prodcat','$prodpri','$prodrentpri','$prodstoc','$prodstatus')";
+    $sql = "INSERT into product (Product_Name,Product_Description,Product_Category,Product_Price,Product_Rent_Price,Product_Stock,Product_Date,Product_Status) values
+		('$prodname','$proddes','$prodcat','$prodpri','$prodrentpri','$prodstoc','$proddate','$prodstatus')";
 		$result = mysql_query($sql);
     if($result) {
       echo "query successful";
@@ -154,6 +155,11 @@ table
               </tr>
 
               <tr>
+                <td>Date</td>
+                <td><input type="date" name="pdate" class="textfield"/></td>
+              </tr>
+
+              <tr>
                 <td>Status</td>
                 <td><select name="pstat">
       						<option value="1">Active</option>
@@ -168,7 +174,7 @@ table
   					</table>
 
           <div style="margin-left: 180px;">
-						<button class="add" name="addbtn" type="submit"  style="background: #F3F3F3 url(../img/i_edit.png) no-repeat 4px center; padding-left: 25px;">Add Now</button>
+						<button class="add" name="addbtn" type="submit"  style="background: #F3F3F3 url(../img/i_add.png) no-repeat 4px center; padding-left: 25px;">Add Now</button>
 					</div>
           </form>
 				</div>
