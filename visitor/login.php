@@ -12,7 +12,7 @@
 		$email=$_POST['email'];
 		$password = md5($_POST['password']);
 		$loginadm_sql = "select * from user where user_email = '".$email."' and user_password = '".$password."' and User_Privilege='1' " ;
-		$login_sql = "select * from user where user_email = '".$email."' and user_apassword = '".$password."' and User_Privilege='2' " ;
+		$login_sql = "select * from user where user_email = '".$email."' and user_password = '".$password."' and User_Privilege='2' " ;
 
 		$login_result = mysql_query($login_sql);
 		$loginadm_result = mysql_query($loginadm_sql);
