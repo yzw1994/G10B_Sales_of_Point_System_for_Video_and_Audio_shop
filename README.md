@@ -1,10 +1,18 @@
 G10B_Sales_of_Point_System_for_Video_and_Audio_shop
-=======
+======= 
+
+|Download xampp|
+----------
+|![enter image description here](https://lh3.googleusercontent.com/-dmUgOVK99hI/VsCPV0IjauI/AAAAAAAAAJQ/YYDBZ668QEg/s0/xamppdownload.JPG "xamppdownload.JPG")|
+|* download xampp through this link https://sourceforge.net/projects/xampp/files/XAMPP%20Mac%20OS%20X/1.8.3/xampp-osx-1.8.3-3-installer.dmg/download|
+
+----------
 
 |Install xampp|
 ----------
 |![enter image description here](https://lh3.googleusercontent.com/zD8RQhn_yNvu9cQx1oQvCcaaSx7DgBfx6H_IDPFVRnOnX3kQd1YlqwQNo1btaUEl2Ns=s0 "installer.JPG")|
 |* run the installer that is downloaded|
+
 ----------
 
 
@@ -112,6 +120,14 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 |![enter image description here](https://lh3.googleusercontent.com/-cnDv61g6Ym4/VsAYJgLOhcI/AAAAAAAAAHQ/IjG_izpcw_w/s0/index_view_profile.JPG "index_view_profile.JPG")|
 |* link customer to user profile|
 
+
+----------
+
+
+|View and edit user profile|
+----------
+|![enter image description here](https://lh3.googleusercontent.com/-CquaZNx8y8c/VsCP74lQ-rI/AAAAAAAAAJY/w4pseN7663A/s0/edituserprofile.JPG "edituserprofile.JPG")|
+| * Click on edit. After finish edit and click save or cancel to edit|
 
 ----------
 
