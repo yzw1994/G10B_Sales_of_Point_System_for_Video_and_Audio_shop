@@ -11,15 +11,45 @@
   $result1 = mysql_query("SELECT * FROM product");
 	$row = mysql_fetch_assoc($result);
   $row1 = mysql_fetch_assoc($result1);
+
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <title>Admin > Index</title>
 <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../css/stylesheet.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="../css/bg_style_black.css" media="screen" />
 <script type="text/javascript" src="../Js/jquery-2.2.0.js"></script>
 <script type="text/javascript" src="../Js/timer.js"></script>
+
+<script type="text/javascript">
+function Check(frm){
+    var checkBoxes = frm.elements['del_check[]'];
+    for (i = 0; i < checkBoxes.length; i++){
+        checkBoxes[i].checked = (frm.check_all.checked == true) ? 'checked' : '';
+    }
+    frm.check_all.value = (frm.check_all.checked == false) ? "Uncheck All" : 'Check All';
+}
+</script>
+<?php
+if(isset($_REQUEST['pid'])) {
+	$prodid = $_REQUEST['pid'];
+	mysql_query("delete from product where Product_ID = $prodid");
+	header("Location: admin_prodList.php");
+}
+
+  if(isset($_GET['delete_multiple']))	{
+  $checkbox = $_GET['del_check'];
+  $count = count($_GET['del_check']);
+    for($i=0;$i<$count;$i++) {
+      $del_id = $checkbox[$i];
+      $sql = "delete from product where Product_ID = $del_id";
+      mysql_query($sql);
+    }
+  header("Location: admin_prodList.php");
+} ?>
 <style type="text/css">
 table
 {
@@ -27,30 +57,7 @@ table
 	margin-left: 10px;
 
 }
-.name{
-  width:100px;
-}
-.des{
-  width:10px;
-}
-.cat{
 
-}
-.pri{
-
-}
-.rpri{
-
-}
-.stk{
-
-}
-.dat{
-
-}
-.sta{
-
-}
 </style>
 </head>
 
@@ -116,51 +123,60 @@ table
 				</ul>
 			</div>
 		</div>
-		<div id="main" class="content">
-			<div class="full_w">
-				<div class="h_title" >Product Added</div>
-				<form name="" method="get">
+    <div id="main">
+      <div class="full_w">
+        <div class="h_title">Product List</div>
+        <form method="get" action="" style="margin: 0px;" name="prodlist_frm">
+        <table width="90%">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col" width="20%">Description</th>
+              <th class=""scope="col">Category</th>
+              <th scope="col">Price</th>
+              <th scope="col">Rent price</th>
+              <th scope="col">Stock</th>
+              <th scope="col">Date</th>
+              <th scope="col">Status</th>
+              <th scope="col">Delete</th>
+							<th scope="col" style="width: 45px;">Modify</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+              while($row1 = mysql_fetch_assoc($result1))
+              {
 
-				<!-- <div> -->
-					<table style="font-size: 15px; width:100px;">
-              <tr>
-      					<th class="">Name</th>
-      					<th class="">Description</th>
-      					<th class="">Category</th>
-      					<th class="">Price</th>
-      					<th class="">Rent price</th>
-      					<th class="">Stock</th>
-      					<th class="">Date</th>
-      					<th class="">Status</th>
-                <th class="">Status</th>
-                <th class="">Status</th>
-      				</tr>
-      			<?php
-      				while($row1 = mysql_fetch_assoc($result1))
-      				{
+              ?>
+            <tr>
 
-      				?>
-      				<tr>
-      					<td class="nam"><?php echo $row1["Product_Name"];?></td>
-                <td class="des"><?php echo $row1["Product_Description"];?></td>
-                <td class="cat"><?php echo $row1["Product_Category"];?></td>
-      					<td class="pri"><?php echo $row1["Product_Price"];?></td>
-      					<td class="rpri"><?php echo $row1["Product_Rent_Price"];?></td>
-      					<td class="stk"><?php echo $row1["Product_Stock"];?></td>
-      					<td class="dat"><?php echo $row1["Product_Date"];?></td>
-      					<td class="sta"><?php echo $row1["Product_Status"];?></td>
-      					<td class=""><a href="admin_edit_product.php?pid=<?php echo $row["Product_ID"]; ?>'">Modify</a></td>
-      					<td class=""><a onclick="return confirmation()" href="admin_delete_product.php?pid=<?php echo $row["Product_ID"]; ?>">Delete</a></td>
-      				</tr>
+                          <td class="align-center"><?php echo $row1["Product_Name"];?></td>
+                          <td class="align-center"><?php echo $row1["Product_Description"];?></td>
+                          <td class="align-center"><?php echo $row1["Product_Category"];?></td>
+                          <td class="align-center"><?php echo $row1["Product_Price"];?></td>
+                          <td class="align-center"><?php echo $row1["Product_Rent_Price"];?></td>
+                          <td class="align-center"><?php echo $row1["Product_Stock"];?></td>
+                          <td class="align-center"><?php echo $row1["Product_Date"];?></td>
+                          <td class="align-center"><?php echo $row1["Product_Status"];?></td>
+                          <td style="text-align: center;"><input type="checkbox" name="del_check[]" value="<?php echo $row['User_ID']; ?>"/></td>
+              <td>
 
-      			<?php
-      				}
-      			?>
-					</table>
-				<!-- </div> -->
-				</form>
-			</div>
-		</div>
+                <a href="http://localhost/G10B_Sales_of_Point_System_for_Video_and_Audio_shop/admin/admin_editProduct.php?pid=<?php echo $row["Product_ID"]; ?>'" class="edit table-icon" title="Edit"></a>
+                <a href="http://localhost/G10B_Sales_of_Point_System_for_Video_and_Audio_shop/admin/admin_prodlist.php?pid=<?php echo $row["Product_ID"]; ?>?>" onclick="return confirmation();" class="delete table-icon" title="Delete"></a>
+              </td>
+            </tr>
+            <?php
+              }
+            ?>
+          </tbody>
+        </table>
+        <div class="entry" style="margin:10px;">
+          <input type="checkbox" name="check_all" onclick="Check(document.prodlist_frm)" /> Select All &nbsp
+          <button name="delete_multiple" class="deletebtn">Delete</button>
+        </div>
+        </form>
+      </div>
+    </div>
 	</div>
 	<div id="footer">
 			<p style="text-align:center;">Copyright 2016</p>
