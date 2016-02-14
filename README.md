@@ -84,8 +84,15 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 ----------
 
 
-## View Customer profile and edit profile picture ##
+## View Customer profile and edit profile picture by click on picture ##
 ![enter image description here](https://lh3.googleusercontent.com/_Src-5H_OE9zE5FzT5wLjVtBOYKnVWmzMnK3vRu7_FO5KHKLnlJ1jd1IHpDZ-UzW9iY=s0 "adminprofile3.jpg")
+
+
+----------
+
+
+## After click profile picture and will pop out a list of picture and choose either picture and click open to upload##
+![enter image description here](https://lh3.googleusercontent.com/-UiZ81qST0PU/VsAcgUv6QoI/AAAAAAAAAII/eyIGFrWTSP8/s0/chooseprofilepicture.JPG "chooseprofilepicture.JPG")
 
 
 ----------
