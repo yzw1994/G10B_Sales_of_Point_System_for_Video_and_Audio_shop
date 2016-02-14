@@ -23,7 +23,7 @@
 table
 {
 	width: 50%;
-	margin-left: 180px;
+	margin-left: 280px;
 }
 </style>
 </head>
@@ -108,7 +108,7 @@ table
 		<div id="sidebar">
 			<div class="box">
 				<div class="h_title">Admin Profile</div>
-				<div style="background:white; padding: 10px 55px;"><img src="../img/user_photo.gif" style="border:1px solid black; padding: 5px;" /></div>
+				<div style="background:white; padding: 10px 55px;"><img src="../images/default_pic.jpg" style="border:1px solid black; padding: 5px; width:60px;" /></div>
 				<p style="text-align:center; line-height: 20px;">Welcome, <?php echo $row['User_Name'];?></p>
 				<ul id="home">
 					<li class="b1"><a class="icon profile" href="" >View profile</a></li>
@@ -141,8 +141,14 @@ table
 			<div class="full_w">
 				<div class="h_title">Personal Details</div>
 				<form name="" method="get">
-				<div style="float:left;">
-					<img src="../img/user_photo.gif" style="border:1px solid black; padding: 5px; height: 150px; width: 150px;" />
+				<div style="float:left; position: relative;overflow: hidden;background-color: #F7F7F7;width:200px;height:200px;">
+					<img src="../images/default_pic.jpg" style="border:1px solid black; padding: 5px; height: 150px; width: 150px;" />
+          <form action="upload_profile_picture.php?user_id=<?php echo $row['User_ID'];?>" id="upload_profile" enctype="multipart/form-data" method="post">
+            <button class="file-upload">
+            <input type="file" name="edit_profile_pic" accept="image/x-png, image/gif, image/jpeg" id="edit_profile" class="file-input"/>
+            Upload Photo
+            </button>
+          </form>
 				</div>
 				<div>
 					<table>

@@ -20,9 +20,9 @@
 	{
 		$temp = explode(".",$_FILES["edit_profile_pic"]["name"]);
 		$newfilename = $user_id . '.' .end($temp);
-		move_uploaded_file($_FILES["edit_profile_pic"]["tmp_name"],"../user/profile_picture/" . $user_id . "U" . $_FILES["edit_profile_pic"]["name"]);
+		move_uploaded_file($_FILES["edit_profile_pic"]["tmp_name"],"../admin/profile_picture/" . $user_id . "U" . $_FILES["edit_profile_pic"]["name"]);
 
-		$file="../user/profile_picture/" . $user_id . "U" . $_FILES["edit_profile_pic"]["name"];
+		$file="../admin/profile_picture/" . $user_id . "U" . $_FILES["edit_profile_pic"]["name"];
 		$sql="update user set User_Profile_Pic = '$file' where User_ID = '$user_id'";
 
 		if (!mysql_query($sql))
@@ -33,6 +33,6 @@
 	}
 
 
-	  header("location:user_profile.php");
+	  header("location:index.php");
 	  mysqli_close();
 ?>
