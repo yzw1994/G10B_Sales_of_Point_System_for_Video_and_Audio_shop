@@ -77,6 +77,20 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 ----------
 
 
+## Click on customer view profile##
+![enter image description here](https://lh3.googleusercontent.com/-cnDv61g6Ym4/VsAYJgLOhcI/AAAAAAAAAHQ/IjG_izpcw_w/s0/index_view_profile.JPG "index_view_profile.JPG")
+
+
+----------
+
+
+## View Customer profile and edit profile picture ##
+![enter image description here](https://lh3.googleusercontent.com/_Src-5H_OE9zE5FzT5wLjVtBOYKnVWmzMnK3vRu7_FO5KHKLnlJ1jd1IHpDZ-UzW9iY=s0 "adminprofile3.jpg")
+
+
+----------
+
+
 ## Click on buy or rent products ##
 ![enter image description here](https://lh3.googleusercontent.com/JzoJcpfHP-LEdgsM4HLgHEvW996Y7tyY_IjwyfMvB_-1EOVbfMSqo1M5qkrjmP2nFzY=s0 "products.JPG")
 
@@ -100,3 +114,31 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 
 ## Confirm rent or buy by clicking the small black checbox##
 ![enter image description here](https://lh3.googleusercontent.com/eVfmN5vF9aFaAD2YiI7OcCUWO_aBcfpt8Xey-rWP37-OIU5v2HRlE6V3-t6yE0hKY1s=s0 "rent_or_buy.jpg")
+
+
+----------
+
+
+## Admin Login also click on login same with customer ##
+![enter image description here](https://lh3.googleusercontent.com/8gF8Ap8RzpkUnjCeJqdWMxYeew4EAHaxKJD0CLfU_3uzAgVqTlE0eT9RwB_1RHDAvqk=s0 "login.JPG")
+
+
+----------
+
+
+## System will continue to admin view and edit profile. After finish edit then click save ##
+![enter image description here](https://lh3.googleusercontent.com/5Yusb-wpzETNvMHljidtMcH1NYeu1_YbQ68nMdDA6BGx3XKgA44Pa6LxPoKeWbRrOnM=s0 "adminprofile - Copy &#40;3&#41;.JPG")
+
+
+----------
+
+
+## Add Products, after finish fill in the details and click on add now##
+![enter image description here](https://lh3.googleusercontent.com/HxqoJkfWvTByR_7TN7B1w_E8NmDqlHH_gLwiDjsj8kheUrrC6bTRw8t8CvM6OtUj1Cw=s0 "addproductlist.JPG")
+
+
+----------
+
+
+## Admin Logout just click on log out button ##
+![enter image description here](https://lh3.googleusercontent.com/-UgrHjONs5Wk/VsAa_LD2AgI/AAAAAAAAAHo/wxNN0_Iu5jc/s0/logout.JPG "logout.JPG")
