@@ -78,38 +78,31 @@ table
 		</div>
 	</div>
 	<div id="content">
-		<div id="sidebar">
-			<div class="box">
-				<div class="h_title">Admin Profile</div>
-				<div style="background:white; padding: 10px 55px;"><img src="../img/user_photo.gif" style="border:1px solid black; padding: 5px;" /></div>
-				<p style="text-align:center; line-height: 20px;">Welcome, <?php echo $row['User_Name'];?></p>
-				<ul id="home">
-					<li class="b1"><a class="icon profile" href="" >View profile</a></li>
-					<li class="b1"><a class="icon logout" href="../visitor/visitor.php">Log Out</a></li>
-				</ul>
-			</div>
-			<div class="box">
-				<div class="h_title">Product</div>
-				<ul>
+    <div id="sidebar">
+      <div class="box">
+        <div class="h_title">Admin Profile</div>
+        <div style="background:white; padding: 10px 55px;"><img src="../img/user_photo.gif" style="border:1px solid black; padding: 5px;" /></div>
+        <p style="text-align:center; line-height: 20px;">Welcome, <?php echo $row['User_Name'];?></p>
+        <ul id="home">
+          <li class="b1"><a class="icon profile" href="adminProfile.php" >View profile</a></li>
+          <li class="b1"><a class="icon logout" href="../visitor/visitor.php">Log Out</a></li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="h_title">Product</div>
+        <ul>
           <li class="b1"><a class="icon add_product" href="admin_addProduct.php">Add Product</a></li>
-					<li class="b2"><a class="icon delete_product" href="">Delete Product</a></li>
-					<li class="b2"><a class="icon delete_product" href="admin_prodList.php">Product List</a></li>
-				</ul>
-			</div>
-			<div class="box">
-				<div class="h_title">Graph</div>
-				<ul>
-					<li class="b1"><a class="icon delete_product" href="">View Report</a></li>
-				</ul>
-			</div>
-			<div class="box">
-				<div class="h_title">Manage Users</div>
-				<ul>
-					<li class="b1"><a class="icon add_user" href="add_user.php">User List</a></li>
-					<li class="b2"><a class="icon delete_user" href="delete_user.php">Disable User</a></li>
-				</ul>
-			</div>
-		</div>
+          <li class="b1"><a class="icon delete_product" href="admin_prodList.php">Product List</a></li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="h_title">Manage Users</div>
+        <ul>
+          <li class="b3"><a class="icon add_user" href="view_user.php">User List</a></li>
+          <li class="b3"><a class="icon delete_user" href="disable_user.php">Disable User</a></li>
+        </ul>
+      </div>
+    </div>
     <div id="main">
       <div class="full_w">
         <div class="h_title">Product List</div>

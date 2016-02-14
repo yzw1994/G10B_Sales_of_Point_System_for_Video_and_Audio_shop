@@ -9,34 +9,6 @@
 	$user_id = $_SESSION['user_id'];
 	$result = mysql_query("SELECT * FROM user WHERE User_ID = '$user_id'");
 	$row = mysql_fetch_assoc($result);
-  $user_list = mysql_query("SELECT * FROM user where User_Privilege='2'");
-  $user_rows = mysql_num_rows($user_list);
-  $button = "Disable";
-
-
-
-
-  if(isset($_POST['disable']))
-  {
-
-
-      $u_id = $_POST['userid'];
-
-      $status = mysql_query("UPDATE user set User_Subscribe_Status= '$button' where User_ID=$u_id");
-
-
-
-      header("Location: ../admin/disable_user.php");
-
-  }
-
-
-
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,21 +29,6 @@ table
 </style>
 </head>
 <script>
-
-  function update_status()
-  {
-    /*
-    $.ajax({
-      type: "POST",
-      url:"disable.php",
-      data:{name:$("").val()},
-      success:function( msg ){
-        alert("Data Saved:" + msg);
-      }
-    });*/
-
-  }
-
 	function adminedit()
 	{
 		document.getElementById('edit_Email').contentEditable= true;
@@ -97,10 +54,10 @@ table
 				username: username
 			},
 			success: function(data) {
-				alert("update successful");
+				alert("update failed");
 			},
       error: function (jqXHR, status, err) {
-        alert("update failed");
+        alert("update successful");
      }
 
 		});
@@ -116,6 +73,8 @@ table
 		init();
 	});
 </script>
+<?php
+ ?>
 <body>
 <div class="wrap">
 	<div id="header">
@@ -135,19 +94,15 @@ table
 		</div>
 		<div id="nav">
 			<ul>
-				<li class="upp"><a href="../admin/index.php">Home</a></li>
+				<li class="upp"><a href="../visitor/visitor.php">Home</a></li>
 				<li class="upp"><a href="#">Rent & Sales</a>
-					<ul>
-						<li><a href="">List of video</a></li>
-						<li><a href="">Transaction History</a></li>
-					</ul>
 				</li>
 				<li class="upp"><a href="#">Coming Soon</a></li>
 			</ul>
 		</div>
 	</div>
 	<div id="content">
-    <div id="sidebar">
+		<div id="sidebar">
 			<div class="box">
 				<div class="h_title">Admin Profile</div>
 				<div style="background:white; padding: 10px 55px;"><img src="../img/user_photo.gif" style="border:1px solid black; padding: 5px;" /></div>
@@ -172,52 +127,40 @@ table
 				</ul>
 			</div>
 		</div>
-    <div id="main">
+		<div id="main">
 			<div class="full_w">
-				<div class="h_title">User Details</div>
-
-            <table style="margin-left:200px;">
-
-              <tr class="admin_table">
-                    <th></th>
-                    <th class="admin_table_ID">User ID</th>
-                    <th class="admin_table_email">User Email</th>
-                    <th class="admin_table_name">User Name</th>
-                    <th class="admin_table_phone">User Phone</th>
-                    <th class="admin_table_address">User Address</th>
-                    <th class="admin_table_birthday">User birthday</th>
-                    <th class="admin_table_birthday">User Rent Limit</th>
-                    <th class="admin_table_status">User Subscirbe status</th>
-                    <th class="admin_table_status">Disable Button</th>
-                </tr>
-              <?php
-
-              while(  $u_rows = mysql_fetch_assoc($user_list))
-              {
-
-
-              ?>
-              <form name="user_form" method="POST">
-                <tr>
-                      <td></td>
-                      <td class="admin_table_ID"><input type="hidden"  name ="userid" value="<?php echo $u_rows['User_ID']?>"><?php echo $u_rows['User_ID']?></td>
-                      <td class="admin_table_email"><?php echo $u_rows['User_Email']?></td>
-                      <td class="admin_table_name"><?php echo $u_rows['User_Name']?></td>
-                      <td class="admin_table_phone"><?php echo $u_rows['User_Phone']?></td>
-                      <td class="admin_table_address"><?php echo $u_rows['User_Address']?></td>
-                      <td class="admin_table_birthday"><?php echo $u_rows['User_Dob']?></td>
-                      <td class="admin_table_status"><?php echo $u_rows['User_Rent_Limit']?></td>
-                      <td class="admin_table_status"><?php echo $u_rows['User_Subscribe_Status']?></td>
-                      <td>
-                          <input type="submit" Value="<?php echo $button ?> " name="disable">
-                      </td>
-                  </tr>
-                </form>
-                <?php
-              }
-                 ?>
-
-            </table>
+				<div class="h_title">Personal Details</div>
+				<form name="" method="get">
+				<div style="float:left;">
+					<img src="../img/user_photo.gif" style="border:1px solid black; padding: 5px; height: 150px; width: 150px;" />
+				</div>
+				<div>
+					<table>
+						<tr>
+							<td colspan="2" style="font-size: 18pt; font-weight:bold;">User's Profile</td>
+						</tr>
+						<tr>
+							<td><b>Admin ID</b></td>
+							<td id="edit_ID" contenteditable="false" class="profile-details"><?php echo $row['User_ID'];?></td>
+						</tr>
+						<tr>
+							<td><b>Email</b> </td>
+							<td id="edit_Email" contenteditable="false" class="profile-details"><?php echo $row['User_Email'];?></td>
+						</tr>
+						<tr>
+							<td><b>Contact No.</b></td>
+							<td id="edit_Contact" contenteditable="false" class="profile-details"><?php echo $row['User_Phone'];?></td>
+						</tr>
+						<tr>
+							<td><b>Username</b></td>
+							<td id="edit_Name" contenteditable="false" class="profile-details"><?php echo $row['User_Name'];?></td>
+						</tr>
+						</table>
+					<div style="margin-left: 180px;">
+						<button class="edit" name="editbutton" type="button" onclick="saveUpdate();" style="background: #F3F3F3 url(../img/i_edit.png) no-repeat 4px center; padding-left: 25px;">Save</button>
+						</div>
+				</div>
+				</form>
 			</div>
 		</div>
 	</div>
