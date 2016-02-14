@@ -48,9 +48,27 @@ table
 </style>
 </head>
 
-<?php
- ?>
+
 <body>
+<?php
+	if(isset($_POST["updatebtn"]))
+	{
+
+		$prodname = $_POST["pname"];
+		$proddes = $_POST['des'];
+		$prodcat = $_POST['cat'];
+		$prodpri=$_POST['pri'];
+		$prodRpri=$_POST['rpri'];
+    $stk=$_POST['stk'];
+    $date=$_POST['dat'];
+		$status=$_POST['status'];
+
+		mysql_query("update product set Product_Name='$prodname',Product_Description='$proddes',Product_Category='$prodcat',Product_Price='$prodpri',Product_Rent_Price='$prodRpri',Product_Stock='$stk',Product_Date='$date',Product_Status='$status' where Product_ID='$product_id'");
+
+ 
+		header("Location:admin_prodList.php");
+	}
+?>
 <div class="wrap">
 	<div id="header">
 		<div id="top">
@@ -134,27 +152,4 @@ table
 </body>
 </html>
 
-<?php
-	if(isset($_POST["updatebtn"]))
-	{
 
-		$prodname = $_POST["pname"];
-		$proddes = $_POST['des'];
-		$prodcat = $_POST['cat'];
-		$prodpri=$_POST['pri'];
-		$prodRpri=$_POST['rpri'];
-    $stk=$_POST['stk'];
-    $date=$_POST['dat'];
-		$status=$_POST['status'];
-
-		mysql_query("update product set Product_Name='$prodname',Product_Description='$proddes',Product_Category='$prodcat',Product_Price='$prodpri',Product_Rent_Price='$prodRpri',Product_Stock='$stk',Product_Date='$date',Product_Status='$status' where Product_ID='$product_id'");
-
-  ?>
-	<script>
-		alert("One record saved");
-	</script>
-
-	<?php
-		header("Location:admin_editProd.php");
-	}
-?>
