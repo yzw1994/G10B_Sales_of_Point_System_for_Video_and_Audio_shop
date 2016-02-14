@@ -13,9 +13,6 @@
 				<li>
 					<a href="<?php echo $navigation_link;?>cat=4">COMING SOON</a>
 				</li>
-				<li>
-					<a href="<?php echo $navigation_link;?>cat=5">kkkkkk</a>
-				</li>
 			</ul>
 		</div>
 	</div>
