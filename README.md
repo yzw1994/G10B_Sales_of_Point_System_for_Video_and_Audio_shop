@@ -251,7 +251,7 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 ----------
 |![enter image description here](https://lh3.googleusercontent.com/5Yusb-wpzETNvMHljidtMcH1NYeu1_YbQ68nMdDA6BGx3XKgA44Pa6LxPoKeWbRrOnM=s0 "adminprofile - Copy &#40;3&#41;.JPG")
 
- - After finish edit click save button
+ - After finish edit admin profile click save button
 
 |
 
@@ -261,7 +261,11 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 
 |Add Products, after finish fill in the details and click on add now|
 ----------
-|![enter image description here](https://lh3.googleusercontent.com/HxqoJkfWvTByR_7TN7B1w_E8NmDqlHH_gLwiDjsj8kheUrrC6bTRw8t8CvM6OtUj1Cw=s0 "addproductlist.JPG")|
+|![enter image description here](https://lh3.googleusercontent.com/HxqoJkfWvTByR_7TN7B1w_E8NmDqlHH_gLwiDjsj8kheUrrC6bTRw8t8CvM6OtUj1Cw=s0 "addproductlist.JPG")
+
+ - Admin fill in the product details and click add now to proceed
+
+|
 
 
 ----------
@@ -269,4 +273,8 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 
 | Admin Logout just click on log out button |
 ----------
-|![enter image description here](https://lh3.googleusercontent.com/-UgrHjONs5Wk/VsAa_LD2AgI/AAAAAAAAAHo/wxNN0_Iu5jc/s0/logout.JPG "logout.JPG")|
+|![enter image description here](https://lh3.googleusercontent.com/-UgrHjONs5Wk/VsAa_LD2AgI/AAAAAAAAAHo/wxNN0_Iu5jc/s0/logout.JPG "logout.JPG")
+
+ - Finish use it and proceed to logout.
+
+|
