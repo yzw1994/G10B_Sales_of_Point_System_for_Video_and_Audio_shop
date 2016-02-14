@@ -113,7 +113,7 @@
             </span>
             <span id="user_dob_display" class="user_data_content">
               <span id="user_date_control" class=""><?php echo $row["User_Dob"]; ?></span>
-              <input type="date" name="edit_user_date_input" id="edit_user_date_input" class="edit_user_date_input_char" value="<?php echo $row["User_Dob"]; ?>"/>
+              <input type="date(yyyy-mm-dd)" name="edit_user_date_input" id="edit_user_date_input" class="edit_user_date_input_char" value="<?php echo $row["User_Dob"]; ?>"/>
             </span>
             <div id="" class="user_data_edit">
               <input type="button" name="edit_user_date" id="edit_user_date_btn" class="" value="EDIT"/>
