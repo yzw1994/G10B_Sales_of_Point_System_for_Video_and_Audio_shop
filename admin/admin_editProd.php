@@ -8,7 +8,8 @@
 	require("../dataconn/page_load.php");
 	$user_id = $_SESSION['user_id'];
 	$result = mysql_query("SELECT * FROM user WHERE User_ID = '$user_id'");
-  $result1 = mysql_query("SELECT * FROM product");
+  $product_id = (int)$_GET['pid'];
+  $result1 = mysql_query("SELECT * FROM product where Product_ID=$product_id");
 	$row = mysql_fetch_assoc($result);
   $row1 = mysql_fetch_assoc($result1);
 
@@ -38,6 +39,10 @@ table
 	width: 800px;
 	margin-left: 10px;
 
+}
+
+.textfield{
+  width:250px;
 }
 
 </style>
@@ -109,21 +114,23 @@ table
       <div class="full_w">
         <div class="h_title">Product List</div>
         <form name="editfrm" method="post" action=""  ENCTYPE=multipart/form-data>
-  				<p>Name : <input type="text" name="pname" value="<?php echo $row1['Product_Name'];?> "/></p>
-  				<p>Description : <input type="text" name="des" value="<?php echo $row1['Product_Description'];?>"/></p>
-  				<p>Category : <input type="text" name="cat" value="<?php echo $row1['Product_Category'];?>"/></p>
-  				<p>Price : <input type="text" name="pri" value="<?php echo $row1['Product_Price'];?>"/></p>
-  				<p>Rent Price : <input type="text" name="rpri" value="<?php echo $row1['Product_Rent_Price'];?>"/></p>
-  				<p>Stock : <input type="text" name="stk" value="<?php echo $row1['Product_Stock'];?>"/></p>
-          <p>Date : <input type="date" name="dat" value="<?php echo $row1['Product_Date'];?>"/></p>
-  				<p>Status:
-  					<select name="status">
-  						<option value="active" <?php if ($row1['Product_Status'] == "active")  echo "selected";  ?>>active</option>
-  						<option value="unactive" <?php if ($row1['Product_Status'] == "unactive") echo "selected='selected' "  ?>>unactive</option>
+          <table>
+          <tr><td>Name : </td><td><input type="text" name="pname" class="textfield" value="<?php echo $row1['Product_Name'];?> "/></td></tr>
+  				<tr><td>Description : </td><td><textarea rows="3"cols="34" name="des" class="" value="<?php echo $row1['Product_Description'];?>"></textarea></td></tr>
+  				<tr><td>Category : </td><td><input type="text" name="cat" class="textfield" value="<?php echo $row1['Product_Category'];?>"/></td></tr>
+  				<tr><td>Price : </td><td><input type="text" name="pri" class="textfield" value="<?php echo $row1['Product_Price'];?>"/></td></tr>
+  				<tr><td>Rent Price : </td><td><input type="text" name="rpri" class="textfield"value=" <?php echo $row1['Product_Rent_Price'];?>"/></td></tr>
+  				<tr><td>Stock : </td><td><input type="text" name="stk" class="textfield" value="<?php echo $row1['Product_Stock'];?>"/></td></tr>
+          <tr><td>Date : </td><td><input type="date" name="dat" class="textfield" value="<?php echo $row1['Product_Date'];?>"/></td></tr>
+  				<tr><td>Status:</td>
+  					<td><select name="status">
+  						<option value="active" <?php if ($row1['Product_Status'] == "Active")  echo "selected";  ?>>Active</option>
+  						<option value="unactive" <?php if ($row1['Product_Status'] == "Inactive") echo "selected='selected' "  ?>>Inactive</option>
   					</select>
-  				</p>
-  				<p><input type="submit" name="updatebtn" value="Update Now" /></p>
-  			</form>
+  				</td><tr>
+  				<tr><td><input type="submit" name="updatebtn" value="Update Now" /></td><tr>
+        </table>
+        </form>
       </div>
     </div>
 	</div>
@@ -148,12 +155,13 @@ table
 		$status=$_POST['status'];
 
 		mysql_query("update product set Product_Name='$prodname',Product_Description='$proddes',Product_Category='$prodcat',Product_Price='$prodpri',Product_Rent_Price='$prodRpri',Product_Stock='$stk',Product_Date='$date',Product_Status='$status' where Product_ID='$product_id'");
-	?>
+
+  ?>
 	<script>
 		alert("One record saved");
 	</script>
 
 	<?php
-		header("Location:admin_prodList.php");
+		header("Location:admin_editProd.php");
 	}
 ?>

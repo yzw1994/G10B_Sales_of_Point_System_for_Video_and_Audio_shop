@@ -23,7 +23,7 @@
 table
 {
 	width: 50%;
-	margin-left: 280px;
+	margin-left: 180px;
 }
 </style>
 </head>
@@ -93,7 +93,7 @@ table
 		</div>
 		<div id="nav">
 			<ul>
-				<li class="upp"><a href="../admin/index.php">Home</a></li>
+				<li class="upp"><a href="../visitor/visitor.php">Home</a></li>
 				<li class="upp"><a href="#">Rent & Sales</a>
 					<ul>
 						<li><a href="">List of video</a></li>
@@ -108,7 +108,7 @@ table
 		<div id="sidebar">
 			<div class="box">
 				<div class="h_title">Admin Profile</div>
-				<div style="background:white; padding: 10px 55px;"><img src="<?php echo $row["User_Profile_Pic"]; ?>" style="border:1px solid black; padding: 5px; width:60px;" /></div>
+				<div style="background:white; padding: 10px 55px;"><img src="../img/user_photo.gif" style="border:1px solid black; padding: 5px;" /></div>
 				<p style="text-align:center; line-height: 20px;">Welcome, <?php echo $row['User_Name'];?></p>
 				<ul id="home">
 					<li class="b1"><a class="icon profile" href="" >View profile</a></li>
@@ -120,7 +120,7 @@ table
 				<ul>
 					<li class="b1"><a class="icon add_product" href="admin_addProduct.php">Add Product</a></li>
 					<li class="b2"><a class="icon delete_product" href="">Delete Product</a></li>
-					<li class="b2"><a class="icon delete_product" href="admin_prodList.php">Product List</a></li>
+					<li class="b2"><a class="icon delete_product" href="">Product List</a></li>
 				</ul>
 			</div>
 			<div class="box">
@@ -133,7 +133,7 @@ table
 				<div class="h_title">Manage Users</div>
 				<ul>
 					<li class="b1"><a class="icon add_user" href="view_user.php">User List</a></li>
-					<li class="b2"><a class="icon delete_user" href="disable_user.php">Disable User</a></li>
+					<li class="b2"><a class="icon delete_user" href="delete_user.php">Disable User</a></li>
 				</ul>
 			</div>
 		</div>
@@ -141,14 +141,8 @@ table
 			<div class="full_w">
 				<div class="h_title">Personal Details</div>
 				<form name="" method="get">
-				<div style="float:left; position: relative;overflow: hidden;background-color: #F7F7F7;width:200px;height:200px;">
-					<img src="<?php echo $row["User_Profile_Pic"]; ?>" style="border:1px solid black; padding: 5px; height: 150px; width: 150px;" />
-          <form action="upload_profile_picture.php?user_id=<?php echo $row['User_ID'];?>" id="upload_profile" enctype="multipart/form-data" method="post">
-            <button class="file-upload">
-            <input type="file" name="edit_profile_pic" accept="image/x-png, image/gif, image/jpeg" id="edit_profile" class="file-input"/>
-            Upload Photo
-            </button>
-          </form>
+				<div style="float:left;">
+					<img src="../img/user_photo.gif" style="border:1px solid black; padding: 5px; height: 150px; width: 150px;" />
 				</div>
 				<div>
 					<table>

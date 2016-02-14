@@ -162,8 +162,8 @@ table
               <tr>
                 <td>Status</td>
                 <td><select name="pstat">
-      						<option value="1">Active</option>
-      						<option value="2">Inactive</option>
+      						<option value="Active">Active</option>
+      						<option value="Inactive">Inactive</option>
       					</select></td>
               </tr>
 
