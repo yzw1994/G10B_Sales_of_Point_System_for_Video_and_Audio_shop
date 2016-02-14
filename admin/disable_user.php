@@ -152,7 +152,7 @@ table
 				<div style="background:white; padding: 10px 55px;"><img src="../img/user_photo.gif" style="border:1px solid black; padding: 5px;" /></div>
 				<p style="text-align:center; line-height: 20px;">Welcome, <?php echo $row['User_Name'];?></p>
 				<ul id="home">
-					<li class="b1"><a class="icon profile" href="" >View profile</a></li>
+					<li class="b1"><a class="icon profile" href="../admin/index.php" >View profile</a></li>
 					<li class="b1"><a class="icon logout" href="../visitor/visitor.php">Log Out</a></li>
 				</ul>
 			</div>
@@ -160,7 +160,6 @@ table
 				<div class="h_title">Product</div>
 				<ul>
 					<li class="b1"><a class="icon add_product" href="admin_addProduct.php">Add Product</a></li>
-					<li class="b2"><a class="icon delete_product" href="">Delete Product</a></li>
 					<li class="b2"><a class="icon delete_product" href="">Product List</a></li>
 				</ul>
 			</div>
