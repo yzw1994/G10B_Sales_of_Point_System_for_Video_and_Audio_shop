@@ -133,7 +133,7 @@ table
                           <td class="align-center"><?php echo $row1["Product_Stock"];?></td>
                           <td class="align-center"><?php echo $row1["Product_Date"];?></td>
                           <td class="align-center"><?php echo $row1["Product_Status"];?></td>
-                          <td style="text-align: center;"><a href="admin_editProd.php?pid=<?php echo $row1["Product_ID"]; ?>'"class="table-icon edit"></a></td>
+                          <td style="text-align: center;"><a href="admin_editProd.php?pid='<?php echo $row1["Product_ID"]; ?>'"class="table-icon edit"></a></td>
                           <td><a onclick="return confirmation()" href="admin_deleteProd.php?pid=<?php echo $row1["Product_ID"]; ?>" class="delete table-icon" title="Delete"></a></td>
 
             </tr>
