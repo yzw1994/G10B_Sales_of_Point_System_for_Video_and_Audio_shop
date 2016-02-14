@@ -93,7 +93,7 @@ table
 		</div>
 		<div id="nav">
 			<ul>
-				<li class="upp"><a href="../visitor/visitor.php">Home</a></li>
+				<li class="upp"><a href="../admin/index.php">Home</a></li>
 				<li class="upp"><a href="#">Rent & Sales</a>
 					<ul>
 						<li><a href="">List of video</a></li>
@@ -108,7 +108,7 @@ table
 		<div id="sidebar">
 			<div class="box">
 				<div class="h_title">Admin Profile</div>
-				<div style="background:white; padding: 10px 55px;"><img src="../images/default_pic.jpg" style="border:1px solid black; padding: 5px; width:60px;" /></div>
+				<div style="background:white; padding: 10px 55px;"><img src="<?php echo $row["User_Profile_Pic"]; ?>" style="border:1px solid black; padding: 5px; width:60px;" /></div>
 				<p style="text-align:center; line-height: 20px;">Welcome, <?php echo $row['User_Name'];?></p>
 				<ul id="home">
 					<li class="b1"><a class="icon profile" href="" >View profile</a></li>
@@ -142,7 +142,7 @@ table
 				<div class="h_title">Personal Details</div>
 				<form name="" method="get">
 				<div style="float:left; position: relative;overflow: hidden;background-color: #F7F7F7;width:200px;height:200px;">
-					<img src="../images/default_pic.jpg" style="border:1px solid black; padding: 5px; height: 150px; width: 150px;" />
+					<img src="<?php echo $row["User_Profile_Pic"]; ?>" style="border:1px solid black; padding: 5px; height: 150px; width: 150px;" />
           <form action="upload_profile_picture.php?user_id=<?php echo $row['User_ID'];?>" id="upload_profile" enctype="multipart/form-data" method="post">
             <button class="file-upload">
             <input type="file" name="edit_profile_pic" accept="image/x-png, image/gif, image/jpeg" id="edit_profile" class="file-input"/>
