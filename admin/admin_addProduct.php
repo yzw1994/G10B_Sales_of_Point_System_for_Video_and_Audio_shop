@@ -24,8 +24,23 @@
     $proddate=$_POST['pdate'];
 		$prodstatus=$_POST['pstat'];
 
-    $sql = "INSERT into product (Product_Name,Product_Description,Product_Category,Product_Price,Product_Rent_Price,Product_Stock,Product_Date,Product_Status) values
-		('$prodname','$proddes','$prodcat','$prodpri','$prodrentpri','$prodstoc','$proddate','$prodstatus')";
+
+    if ($_FILES["pic_name"]["error"] > 0)
+        			{
+        				 $pic_name="";
+        			}
+        			else
+        			{
+                $temp = explode(".",$_FILES["pic_name"]["name"]);
+        				 move_uploaded_file($_FILES["pic_name"]["tmp_name"],"../images/product/" . $_FILES["pic_name"]["name"]);
+        				 $pic_name="../images/product/" . $_FILES["pic_name"]["name"];
+
+        			}
+
+
+
+    $sql = "INSERT into product (Product_Pic,Product_Name,Product_Description,Product_Category,Product_Price,Product_Rent_Price,Product_Stock,Product_Date,Product_Status) values
+		('$pic_name','$prodname','$proddes','$prodcat','$prodpri','$prodrentpri','$prodstoc','$proddate','$prodstatus')";
 		$result = mysql_query($sql);
     if($result) {
       echo "query successful";
@@ -124,6 +139,10 @@ table
 				<div>
           <form name="productDetails" method="POST">
             <table>
+              <tr>
+                <td>Picture</td>
+                <td><input type="file" name="pic_name" size="67" class="textfield"/></td>
+              </tr>
               <tr>
                 <td>Name</td>
                 <td><input type="text" name="pname" size="67" class="textfield"/></td>

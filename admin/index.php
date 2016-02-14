@@ -53,10 +53,10 @@ table
 				username: username
 			},
 			success: function(data) {
-				alert("update successful");
+				alert("update failed");
 			},
       error: function (jqXHR, status, err) {
-        alert("update failed");
+        alert("update successful");
      }
 
 		});
