@@ -24,6 +24,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="../js/main.js"></script>
   <script src="../js/jquery-2.2.0.js"></script>
+  <script src="../js/edit_user_profile.js"></script>
   <script>
 
   </script>
@@ -64,40 +65,61 @@
             <span id="" class="user_data_title">
               Name
             </span>
-            <span id="" class="user_data_content">
-              <?php echo $row["User_Name"]; ?>
+            <span id="user_name_display" class="user_data_content">
+              <span id="user_name_control" class=""><?php echo $row["User_Name"]; ?></span>
+              <input type="text" name="edit_user_name_input" id="edit_user_name_input" class="edit_user_name_input_char" value="<?php echo $row["User_Name"]; ?>"/>
             </span>
             <div id="" class="user_data_edit">
+              <input type="button" name="edit_user_name" id="edit_user_name_btn" class="" value="EDIT"/>
+
+              <input type="button" name="cancel_user_name" id="cancel_user_name_btn" class="edit_control_char" value="CANCEL"/>
+              <input type="button" name="save_user_name" id="save_user_name_btn" class="edit_control_char" value="SAVE"/>
             </div>
           </div>
           <div id="" class="user_data">
             <span id="" class="user_data_title">
               Contact No
             </span>
-            <span id="" class="user_data_content">
-              <?php echo $row["User_Phone"]; ?>
+            <span id="user_phone_display" class="user_data_content">
+              <span id="user_phone_control" class=""><?php echo $row["User_Phone"]; ?></span>
+              <input type="number" name="edit_user_phone_input" id="edit_user_phone_input" class="edit_user_phone_input_char" value="<?php echo $row["User_Phone"]; ?>"/>
             </span>
             <div id="" class="user_data_edit">
+              <input type="button" name="edit_user_phone" id="edit_user_phone_btn" class="" value="EDIT"/>
+
+              <input type="button" name="cancel_user_phone" id="cancel_user_phone_btn" class="edit_control_char" value="CANCEL"/>
+              <input type="button" name="save_user_phone" id="save_user_phone_btn" class="edit_control_char" value="SAVE"/>
             </div>
           </div>
           <div id="" class="user_data">
             <span id="" class="user_data_title">
               Address
             </span>
-            <span id="" class="user_data_content">
-              <?php echo $row["User_Address"]; ?>
+            <span id="user_address_display" class="user_data_content">
+              <span id="user_address_control" class=""><?php echo $row["User_Address"]; ?></span>
+              <textarea name="edit_user_address_input" id="edit_user_address_input" class="edit_user_address_input_char"><?php echo $row["User_Address"]; ?>
+              </textarea>
             </span>
             <div id="" class="user_data_edit">
+              <input type="button" name="edit_user_address" id="edit_user_address_btn" class="" value="EDIT"/>
+
+              <input type="button" name="cancel_user_address" id="cancel_user_address_btn" class="edit_control_char" value="CANCEL"/>
+              <input type="button" name="save_user_address" id="save_user_address_btn" class="edit_control_char" value="SAVE"/>
             </div>
           </div>
           <div id="" class="user_data">
             <span id="" class="user_data_title">
               Birthday
             </span>
-            <span id="" class="user_data_content">
-              <?php echo $row["User_Dob"]; ?>
+            <span id="user_dob_display" class="user_data_content">
+              <span id="user_date_control" class=""><?php echo $row["User_Dob"]; ?></span>
+              <input type="date" name="edit_user_date_input" id="edit_user_date_input" class="edit_user_date_input_char" value="<?php echo $row["User_Dob"]; ?>"/>
             </span>
             <div id="" class="user_data_edit">
+              <input type="button" name="edit_user_date" id="edit_user_date_btn" class="" value="EDIT"/>
+
+              <input type="button" name="cancel_user_date" id="cancel_user_date_btn" class="edit_control_char" value="CANCEL"/>
+              <input type="button" name="save_user_date" id="save_user_date_btn" class="edit_control_char" value="SAVE"/>
             </div>
           </div>
         </div>

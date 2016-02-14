@@ -56,7 +56,8 @@
 }
 .user_data {
   width:98%;
-  height:50px;
+  min-height:50px;
+  overflow: hidden;
   background-color:#FFFFFF;
   margin: 15px 0;
 }
@@ -81,4 +82,31 @@
   width:50%;
   text-align: left;
   background-color: ;
+}
+.user_data_edit {
+  width:auto;
+  float:right;
+  background-color: ;
+  padding:15px;
+}
+.edit_user_name_input_char {
+  display:none;
+}
+.edit_user_phone_input_char {
+  display:none;
+}
+.edit_user_address_input_char {
+  display:none;
+  width:400px;
+  height:100px;
+  float:left;
+}
+.edit_user_date_input_char {
+  display:none;
+}
+.edit_control_char {
+  display:none;
+}
+#final_user_name {
+  display:none;
 }
