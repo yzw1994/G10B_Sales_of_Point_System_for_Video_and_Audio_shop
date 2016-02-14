@@ -2,7 +2,7 @@
 	include("dataconn.php");
 	$sess_aid = $_SESSION["admin_id"];
 	$result = mysql_query("select * from product");
-	
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,7 +45,7 @@
 			<?php
 				while($row = mysql_fetch_assoc($result))
 				{
-				
+
 				?>
 				<tr>
 					<td><?php echo $row["Product_ID"];?></td>
@@ -57,14 +57,14 @@
 					<td><?php echo $row["Product_Category"];?></td>
 					<td><?php echo $row["Product_Status"];?></td>
 					<td><a href="admin_edit_product.php?pid=<?php echo $row["Product_ID"]; ?>'">Modify</a></td>
-					<td><a onclick="return confirmation()" href="admin_delete_product.php?pid=<?php echo $row["Product_ID"]; ?>">Delete</a></td>
+					<td><a onclick="return confirmation()" href="admin_deleteProduct.php?pid=<?php echo $row["Product_ID"]; ?>">Delete</a></td>
 				</tr>
-				
+
 			<?php
 				}
 			?>
 			</table>
-		
+
 		</div>
 	</div>
 </body>

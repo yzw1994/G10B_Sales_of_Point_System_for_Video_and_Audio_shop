@@ -1,11 +1,11 @@
-<?php/*
+<?php
 	include("dataconn.php");
 	$sess_aid = $_SESSION["admin_id"];
 	$result = mysql_query("select * from admin where admin_id = '$sess_aid'");
-	$row = mysql_fetch_assoc($result);*/
+	$row = mysql_fetch_assoc($result);
 ?>
 
-<?php/*
+<?php
 	if(isset($_POST['addbtn']))
 	{
 
@@ -21,7 +21,7 @@
 		('$prodname','$description','$prodqty','$type','$category','$prodprice','$status')");
 		header("Location:list.php")
 
-	*/
+
 	}
 ?>
 <!DOCTYPE html>

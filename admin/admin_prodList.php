@@ -25,31 +25,13 @@
 <script type="text/javascript" src="../Js/timer.js"></script>
 
 <script type="text/javascript">
-function Check(frm){
-    var checkBoxes = frm.elements['del_check[]'];
-    for (i = 0; i < checkBoxes.length; i++){
-        checkBoxes[i].checked = (frm.check_all.checked == true) ? 'checked' : '';
-    }
-    frm.check_all.value = (frm.check_all.checked == false) ? "Uncheck All" : 'Check All';
-}
+  function confirmation()
+  {
+    answer=confirm("Delete [Yes or No]?");
+    return answer;
+  }
 </script>
-<?php
-if(isset($_REQUEST['pid'])) {
-	$prodid = $_REQUEST['pid'];
-	mysql_query("delete from product where Product_ID = $prodid");
-	header("Location: admin_prodList.php");
-}
 
-  if(isset($_GET['delete_multiple']))	{
-  $checkbox = $_GET['del_check'];
-  $count = count($_GET['del_check']);
-    for($i=0;$i<$count;$i++) {
-      $del_id = $checkbox[$i];
-      $sql = "delete from product where Product_ID = $del_id";
-      mysql_query($sql);
-    }
-  header("Location: admin_prodList.php");
-} ?>
 <style type="text/css">
 table
 {
@@ -138,8 +120,8 @@ table
               <th scope="col">Stock</th>
               <th scope="col">Date</th>
               <th scope="col">Status</th>
-              <th scope="col">Delete</th>
-							<th scope="col" style="width: 45px;">Modify</th>
+              <th scope="col">Edit</th>
+							<th scope="col" style="width: 45px;">Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -158,22 +140,15 @@ table
                           <td class="align-center"><?php echo $row1["Product_Stock"];?></td>
                           <td class="align-center"><?php echo $row1["Product_Date"];?></td>
                           <td class="align-center"><?php echo $row1["Product_Status"];?></td>
-                          <td style="text-align: center;"><input type="checkbox" name="del_check[]" value="<?php echo $row['User_ID']; ?>"/></td>
-              <td>
+                          <td style="text-align: center;"><a href="admin_edit_product.php?pid=<?php echo $row1["Product_ID"]; ?>'"class="table-icon edit"></a></td>
+                          <td><a onclick="return confirmation()" href="admin_deleteProd.php?pid=<?php echo $row1["Product_ID"]; ?>" class="delete table-icon" title="Delete"></a></td>
 
-                <a href="http://localhost/G10B_Sales_of_Point_System_for_Video_and_Audio_shop/admin/admin_editProduct.php?pid=<?php echo $row["Product_ID"]; ?>'" class="edit table-icon" title="Edit"></a>
-                <a href="http://localhost/G10B_Sales_of_Point_System_for_Video_and_Audio_shop/admin/admin_prodlist.php?pid=<?php echo $row["Product_ID"]; ?>?>" onclick="return confirmation();" class="delete table-icon" title="Delete"></a>
-              </td>
             </tr>
             <?php
               }
             ?>
           </tbody>
         </table>
-        <div class="entry" style="margin:10px;">
-          <input type="checkbox" name="check_all" onclick="Check(document.prodlist_frm)" /> Select All &nbsp
-          <button name="delete_multiple" class="deletebtn">Delete</button>
-        </div>
         </form>
       </div>
     </div>
