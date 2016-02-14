@@ -128,7 +128,6 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 |Step to change profile picture|
 ----------
 |![enter image description here](https://lh3.googleusercontent.com/-UiZ81qST0PU/VsAcgUv6QoI/AAAAAAAAAII/eyIGFrWTSP8/s0/chooseprofilepicture.JPG "chooseprofilepicture.JPG")|
-
 | * choose the picture you wish and click on it and proceed to click on open to continue|
 
 
