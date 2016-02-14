@@ -115,10 +115,10 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 ----------
 
 
-| Click on customer view profile|
+| Click on user view profile|
 ----------
 |![enter image description here](https://lh3.googleusercontent.com/-cnDv61g6Ym4/VsAYJgLOhcI/AAAAAAAAAHQ/IjG_izpcw_w/s0/index_view_profile.JPG "index_view_profile.JPG")|
-|* link customer to user profile|
+|* link User to user profile|
 
 
 ----------
@@ -132,7 +132,7 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 ----------
 
 
-| View Customer profile and edit profile picture by click on picture |
+| View user profile and edit profile picture by click on picture |
 ----------
 |![enter image description here](https://lh3.googleusercontent.com/_Src-5H_OE9zE5FzT5wLjVtBOYKnVWmzMnK3vRu7_FO5KHKLnlJ1jd1IHpDZ-UzW9iY=s0 "adminprofile3.jpg")|
 | * View your own user profile and hover to profile picture to edit profile picture|
@@ -193,8 +193,16 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 
 ----------
 
+| User Logout|
+----------
+|![enter image description here](https://lh3.googleusercontent.com/-EMmoDkPOTc4/VsCVX8v1RHI/AAAAAAAAAJ8/sfY7Xq1zn80/s0/logoutuser.JPG "logoutuser.JPG")|
+| * Click on menubar and you can see the logout.|
 
-| Admin Login also click on login same with customer |
+
+----------
+
+
+| Admin Login also click on login same with user|
 ----------
 |![enter image description here](https://lh3.googleusercontent.com/8gF8Ap8RzpkUnjCeJqdWMxYeew4EAHaxKJD0CLfU_3uzAgVqTlE0eT9RwB_1RHDAvqk=s0 "login.JPG")|
 | * login to admin system by email and password at the same page in localhost/G10B_Sales_of_Point_System_for_Video_and_Audio_shop-master/visitor/visitor.php|
