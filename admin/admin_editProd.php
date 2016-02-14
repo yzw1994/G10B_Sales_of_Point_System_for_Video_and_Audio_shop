@@ -108,48 +108,22 @@ table
     <div id="main">
       <div class="full_w">
         <div class="h_title">Product List</div>
-        <form method="get" action="" style="margin: 0px;" name="prodlist_frm">
-        <table width="90%">
-          <thead>
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col" width="20%">Description</th>
-              <th class=""scope="col">Category</th>
-              <th scope="col">Price</th>
-              <th scope="col">Rent price</th>
-              <th scope="col">Stock</th>
-              <th scope="col">Date</th>
-              <th scope="col">Status</th>
-              <th scope="col">Edit</th>
-							<th scope="col" style="width: 45px;">Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-              while($row1 = mysql_fetch_assoc($result1))
-              {
-
-              ?>
-            <tr>
-
-                          <td class="align-center"><?php echo $row1["Product_Name"];?></td>
-                          <td class="align-center"><?php echo $row1["Product_Description"];?></td>
-                          <td class="align-center"><?php echo $row1["Product_Category"];?></td>
-                          <td class="align-center"><?php echo $row1["Product_Price"];?></td>
-                          <td class="align-center"><?php echo $row1["Product_Rent_Price"];?></td>
-                          <td class="align-center"><?php echo $row1["Product_Stock"];?></td>
-                          <td class="align-center"><?php echo $row1["Product_Date"];?></td>
-                          <td class="align-center"><?php echo $row1["Product_Status"];?></td>
-                          <td style="text-align: center;"><a href="admin_editProd.php?pid=<?php echo $row1["Product_ID"]; ?>'"class="table-icon edit"></a></td>
-                          <td><a onclick="return confirmation()" href="admin_deleteProd.php?pid=<?php echo $row1["Product_ID"]; ?>" class="delete table-icon" title="Delete"></a></td>
-
-            </tr>
-            <?php
-              }
-            ?>
-          </tbody>
-        </table>
-        </form>
+        <form name="editfrm" method="post" action=""  ENCTYPE=multipart/form-data>
+  				<p>Name : <input type="text" name="pname" value="<?php echo $row1['Product_Name'];?> "/></p>
+  				<p>Description : <input type="text" name="des" value="<?php echo $row1['Product_Description'];?>"/></p>
+  				<p>Category : <input type="text" name="cat" value="<?php echo $row1['Product_Category'];?>"/></p>
+  				<p>Price : <input type="text" name="pri" value="<?php echo $row1['Product_Price'];?>"/></p>
+  				<p>Rent Price : <input type="text" name="rpri" value="<?php echo $row1['Product_Rent_Price'];?>"/></p>
+  				<p>Stock : <input type="text" name="stk" value="<?php echo $row1['Product_Stock'];?>"/></p>
+          <p>Date : <input type="date" name="dat" value="<?php echo $row1['Product_Date'];?>"/></p>
+  				<p>Status:
+  					<select name="status">
+  						<option value="active" <?php if ($row1['Product_Status'] == "active")  echo "selected";  ?>>active</option>
+  						<option value="unactive" <?php if ($row1['Product_Status'] == "unactive") echo "selected='selected' "  ?>>unactive</option>
+  					</select>
+  				</p>
+  				<p><input type="submit" name="updatebtn" value="Update Now" /></p>
+  			</form>
       </div>
     </div>
 	</div>
@@ -159,3 +133,27 @@ table
 </div>
 </body>
 </html>
+
+<?php
+	if(isset($_POST["updatebtn"]))
+	{
+
+		$prodname = $_POST["pname"];
+		$proddes = $_POST['des'];
+		$prodcat = $_POST['cat'];
+		$prodpri=$_POST['pri'];
+		$prodRpri=$_POST['rpri'];
+    $stk=$_POST['stk'];
+    $date=$_POST['dat'];
+		$status=$_POST['status'];
+
+		mysql_query("update product set Product_Name='$prodname',Product_Description='$proddes',Product_Category='$prodcat',Product_Price='$prodpri',Product_Rent_Price='$prodRpri',Product_Stock='$stk',Product_Date='$date',Product_Status='$status' where Product_ID='$product_id'");
+	?>
+	<script>
+		alert("One record saved");
+	</script>
+
+	<?php
+		header("Location:admin_prodList.php");
+	}
+?>
