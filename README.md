@@ -1,6 +1,11 @@
 G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 =======
 
+First Header | Second Header
+------------ | -------------
+Content from cell 1 | Content from cell 2
+Content in the first column | Content in the second column
+
 ## Install xampp ##
 ![enter image description here](https://lh3.googleusercontent.com/zD8RQhn_yNvu9cQx1oQvCcaaSx7DgBfx6H_IDPFVRnOnX3kQd1YlqwQNo1btaUEl2Ns=s0 "installer.JPG")
 
