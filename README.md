@@ -4,9 +4,10 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 
 |Install xampp|
 ----------
+ - run the installer that is downloaded
 |![enter image description here](https://lh3.googleusercontent.com/zD8RQhn_yNvu9cQx1oQvCcaaSx7DgBfx6H_IDPFVRnOnX3kQd1YlqwQNo1btaUEl2Ns=s0 "installer.JPG")
 
- - run the installer that is downloaded
+
 
 |
 
