@@ -46,7 +46,7 @@ table
 		</div>
 		<div id="nav">
 			<ul>
-				<li class="upp"><a href="../visitor/visitor.php">Home</a></li>
+				<li class="upp"><a href="../admin/index.php">Home</a></li>
 				<li class="upp"><a href="#">Rent & Sales</a>
 					<ul>
 						<li><a href="">List of video</a></li>
