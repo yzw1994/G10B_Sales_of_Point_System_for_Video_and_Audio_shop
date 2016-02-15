@@ -65,7 +65,7 @@ table
 
 		mysql_query("update product set Product_Name='$prodname',Product_Description='$proddes',Product_Category='$prodcat',Product_Price='$prodpri',Product_Rent_Price='$prodRpri',Product_Stock='$stk',Product_Date='$date',Product_Status='$status' where Product_ID='$product_id'");
 
- 
+
 		header("Location:admin_prodList.php");
 	}
 ?>
@@ -86,11 +86,7 @@ table
 			<ul>
 				<li class="upp"><a href="../visitor/visitor.php">Home</a></li>
 				<li class="upp"><a href="#">Rent & Sales</a>
-					<ul>
-						<li><a href="">List of video</a></li>
-						<li><a href="">Transaction History</a></li>
-					</ul>
-				</li>
+					</li>
 				<li class="upp"><a href="#">Coming Soon</a></li>
 			</ul>
 		</div>
@@ -151,5 +147,3 @@ table
 </div>
 </body>
 </html>
-
-
