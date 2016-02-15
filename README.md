@@ -243,10 +243,10 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 
 ----------
 
-|View products list and edit products|
+|View products list, edit products and delete products|
 ----------
-|![enter image description here](https://lh3.googleusercontent.com/4xzrViiigPdOMZuOk57FLV1B-aG8jYdBdMZePP1-0FFQIeJKDZEl6e-VapHf_SOmaRWm=s0 "productlist.JPG")|
-| * Admin view product list and click on pencil button to edit product details|
+|![enter image description here](https://lh3.googleusercontent.com/-Wa6J28jNl58/VsF0gkF4dAI/AAAAAAAAAMM/MEt5BYH9LWQ/s0/productlist.JPG "productlist.JPG")|
+| * Admin view product list and click on pencil button to edit product details, and rubbish bin button is delete products|
 
 
 ----------
