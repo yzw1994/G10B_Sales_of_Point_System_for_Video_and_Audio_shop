@@ -108,7 +108,7 @@ table
 				<div style="background:white; padding: 10px 55px;"><img src="../img/user_photo.gif" style="border:1px solid black; padding: 5px;" /></div>
 				<p style="text-align:center; line-height: 20px;">Welcome, <?php echo $row['User_Name'];?></p>
 				<ul id="home">
-					<li class="b1"><a class="icon profile" href="adminProfile.php" >View profile</a></li>
+  					<li class="b1"><a class="icon profile" href="adminProfile.php" >View profile</a></li>
 					<li class="b1"><a class="icon logout" href="../visitor/visitor.php">Log Out</a></li>
 				</ul>
 			</div>

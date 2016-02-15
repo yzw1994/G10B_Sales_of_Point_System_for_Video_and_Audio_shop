@@ -51,8 +51,8 @@
 <style type="text/css">
 table
 {
-	width: 50%;
-	margin-left: 180px;
+	width: 800px;
+	margin-left: 10px;
 }
 </style>
 </head>
@@ -173,53 +173,54 @@ table
 			</div>
 		</div>
     <div id="main">
-			<div class="full_w">
-				<div class="h_title">User Details</div>
+      <div class="full_w">
+        <div class="h_title">User List</div>
+        <table width="90%">
+          <thead>
+            <tr>
+                  <th scope="col" width="20%">User ID</th>
+                  <th scope="col" width="20%">User Email</th>
+                  <th scope="col" >User Name</th>
+                  <th scope="col" >User Phone</th>
+                  <th scope="col" >User Address</th>
+                  <th scope="col" >User birthday</th>
+                  <th scope="col" >User Rent Limit</th>
+                  <th scope="col">User Subscirbe status</th>
+                  <th scope="col">Disable Button</th>
+              </tr>
 
-            <table style="margin-left:200px;">
+          </thead>
+          <tbody>
+            <?php
 
-              <tr class="admin_table">
-                    <th></th>
-                    <th class="admin_table_ID">User ID</th>
-                    <th class="admin_table_email">User Email</th>
-                    <th class="admin_table_name">User Name</th>
-                    <th class="admin_table_phone">User Phone</th>
-                    <th class="admin_table_address">User Address</th>
-                    <th class="admin_table_birthday">User birthday</th>
-                    <th class="admin_table_birthday">User Rent Limit</th>
-                    <th class="admin_table_status">User Subscirbe status</th>
-                    <th class="admin_table_status">Disable Button</th>
-                </tr>
-              <?php
+            while(  $u_rows = mysql_fetch_assoc($user_list))
+            {
+          ?>
+          <form name="user_form" method="POST" style="margin: 0px;">
 
-              while(  $u_rows = mysql_fetch_assoc($user_list))
-              {
+            <tr>
 
+                  <td class="align-center"><input type="hidden"  name ="userid" value="<?php echo $u_rows['User_ID']?>"><?php echo $u_rows['User_ID']?></td>
+                  <td class="align-center"><?php echo $u_rows['User_Email']?></td>
+                  <td class="align-center"><?php echo $u_rows['User_Name']?></td>
+                  <td class="align-center"><?php echo $u_rows['User_Phone']?></td>
+                  <td class="align-center"><?php echo $u_rows['User_Address']?></td>
+                  <td class="align-center"><?php echo $u_rows['User_Dob']?></td>
+                  <td class="align-center"><?php echo $u_rows['User_Rent_Limit']?></td>
+                  <td class="align-center"><?php echo $u_rows['User_Subscribe_Status']?></td>
+                  <td>
+                      <input type="submit" Value="<?php echo $button ?> " name="disable">
+                  </td>
+              </tr>
+              </form>
+            <?php
+          }
+             ?>
+          </tbody>
+        </table>
 
-              ?>
-              <form name="user_form" method="POST">
-                <tr>
-                      <td></td>
-                      <td class="admin_table_ID"><input type="hidden"  name ="userid" value="<?php echo $u_rows['User_ID']?>"><?php echo $u_rows['User_ID']?></td>
-                      <td class="admin_table_email"><?php echo $u_rows['User_Email']?></td>
-                      <td class="admin_table_name"><?php echo $u_rows['User_Name']?></td>
-                      <td class="admin_table_phone"><?php echo $u_rows['User_Phone']?></td>
-                      <td class="admin_table_address"><?php echo $u_rows['User_Address']?></td>
-                      <td class="admin_table_birthday"><?php echo $u_rows['User_Dob']?></td>
-                      <td class="admin_table_status"><?php echo $u_rows['User_Rent_Limit']?></td>
-                      <td class="admin_table_status"><?php echo $u_rows['User_Subscribe_Status']?></td>
-                      <td>
-                          <input type="submit" Value="<?php echo $button ?> " name="disable">
-                      </td>
-                  </tr>
-                </form>
-                <?php
-              }
-                 ?>
-
-            </table>
-			</div>
-		</div>
+      </div>
+    </div>
 	</div>
 	<div id="footer">
 			<p style="text-align:center;">Copyright 2016</p>

@@ -18,7 +18,7 @@
 <head>
 <title>Admin > Index</title>
 <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
-<link rel="stylesheet" type="text/css" href="../css/stylesheet.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../css/stylesheet.css" media="screen"/>
 <link rel="stylesheet" type="text/css" href="../css/bg_style_black.css" media="screen" />
 <script type="text/javascript" src="../Js/jquery-2.2.0.js"></script>
 <!--<link rel="shortcut icon" href="../img/mmu_icon.png" type="image/png">-->
