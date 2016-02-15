@@ -81,7 +81,7 @@
 						$product_name = $row['Product_Name'];
 						$product_image = $row['Product_Pic'];
 						$product_price = $row['Product_Price'];
-            echo $product_image;
+          
 
 						echo "<div id='' class='pro_div1'>
 								<div id='' class='prod_pic'>
