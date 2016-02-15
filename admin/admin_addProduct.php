@@ -12,9 +12,10 @@
 ?>
 
 <?php
+/*
 	if(isset($_POST['addbtn']))
 	{
-    echo "isset button";
+
 		$prodname = $_POST["pname"];
 		$proddes = $_POST['pdesc'];
 		$prodcat = $_POST['pcat'];
@@ -23,24 +24,32 @@
 		$prodstoc=$_POST['pstoc'];
     $proddate=$_POST['pdate'];
 		$prodstatus=$_POST['pstat'];
+    $pic_name=$_POST['pic_name'];
+    echo $pic_name;
 
 
-    if ($_FILES["pic_name"]["error"] > 0)
-        			{
-        				 $pic_name="";
-        			}
-        			else
-        			{
-                $temp = explode(".",$_FILES["pic_name"]["name"]);
-        				 move_uploaded_file($_FILES["pic_name"]["tmp_name"],"../images/product/" . $_FILES["pic_name"]["name"]);
-        				 $pic_name="../images/product/" . $_FILES["pic_name"]["name"];
 
-        			}
+
+        		/*		 move_uploaded_file($_FILES[$_POST['pic_name']]['tmp_name'],"../images/product/".$_FILES[$_POST['pic_name']]['name']);
+        				 $pic_name="../images/product/".$_FILES[$_POST['pic_name']]['name'];
+
+        			echo $pic_name;
+              echo $_FILES[$_POST['pic_name']]['name'];
+
+
+
+              $temp = explode(".",$_FILES[$pic_name]["name"]);
+          		$newfilename = $user_id . '.' .end($temp);
+          		move_uploaded_file($_FILES[$pic_name]["tmp_name"],"../images/product/" . $user_id . "P" . $_FILES[$pic_name]["name"]);
+
+          		$file="../images/product/" . $user_id . "P" . $_FILES[$pic_name]["name"];
+          		//$sql="update user set User_Profile_Pic = '$file' where User_ID = '$user_id'";
+
 
 
 
     $sql = "INSERT into product (Product_Pic,Product_Name,Product_Description,Product_Category,Product_Price,Product_Rent_Price,Product_Stock,Product_Date,Product_Status) values
-		('$pic_name','$prodname','$proddes','$prodcat','$prodpri','$prodrentpri','$prodstoc','$proddate','$prodstatus')";
+		('$file','$prodname','$proddes','$prodcat','$prodpri','$prodrentpri','$prodstoc','$proddate','$prodstatus')";
 		$result = mysql_query($sql);
     if($result) {
       echo "query successful";
@@ -48,8 +57,9 @@
     else{
       echo "query failed";
     }
-		 header("Location:admin_prodList.php");
+		 //header("Location:admin_prodList.php");
   }
+  */
 ?>
 <!DOCTYPE html>
 <html>
@@ -127,11 +137,12 @@ table
 				<div class="h_title">Admin Panel</div>
           <!--Upload Product Picture-->
 				<div>
-          <form name="productDetails" method="POST">
+          <form name="productDetails" method="POST" action="add_product.php?user_id=<?php echo $user_id ?>" enctype="multipart/form-data">
             <table>
+
               <tr>
                 <td>Picture</td>
-                <td><input type="file" name="pic_name" size="67" class="textfield"/></td>
+                <td><input type="file" name="pic_name"  class="textfield"/></td>
               </tr>
               <tr>
                 <td>Name</td>
