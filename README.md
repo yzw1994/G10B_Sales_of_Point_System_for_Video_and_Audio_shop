@@ -149,6 +149,13 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 
 ----------
 
+| Search products name |
+----------
+|![enter image description here](https://lh3.googleusercontent.com/-CE-kJgzYJsw/VsFwukcDHYI/AAAAAAAAAL0/BPxt65q7dqE/s0/searchproducts.JPG "searchproducts.JPG")|
+| * search the products and view the result|
+
+
+----------
 
 |Click on buy or rent products |
 ----------
@@ -212,7 +219,7 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 | After login proceed to dashboard|
 ----------
 |![enter image description here](https://lh3.googleusercontent.com/-wzQRM3c0KmY/VsFl9B6sg7I/AAAAAAAAALc/rgA6ZEfBMrU/s0/12754894_1149429191734192_1081017019_o+%25281%2529.jpg "12754894_1149429191734192_1081017019_o &#40;1&#41;.jpg")|
-| Dashboard will view new products and new register in current date  |
+| Dashboard will view new products and new register in current date added |
 
 
 ----------
