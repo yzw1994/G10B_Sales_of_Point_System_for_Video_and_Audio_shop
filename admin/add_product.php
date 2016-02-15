@@ -35,5 +35,9 @@
 	    else{
 	      echo "query failed";
 	    }
+
+
 			 header("Location:admin_prodList.php");
+
+
 ?>

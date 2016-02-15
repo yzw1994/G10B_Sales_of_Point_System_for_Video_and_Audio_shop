@@ -131,8 +131,9 @@ table
           <tr><td>Date : </td><td><input type="date" name="dat" class="textfield" value="<?php echo $row1['Product_Date'];?>"/></td></tr>
   				<tr><td>Status:</td>
   					<td><select name="status">
-  						<option value="active" <?php if ($row1['Product_Status'] == "Active")  echo "selected";  ?>>Active</option>
-  						<option value="unactive" <?php if ($row1['Product_Status'] == "Inactive") echo "selected='selected' "  ?>>Inactive</option>
+  						<option value="Active" <?php if ($row1['Product_Status'] == "Active")  echo "selected";  ?>>Active</option>
+  						<option value="Unactive" <?php if ($row1['Product_Status'] == "Unactive") echo "selected='selected' "  ?>>Unactive</option>
+              <option value="Coming Soon" <?php if ($row1['Product_Status'] == "Coming Soon") echo "selected='selected' "  ?>>Coming Soon</option>
   					</select>
   				</td><tr>
   				<tr><td><input type="submit" name="updatebtn" value="Update Now" /></td><tr>

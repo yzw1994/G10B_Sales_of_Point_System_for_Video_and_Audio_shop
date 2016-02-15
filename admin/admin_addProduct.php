@@ -101,7 +101,7 @@ table
 			<ul>
 				<li class="upp"><a href="../admin/index.php">Home</a></li>
 				<li class="upp"><a href="#">Rent & Sales</a>
-					
+
 				</li>
 				<li class="upp"><a href="#">Coming Soon</a></li>
 			</ul>
@@ -182,10 +182,10 @@ table
 
               <tr>
                 <td>Status</td>
-                <td><select name="pstat">
+                <td><select name="pstat" onchange="">
       						<option value="Active">Active</option>
       						<option value="Inactive">Inactive</option>
-                  <option value="Inactive">Coming Soon</option>
+                  <option value="Coming Soon">Coming Soon</option>
       					</select></td>
               </tr>
 
