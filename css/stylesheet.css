@@ -176,26 +176,26 @@ button:hover, .button:hover{
 	padding: 8px 0 8px 5px;
 }
 .box ul li .icon{ padding: 2px 0 2px 22px;}
-.box ul li .page{ background: url(../images/i_page.png) no-repeat center left;}
-.box ul li .view_page{ background: url(../images/i_view_page.png) no-repeat center left;}
-.box ul li .category{ background: url(../images/i_category.png) no-repeat center left;}
-.box ul li .contact{ background: url(../images/i_contact.png) no-repeat center left;}
-.box ul li .report{ background: url(../images/i_report.png) no-repeat center left;}
-.box ul li .add_page{ background: url(../images/i_add_page.png) no-repeat center left;}
-.box ul li .photo{ background: url(../images/i_photo.png) no-repeat center left;}
-.box ul li .config{ background: url(../images/i_config.png) no-repeat center left;}
-.box ul li .users{ background: url(../images/i_users.png) no-repeat center left;}
-.box ul li .add_user{ background: url(../images/i_add_user.png) no-repeat center left;}
-.box ul li .block_users{ background: url(../images/i_block_users.png) no-repeat center left;}
-.box ul li .view_icon{ background: url(../images/i_view_icon.png) no-repeat center left;}
-.box ul li .timetable{ background: url(../images/i_timetable.png) no-repeat center left;}
-.box ul li .profile{ background: url(../images/i_profile.png) no-repeat center left;}
-.box ul li .add_table{ background: url(../images/i_add_table.png) no-repeat center left;}
-.box ul li .logout{ background: url(../images/i_logout.png) no-repeat center left;}
-.box ul li .show{ background: url(../images/i_show.png) no-repeat center left;}
-.box ul li .search1{background: url(../images/i_search.png) no-repeat center left;}
-.box ul li .error{background: url(../images/i_error.png) no-repeat center left;}
-.box ul li .add_photo{ background: url(../images/i_photo.png) no-repeat center left;}
+.box ul li .page{ background: url(../img/i_page.png) no-repeat center left;}
+.box ul li .view_page{ background: url(../img/i_view_page.png) no-repeat center left;}
+.box ul li .category{ background: url(../img/i_category.png) no-repeat center left;}
+.box ul li .contact{ background: url(../img/i_contact.png) no-repeat center left;}
+.box ul li .report{ background: url(../img/i_report.png) no-repeat center left;}
+.box ul li .add_page{ background: url(../img/i_add_page.png) no-repeat center left;}
+.box ul li .photo{ background: url(../img/i_photo.png) no-repeat center left;}
+.box ul li .config{ background: url(../img/i_config.png) no-repeat center left;}
+.box ul li .users{ background: url(../img/i_users.png) no-repeat center left;}
+.box ul li .add_user{ background: url(../img/i_add_user.png) no-repeat center left;}
+.box ul li .block_users{ background: url(../img/i_block_users.png) no-repeat center left;}
+.box ul li .view_icon{ background: url(../img/i_view_icon.png) no-repeat center left;}
+.box ul li .timetable{ background: url(../img/i_timetable.png) no-repeat center left;}
+.box ul li .profile{ background: url(../img/i_profile.png) no-repeat center left;}
+.box ul li .add_table{ background: url(../img/i_add_table.png) no-repeat center left;}
+.box ul li .logout{ background: url(../img/i_logout.png) no-repeat center left;}
+.box ul li .show{ background: url(../img/i_show.png) no-repeat center left;}
+.box ul li .search1{background: url(../img/i_search.png) no-repeat center left;}
+.box ul li .error{background: url(../img/i_error.png) no-repeat center left;}
+.box ul li .add_photo{ background: url(../img/i_photo.png) no-repeat center left;}
 
 
 
@@ -382,6 +382,7 @@ table .chb{
 .edit table-icon { background: url(../img/i_edit.png) no-repeat; }
 .delete table-icon { background: url(../img/i_delete.png) no-repeat; }
 .show.table-icon { background: url(../images/i_archive.png) no-repeat;}
+.icon add_user{background: url(../images/i_archive.png) no-repeat;}
 
 /* Design for pagination*/
 

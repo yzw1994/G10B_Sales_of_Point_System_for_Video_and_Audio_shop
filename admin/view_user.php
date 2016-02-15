@@ -137,14 +137,14 @@ table
         <table width="90%">
           <thead>
             <tr>
-                  <th scope="col" width="20%">User ID</th>
-                  <th scope="col" width="20%">User Email</th>
-                  <th scope="col" >User Name</th>
-                  <th scope="col" >User Phone</th>
-                  <th scope="col" >User Address</th>
-                  <th scope="col" >User birthday</th>
-                  <th scope="col" >User Rent Limit</th>
-                  <th scope="col" style="width: 45px;">User Subscirbe status</th>
+                  <th ="col" width="20px">UserID</th>
+                  <th scope="col" >User Email</th>
+                  <th scope="col" >Username</th>
+                  <th scope="col" >UserNo</th>
+                  <th scope="col" width="200px">User Address</th>
+                  <th scope="col" >UserDOB</th>
+                  <th scope="col" >RentLimit</th>
+                  <th scope="col" >SubscirberStatus</th>
               </tr>
 
           </thead>
