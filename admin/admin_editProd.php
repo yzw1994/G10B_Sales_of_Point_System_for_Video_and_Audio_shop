@@ -123,7 +123,7 @@ table
         <form name="editfrm" method="post" action=""  ENCTYPE=multipart/form-data>
           <table>
           <tr><td>Name : </td><td><input type="text" name="pname" class="textfield" value="<?php echo $row1['Product_Name'];?> "/></td></tr>
-  				<tr><td>Description : </td><td><textarea rows="3"cols="34" name="des" class="" value="<?php echo $row1['Product_Description'];?>"></textarea></td></tr>
+  				<tr><td>Description : </td><td><textarea rows="3"cols="34" name="des" class=""><?php echo $row1['Product_Description'];?></textarea></td></tr>
   				<tr><td>Category : </td><td><input type="text" name="cat" class="textfield" value="<?php echo $row1['Product_Category'];?>"/></td></tr>
   				<tr><td>Price : </td><td><input type="text" name="pri" class="textfield" value="<?php echo $row1['Product_Price'];?>"/></td></tr>
   				<tr><td>Rent Price : </td><td><input type="text" name="rpri" class="textfield"value=" <?php echo $row1['Product_Rent_Price'];?>"/></td></tr>
