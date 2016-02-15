@@ -25,6 +25,9 @@ table
 	width: 50%;
 	margin-left: 180px;
 }
+.columnwidth{
+  width:250px;
+}
 </style>
 </head>
 
@@ -87,8 +90,8 @@ table
 				<div>
 <table>
 	<tr>
-		<th>New Products</th>
-		<th>Product Picture</th>
+		<th class="columnwidth">New Products Added Recent</th>
+		<th class="">Product Picture</th>
 	<tr>
 <?php
 $sql="select * from product where Product_Date=CURDATE()";
@@ -97,14 +100,15 @@ while($row = mysql_fetch_assoc($productlist))
 {
 		echo "<tr>";
 		echo "<td>$row[Product_Name]</td>";
-		echo "<td><img src=$row[Product_Price]</td>";
+		echo "<td><img src=$row[Product_Pic] width=100px height=100px></td>";
 		echo "</tr>";
+
 }?>
 </table>
 <table>
 	<tr>
-		<th>New Customer</th>
-		<th>Profile Picture</th>
+		<th class="columnwidth">New Customer Registered Recent</th>
+		<th class="">Profile Picture</th>
 	<tr>
 <?php
 $sql="select * from user where User_Date=CURDATE() and User_Privilege=2";
@@ -113,7 +117,7 @@ while($row = mysql_fetch_assoc($productlist))
 {
 		echo "<tr>";
 		echo "<td>$row[User_Name]</td>";
-		echo "<td><img src=$row[User_Email]</td>";
+		echo "<td><img src=$row[User_Profile_Pic] width=100px height=100px></td>";
 		echo "</tr>";
 }?>
 </table>
