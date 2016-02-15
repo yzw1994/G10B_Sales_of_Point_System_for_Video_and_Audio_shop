@@ -85,7 +85,7 @@ table
     </div>
 		<div id="main">
 			<div class="full_w">
-				<div class="h_title">Admin Panel</div>
+				<div class="h_title">Admin Dashboard</div>
 				<form name="" method="get">
 
 				<div>
