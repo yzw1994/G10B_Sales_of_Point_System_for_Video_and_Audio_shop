@@ -228,6 +228,37 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 
 ----------
 
+|View products list and edit products|
+----------
+|![enter image description here](https://lh3.googleusercontent.com/4xzrViiigPdOMZuOk57FLV1B-aG8jYdBdMZePP1-0FFQIeJKDZEl6e-VapHf_SOmaRWm=s0 "productlist.JPG")|
+| * Admin view product list and click on pencil button to edit product details|
+
+
+----------
+
+|Fill in the product detail want to change|
+----------
+|![enter image description here](https://lh3.googleusercontent.com/1yK_9sACcZKnhEXkqLq9u4Lav_MGCrxodpoeOECzt2CouxfcJC_3VdmSPcS8_x6cf07n=s0 "editproduct.JPG")|
+| * After finish edit click add now|
+
+
+----------
+
+|View all user list|
+----------
+|![enter image description here](https://lh3.googleusercontent.com/q-qIREPV_9i_RMgwKdb2aMT8K8VxkTUAm9_540sXipRTiadKeqNDJzGyDzb4Z-vdg4Y5=s0 "userlist.JPG")|
+| * View all the user list and include admin|
+
+
+----------
+|Disable user list|
+----------
+|![enter image description here](https://lh3.googleusercontent.com/RtqXTDI-Pd3RBs6y8a85_MrUOmjwttwQxVASJ0dTnOEeoEb9jfV7zY_X9jiwkP6dYNXS=s0 "disableusr.JPG")|
+| * disable user you wish to|
+
+
+----------
+
 
 | Admin Logout just click on log out button |
 ----------
