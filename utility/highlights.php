@@ -15,7 +15,7 @@
 <div id="" class="new_pro_color4 pro_title1">HIGHLIGHTS
 </div>
 <?php
-	$product_sql = "select * from product where product_status = 2";
+	$product_sql = "select * from product where product_status = 'active'";
 	$product_result = mysql_query($product_sql);
 
 	$product_check = mysql_num_rows($product_result);
