@@ -211,7 +211,7 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 ----------
 
 
-|System will continue to admin view and edit profile |
+|Admin view and edit profile |
 ----------
 |![enter image description here](https://lh3.googleusercontent.com/5Yusb-wpzETNvMHljidtMcH1NYeu1_YbQ68nMdDA6BGx3XKgA44Pa6LxPoKeWbRrOnM=s0 "adminprofile - Copy &#40;3&#41;.JPG")|
 | * After finish edit admin profile click save button|
