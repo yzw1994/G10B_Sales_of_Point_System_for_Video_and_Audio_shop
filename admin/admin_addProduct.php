@@ -101,6 +101,10 @@ table
 			<ul>
 				<li class="upp"><a href="../admin/index.php">Home</a></li>
 				<li class="upp"><a href="#">Rent & Sales</a>
+					<ul>
+						<li><a href="">List of video</a></li>
+						<li><a href="">Transaction History</a></li>
+					</ul>
 				</li>
 				<li class="upp"><a href="#">Coming Soon</a></li>
 			</ul>
@@ -184,6 +188,7 @@ table
                 <td><select name="pstat">
       						<option value="Active">Active</option>
       						<option value="Inactive">Inactive</option>
+                  <option value="Inactive">Coming Soon</option>
       					</select></td>
               </tr>
 
