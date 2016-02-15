@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.12
+-- version 4.0.9
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 13, 2016 at 07:42 AM
--- Server version: 5.6.16
--- PHP Version: 5.5.11
+-- Generation Time: Feb 15, 2016 at 07:49 AM
+-- Server version: 5.6.14
+-- PHP Version: 5.5.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -78,29 +78,23 @@ CREATE TABLE IF NOT EXISTS `product` (
   `Product_Date` date NOT NULL,
   `Product_Status` varchar(15) NOT NULL,
   PRIMARY KEY (`Product_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=89 ;
 
 --
 -- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`Product_ID`, `Product_Name`, `Product_Description`, `Product_Pic`, `Product_Type`, `Product_Category`, `Product_Price`, `Product_Rent_Price`, `Product_Stock`, `Product_Date`, `Product_Status`) VALUES
-(1, 'adellssssssssssssssssssssssssssss', 'yasfcvbayvs,bs,gkiu,bxh,sjbxgjgxbsd', '../images/default_album.jpg', 2, 'jazz', 35.99, 10, 9, '0000-00-00', '1'),
-(2, 'Unorthodox Jukebox', 'usygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,jashsaybgxkxhasbyxusygabxlisabx,d,j', '../images/default_album.jpg', 2, 'jazz', 49.9, 11.99, 95, '0000-00-00', '1'),
-(3, 'The Avengers', 'Avengerssdcfvgbhnkjmerctvgbuhnkjgvhaskxivkjygxybsdahjbclhfuywebd', '../images/default_album.jpg', 1, 'Adventure', 59.99, 29.99, 20, '0000-00-00', '1'),
-(4, 'Avengers: Age of Ultron', 'AvengerssdcfvgbhnkjmerctvgbuhnkjgvhaskxivkjygxybsdahjbclhfuywebdAvengerssdcfvgbhnkjmerctvgbuhnkjgvhaskxivkjygxybsdahjbclhfuywebd', '../images/default_album.jpg', 1, 'Adventure', 67.99, 27.99, 0, '0000-00-00', '1'),
-(5, 'Batman v Superman: Dawn of Justice', 'Batman v Superman: Dawn of Justiceafdgzna bv ??Xv ZMHGXv as bx,jhb xmnzbxmn sx,vh,xasv x XnZ???????????????????DFDS CSSCS', '../images/default_album.jpg', 1, 'Action', 60, 30, 23, '0000-00-00', '3'),
-(6, 'Suicide Squad ', 'Suicide Squadqskwnsijanuxbaskxb,kjasb,kgvausdvjsvxkh,vdcgulewvhb,sjdab,abedkjgewldv,sdgvg awgeksxhvc,j,sgai.dewdwedewdewe', '../images/default_album.jpg', 1, 'Action', 60.99, 29.99, 12, '0000-00-00', '3'),
-(9, 'London Has Fallen', 'Actionsahjveufbgugbzuygfoub fgyakevufegkufgqk fugkuyqfdwefefearf', '../images/default_album.jpg', 1, 'Action', 99.99, 10, 69, '0000-00-00', '3'),
-(10, 'Triple 9', 'dwedwedweaferhrtgretafef', '../images/default_album.jpg', 1, 'Fantasy', 19.99, 10, 25, '0000-00-00', '3'),
-(11, 'Miracles from Heaven', 'FAGHZJXJVASHBJXHMSAVHJXB,HSGYXJHB SXHSGUJASXXSSAXSAX', '../images/default_album.jpg', 1, 'Story', 40.99, 10, 54, '0000-00-00', '3'),
-(12, 'I Saw the Light', 'qstrwqhnisqwfcsuwqxebuwegwbdnlwbgzydtg wuad5wafeDYyfiyesgdcdbskhjdcsd', '../images/default_album.jpg', 1, 'Story', 39.99, 10, 411, '0000-00-00', '3'),
-(13, 'Doctor Strange', '12twf12ygwyt2fe7qhuzerzwigbxuetrfliegryxfrkzezgvwtfdfewhxferfer', '../images/default_album.jpg', 1, 'Sci-fi', 88.99, 10, 32, '0000-00-00', '3'),
-(14, 'Fantastic Beasts and Where to Find Them', 'qwhguwgeuydvbeuhfbgiyetgfoigeyitgbwuzhbwegfduegqfyrgfbouyqrgfuerbqgffiyerfzerferfqerfer', '../images/default_album.jpg', 1, 'Fantasy', 90.99, 10, 53, '0000-00-00', '3'),
-(15, 'The Founder ', 'hwgvyzvweyidwugfiywgfuwgfqyurbqerybedhvayiubzhdszyibchbajzcbkjdgfkcbjhflb fuebfuakengbfefaerferfref', '../images/default_album.jpg', 1, 'Drama', 67.99, 10, 43, '0000-00-00', '3'),
-(16, '123', '1234 test', '../images/default_album.jpg', 0, 'jazz', 12.5, 15, 3, '0000-00-00', '1'),
-(17, '123', '1234 test', '../images/default_album.jpg', 0, 'jazz', 12.5, 15, 3, '0000-00-00', '1'),
-(18, 'test', 'test', '../images/default_album.jpg', 0, 'test', 12, 12, 5, '1994-12-04', '1');
+(1, 'Batman Begins ', 'After training with his mentor, Batman begins his war on crime to free the crime-ridden Gotham City from corruption that the Scarecrow and the League of Shadows have cast upon it.', '../images/product/2Ubatman.jpg', 0, ' Action, Adventure ', 0, 0, 8, '2014-06-10', 'Active'),
+(80, 'Batman v Superman: Dawn of Justice', ' Action, Adventure, Fantasy', '../images/product/2Ubatmanvssuperman.jpg', 0, ' Action, Adventure, Fantasy', 20, 25, 2, '2016-02-10', 'Active'),
+(81, 'Batman v Superman: Dawn of Justice', ' Action, Adventure, Fantasy', '../images/product/2Ubatmanvssuperman.jpg', 0, ' Action, Adventure, Fantasy', 20, 25, 2, '2016-02-10', 'Active'),
+(82, 'Spider-Man', 'When bitten by a genetically modified spider, a nerdy, shy, and awkward high school student gains spider-like abilities that he eventually must use to fight evil as a superhero after tragedy befalls his family.', '../images/product/2Uspiderman.jpg', 0, ' Action, Adventure ', 15, 10, 20, '2002-07-16', 'Active'),
+(83, 'Ant-Man', 'Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help his mentor, Dr. Hank Pym, plan and pull off a heist that will save the world.', '../images/product/2Uantman.jpg', 0, ' Action, Adventure, Sci-Fi', 25, 22, 10, '2015-11-18', 'Active'),
+(84, 'The Amazing Spider-Man ', 'When New York is put under siege by Oscorp, it is up to Spider-Man to save the city he swore to protect as well as his loved ones.', '../images/product/2Uthe amazing spiderman.jpg', 0, ' Action, Adventure, Fantasy', 23, 18, 5, '2015-07-15', 'Active'),
+(85, 'Fantastic Four', 'Four young outsiders teleport to an alternate and dangerous universe which alters their physical form in shocking ways. The four must learn to harness their new abilities and work together to save Earth from a former friend turned enemy.', '../images/product/2Ufantasyfour.jpg', 0, ' Action, Adventure, Sci-Fi', 24, 20, 15, '2016-02-17', 'Active'),
+(86, 'Deadpool   ', 'A former Special Forces operative turned mercenary is subjected to a rogue experiment that leaves him with accelerated healing powers, adopting the alter ego Deadpool.', '../images/product/2Udeadpool.jpg', 0, ' Action, Adventure, Comedy ', 20, 15, 15, '2016-02-15', 'Unactive'),
+(87, 'Warcraft   ', 'An epic fantasy/adventure based on the popular video game series.', '../images/product/2UWarcraft.jpg', 0, ' Action, Adventure, Fantasy', 25, 18, 5, '2016-02-11', 'Coming Soon'),
+(88, 'The Conjuring 2', 'Lorraine and Ed Warren travel to north London to help a single mother raising four children alone in a house plagued by malicious spirits.', '../images/product/2UThe Conjuring 2.jpg', 0, 'Horror', 30, 20, 0, '2016-02-29', 'Coming Soon');
 
 -- --------------------------------------------------------
 
@@ -169,20 +163,19 @@ CREATE TABLE IF NOT EXISTS `user` (
   `User_Subscribe_Status` varchar(10) NOT NULL,
   `User_Rent_Limit` int(11) NOT NULL DEFAULT '0',
   `User_Privilege` varchar(15) NOT NULL,
+  `User_Date` date NOT NULL,
   PRIMARY KEY (`User_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`User_ID`, `User_Name`, `User_Password`, `User_Email`, `User_Profile_Pic`, `User_Phone`, `User_Address`, `User_Dob`, `User_Subscribe_Status`, `User_Rent_Limit`, `User_Privilege`) VALUES
-(1, 'Yap Cheng Wei', '', 'yapchengwei@gmail.com', '../user/profile_picture/1U18071.jpg', '0109333724', 'dygsankjefvdsjfdsjdesb xiywegjxvd', '1994-06-06', '', 0, ''),
-(2, 'Koh Chee Guan ', '123123123', 'yuanyuan0331@live.com', '../images/default_pic.jpg', '0177601692', 'sad sad ixora ', '2194-02-11', '', 0, ''),
-(3, 'yyy', '123', 'kkk@hsa', '../images/default_pic.jpg', '000000000', 'kajsinmajslas', '0001-06-06', '1', 0, '2'),
-(4, 'BLUycw', '827ccb0eea8a706c4c34a16891f84e7b', 'cheng.wei1@hotmail.com', '../user/profile_picture/4U10418372_4799357158319_3118693698156310696_n.jpg', '0109333724', 'wasdrfgyufdsgjhjesdfghjigdgfghjkidsfgh', '1994-06-06', '1', 0, '2'),
-(5, 'Johny Ang', '05da9d587437a3f58cf91a8694448793', 'ahs_imd@hotmail.com', '../images/default_pic.jpg', '0123456789', 'No.63, Jalan Ria 10, Taman Ria', '0000-00-00', '1', 0, '2'),
-(6, 'yzw', 'c03ff2cbc8056f61241a8a34e7aea8f9', 'zhanweiyap@hotmail.com', '../images/default_pic.jpg', '0100000000', '33D Bunga Raya', '1994-05-16', '1', 0, '1');
+INSERT INTO `user` (`User_ID`, `User_Name`, `User_Password`, `User_Email`, `User_Profile_Pic`, `User_Phone`, `User_Address`, `User_Dob`, `User_Subscribe_Status`, `User_Rent_Limit`, `User_Privilege`, `User_Date`) VALUES
+(1, 'Yap Cheng Wei', '', 'yapchengwei@gmail.com', '../user/profile_picture/1U18071.jpg', '0109333724', 'dygsankjefvdsjfdsjdesb xiywegjxvd', '1994-06-06', 'Disable', 0, '2', '0000-00-00'),
+(2, 'Koh Chee Guan', '202cb962ac59075b964b07152d234b70', 'yuanyuan0331@live.com', '../user/profile_picture/2Ulogo_red.png', '0177601692', 'sad sad ixora ', '2194-02-11', 'Enable', 0, '1', '0000-00-00'),
+(3, 'yyy', '123', 'kkk@hsa', '../images/default_pic.jpg', '000000000', 'kajsinmajslas', '0001-06-06', 'Enable', 0, '1', '0000-00-00'),
+(4, 'BLUycw', '827ccb0eea8a706c4c34a16891f84e7b', 'cheng.wei1@hotmail.com', '../user/profile_picture/4U10418372_4799357158319_3118693698156310696_n.jpg', '0109333724', 'wasdrfgyufdsgjhjesdfghjigdgfghjkidsfgh', '1994-06-06', 'Disable', 0, '2', '0000-00-00');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
