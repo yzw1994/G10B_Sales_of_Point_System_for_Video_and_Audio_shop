@@ -15,7 +15,7 @@
 <div id="" class="new_pro_color1 pro_title">NEW ARRIVE VIDEO
 </div>
 <?php
-	$product_sql = "select * from product where product_status = 1 and product_type = 1";
+	$product_sql = "select * from product where product_status = 'active' and product_type = 1";
 	$product_result = mysql_query($product_sql);
 
 	$product_check = mysql_num_rows($product_result);
