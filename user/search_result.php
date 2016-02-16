@@ -11,9 +11,22 @@
     if(isset($_REQUEST["search"]))
     {
 		$search_text = $_REQUEST["search"];
-		$sql = "SELECT * FROM product WHERE Product_Name like '%$search_text%'";
-		$search_result = mysql_query($sql);
-		$total_result = mysql_num_rows($search_result);
+		$loopstring ="";
+		    $and_value = "or";
+		    $empty_value = "";
+		    $search_string = explode(" ", $search_text);
+		    for($i=0;$i<sizeof($search_string);$i++) {
+		      if($i!=(sizeof($search_string)-1)) {
+		        $loopstring .= "product_name like '%".strval($search_string[$i])."%' ".$and_value." ";
+		      }
+		      else {
+		        $loopstring .= "product_name like '%".strval($search_string[$i])."%' ".$empty_value." ";
+		      }
+		    }
+		
+				$sql = "SELECT * FROM product WHERE ".$loopstring;
+				$search_result = mysql_query($sql);
+				$total_result = mysql_num_rows($search_result);
 
 		if(!$search_result) {
 			echo "Query failed: " . mysql_error();
