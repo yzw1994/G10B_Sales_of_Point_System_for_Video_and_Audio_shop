@@ -1,6 +1,33 @@
 G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 ======= 
+Report for this project
+----------
+TWT GROUP ASSIGNMENT 
+Tutorial Group: G10B 
+Member: 
+1121116131 YAP CHENG WEI 
+1121115935 YAP ZHAN WEI
+1121116127 KOH CHEE GUAN 
+1121115790 KOH JIN YI
 
+**Introduction**
+
+Sales of point system for video and audio shop basically a pathway for people to shopping for video and audio online which can directly interpret from the title. This system bring lot of convenient to user because the don't have to physically appear to shopping but just playing around with the devices.
+
+**Scope**
+
+This system is involved 2 types of user, first one is basic user, user does sales or rent for the items after they done the registration. Other that that, they are also allow to view transcation history all view the details of product. Follow by admin, admin is responsible to add product so that able to view new product. Edit product also can make because sometimes admin will key in the wrong details. Moreover, admin can enable or disable user, because sometimes the user account is being hacked, relevant admin have to disable certain account to protect the particular user.
+
+**Objective**
+
+Basically our system is developed to benefit those user who would like to buy or rent video/CD in an easiest way which is online shopping. We also aim to produce quality system to public so that the user can enjoy and at the same time developer also enjoy with the positive feedback.
+
+**Conclusion**
+
+We will be glad to receive any feedback no matter postive or negative and improve all the bug and keep doing well in order to improve our system, as well as our capabilities in future. Furthermore, we also hope that can add in more useful functionalities which is suitable for this system to make it more perfect in future.
+
+[Report End]
+----------
 |Download xampp|
 ----------
 |![enter image description here](https://lh3.googleusercontent.com/-dmUgOVK99hI/VsCPV0IjauI/AAAAAAAAAJQ/YYDBZ668QEg/s0/xamppdownload.JPG "xamppdownload.JPG")|
@@ -279,3 +306,5 @@ G10B_Sales_of_Point_System_for_Video_and_Audio_shop
 ----------
 |![enter image description here](https://lh3.googleusercontent.com/-UgrHjONs5Wk/VsAa_LD2AgI/AAAAAAAAAHo/wxNN0_Iu5jc/s0/logout.JPG "logout.JPG")|
 | * Finish use it and proceed to logout.|
+
+
